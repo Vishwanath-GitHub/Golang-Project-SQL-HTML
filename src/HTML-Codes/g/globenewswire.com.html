@@ -1,0 +1,559 @@
+
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1" />
+    <title>Send Press Releases with GlobeNewswire</title>
+    <link rel="shortcut icon" href="/Content/Images/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/fontawesome-all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/styles.min.css?v=320414" />
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/mobile_nav.css?v=320414" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/overwrite.css?v=320414" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/flexslider.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/slides.css?v=320414" />
+
+    <!--[if IE 7]>
+        <link rel="stylesheet" type="text/css" href="/Content/css/allstyles.min.css?v=320414"/>
+        <link rel="stylesheet" type="text/css" href="/Content/css/ie-styles.min.css?v=320414"/>
+    <![endif]-->
+    <!--[if IE 8]>
+        <link rel="stylesheet" type="text/css" href="/Content/css/allstyles.min.css?v=320414"/>
+    <![endif]-->
+
+        <link rel="canonical" href="https://www.globenewswire.com/" />
+    <script src="/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery-ui-1.8.18.min.js" type="text/javascript"></script>
+    <script src="/Scripts/datepicker-fr-CA.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+    <script src="/Scripts/myscripts.min.js?v=320414" type="text/javascript"></script>
+
+    <!--<script src="/Scripts/user-culture-helper.js?v=320414" type="text/javascript"> </script>-->
+
+    <script src="/Scripts/jquery.flexslider.js" type="text/javascript"></script>
+
+    <!-- Jeditable settings: see http://www.appelsiini.net/projects/jeditable for more info and options -->
+    <script src="/Scripts/jquery.jeditable.js" type="text/javascript"></script>
+
+    
+
+    
+    
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-24489796-1']);
+            _gaq.push(['_setDomainName', '.globenewswire.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+    <script>
+
+        window.refreshAntiforgeryTokens = function() {
+
+            var allTokens = $("input[name='__RequestVerificationToken']");
+
+            if (allTokens && allTokens.length > 0) {
+
+                $.each(allTokens, function (i, contextElement) {
+
+                    try {
+
+                        $.ajax({
+                            type: 'GET',
+                            url: '/Token/RefreshAntiForgeryToken',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "html",
+                            cache: false,
+                            async: false,
+                            success: function (response) {
+                                var newToken = $('<div />').html(response).find('input[type="hidden"]').val();
+                                $(contextElement).val(newToken);
+                                console.log('done');
+                            },
+                            error: function (ssoToken) {
+                                console.error('Error RefreshAntiForgeryToken, unable to get new token' + ssoToken);
+                            }
+                        });
+
+                    } catch (e) {
+
+                    }
+                });
+            }
+        }
+
+        $(document).ready(function () {
+
+            var common = {};
+
+            common.addActive = function(selector, activeClass) {
+                $(selector).addClass(activeClass);
+            };
+            common.removeActive = function(selector, activeClass) {
+                $(selector).removeClass(activeClass);
+            };
+            common.checkAndChangeActiveState = function(current, container, selector, activeClass) {
+                if (current.parents(container).hasClass(activeClass)) {
+                    common.removeActive(selector, activeClass);
+                } else {
+                    common.addActive(selector, activeClass);
+                }
+            };
+
+            $("form").submit(function () {
+                var bSubmit = true;
+                $("form :input[type=text], textarea").each(function (i, v) {
+                    var element = $(v);
+                    var value = element.val();
+                    /*
+                    <	  	    #start with opening tag "<"
+                     (		    #   start of group #1
+                       "[^"]*"	#	allow string with double quotes enclosed - "string"
+                       |		#	..or
+                       '[^']*'	#	allow string with single quote enclosed - 'string'
+                       |		#	..or
+                       [^'">]	#	cant contains one single quotes, double quotes and ">"
+                     )		    #   end of group #1
+                     *		    # 0 or more
+                    >		    #end with closing tag ">"
+                    */
+                    var re = new RegExp("<(\"[^\"]*\"|'[^']*'|[^'\">])*>", "g");
+                    var myArray = value.match(re);
+                    if (myArray != null) {
+                        alert("Invalid characters. Remove < > and try again.");
+                        bSubmit = false;
+                    }
+                });
+                if (!bSubmit) return false;
+            });
+
+            // Responsive Menu
+
+            $('a.hamburger').click(function() {
+                var current = $(this);
+                var container = ".resp-header";
+                var selector = ".invis-backdrop, .resp-header, #header";
+                var activeClass = "active";
+                common.checkAndChangeActiveState(current, container, selector, activeClass);
+            });
+            $('.invis-backdrop').click(function() {
+                var selector = ".invis-backdrop, .resp-header, #header";
+                var activeClass = "active";
+                common.removeActive(selector, activeClass);
+            });
+            // END Responsive Menu
+
+            // Show / Hide Quick Search
+            $('.qsearch-link').click(function() {
+                var current = $(this);
+                var container = ".qsearch-container";
+                var selector = container;
+                var activeClass = "active";
+                common.checkAndChangeActiveState(current, container, selector, activeClass);
+            });
+            // END Show / Hide Quick Search
+
+            // Start cookie disclosure
+            if (document.cookie.split(';').every(function (item) {
+                return item.trim().indexOf('AcceptPNRCookies=') == -1;
+            })) {
+                if (location.pathname.startsWith('/fr')) {
+                    $("#cookie-text").html('Nous utilisons des témoins (cookies) afin d\'améliorer votre expérience chez GlobeNewswire. En continuant sur notre site, vous acceptez l\'utilisation de ces témoins. Pour plus d\'information, veuillez consulter notre <a href="https://www.globenewswire.com/fr/Home/About/Privacy">politique de confidentialité.</a>');
+                } else {
+                    $("#cookie-text").html('We use cookies to improve your GlobeNewswire experience. By continuing, you agree to our use of cookies. For more information, please see our <a href="https://www.globenewswire.com/Home/About/Privacy">Privacy Policy</a>.');
+                }
+                $('.cookie-disclosure').removeClass('display-none');
+            }
+            $('.jquery-accept-disclosure').click(function(event) {
+                event.preventDefault();
+                document.cookie = 'AcceptPNRCookies=true; expires=Sat, 1 Jan 2050 20:00:00 UTC; path=/; domain=.globenewswire.com';
+                $(this).parents('.cookie-disclosure').addClass('accepted');
+            });
+            // End cookie disclosure
+
+        });
+        $(function () {
+            $('#quicksearch-textbox').autocomplete({
+                source: '/Search/AutoOrg',
+                select: function (event, ui) {
+                    this.value = ui.item.label;
+                    return false;
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<!--The header goes here-->
+<div class="invis-backdrop"> <!-- .invis-backdrop used in jquery -->
+    <!-- Please leave this empty. This is used to create a click state -->
+</div>
+<div class="resp-header"> <!-- .resp-header used in jquery -->
+    <div class="resp-header-inner">
+        <a class="hamburger">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </a>
+        <a href="/Index" class="gnw-headline">GlobeNewswire</a>
+    </div>
+</div>
+<div id="header"> <!-- #header used in jquery -->
+    <div class="header-nav">
+        <div id="logodiv">
+            <a href="https://www.globenewswire.com/en" title="Home" id="logolink">
+                <img src="/Content/Images/intrado.png" alt="Intrado Logo"/>
+            </a>
+        </div>
+
+
+        <!-- QUICKSEARCH:
+        See this website for more info about server-side search setup. 
+        http://jqueryui.com/demos/autocomplete/
+        Look at the examples on the left, then look at the source offered on the page.
+        -->
+        <div class="qsearch-container">
+            <a class="qsearch-link">
+                <i class="fas fa-search"></i>
+            </a>
+            <div id="quicksearch" class="clearfix">
+                <form action="/Search" method="POST" id="layout_search_form">
+                    <input name="__RequestVerificationToken" type="hidden" value="YjFM/VHQg7cCua5Ne8UW6GeSbw8pWax2Rgoyl4+HVACX16hdwG5ZwK2HPVK/2pnup4bKzYsJW04hic4fB9QsOK4sNCgP//5zego4JIj0eYchlnjtIA+3elHaAmyW9dKbbL93sg==" />
+                    
+                    <input id="quicksearch-textbox" name="quicksearch-textbox" onfocus="if(this.value ==&#39;Search&#39;) { this.value = &#39;&#39;; }" type="text" value="Search" />
+
+                    <a href="#" id="quicksearch-button" title="Search" onclick="$('#layout_search_form').submit();return false;">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </form>
+            </div>
+        </div>
+        <!-- End quicksearch -->
+
+<!-- SIGN IN / REGISTER: -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            url: '/News/LoginHeader',
+            type: 'GET'
+        }).success(function (html) {
+            $('#loginContainer').html(html);            
+        });
+    });
+
+</script>
+
+<div id="loginContainer"></div>
+
+<!-- End sign in/ register -->
+
+        <!-- Language selection-->
+        <div id="contact-top-pc-browser">
+            <a id="english-culture" class="selected-culture" href="/en/Index" data-href="/en/Index"><span>English</span></a>
+            <a id="french-culture" class="selected-culture" href="/fr/Index" data-href="/fr/Index"><span>Fran&ccedil;ais</span></a>   
+        </div>
+        <!-- End Language selection-->
+        <!-- top-link-container -->
+        <div class="top-link-container">
+            <a href="https://meet.westuc.com/globenewswire-contact-us"><span>Contact Us</span></a>
+            <a href="https://w.globenewswire.com/en/publishing/distribution"><span>Global Distribution</span></a>
+            <a href="https://w.globenewswire.com/en/publishing/newswire"><span>Newswire Services</span></a>
+            <a href="https://w.globenewswire.com/en/publishing/filing"><span>Regulatory Filings</span></a>
+            <a href="https://w.globenewswire.com/en/publishing/partners"><span>Media Partners</span></a> 
+        </div>
+    </div>
+</div>
+    <!--End header-->
+
+    <!-- Start Body -->
+    
+  
+
+<!--Begin hero (blurb above main content)-->
+<div id="hero" class="hero-home-feature-container">
+<div class="flexslider">
+  <div id="time"></div>
+  <ul class="slides">
+  </ul>
+</div>
+</div><!-- End hero -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        window.refreshAntiforgeryTokens();
+
+        $.ajax({
+            url: '/Home/Carousel',
+            type: 'GET',
+            cache: true
+        }).success(function (slides_html) {
+            var regex = /<!-- Start Body -->([\s\S]+?)<!-- End Body -->/;
+            var match = regex.exec(slides_html);
+            $('ul.slides').html(match[1]);
+            $('.flexslider').flexslider({
+                directionNav: false
+            });
+        });
+    });
+</script>
+<!--The container is here-->
+<div id="main-container-home">
+
+    <div id="main-content-L1">
+<a id="NRPager"></a>
+    <a class="btn-primary right" href="/NewsRoom"><span id="newsroom-button">Newsroom</span></a>
+<div id="main-content-L1" class="padding-top-none">
+    
+        <div class="latestreleases-title"><h5><strong>latest news releases</strong> <i>from the newsroom</i></h5></div>
+    
+    <div>   
+<ul class="ui-html-pager ui-no-bullets">
+<li class="ui-html-pager-current"><a id="pagerPos" href="/Index?page=1#pagerPos">1</a></li>
+<li><a id="pagerPos" href="/Index?page=2#pagerPos">2</a></li>
+<li><a id="pagerPos" href="/Index?page=3#pagerPos">...</a></li>
+<li><a id="pagerPos" href="/Index?page=100#pagerPos">100</a></li>
+<li class="ui-html-pager-next"><a id="pagerPos" href="/Index?page=2#pagerPos">Next &raquo;</a></li>
+</ul>            <p class="dt-green search-metadata">Showing 1-10 of about 2027039 articles.</p>
+    </div>
+</div>
+<div class="ui-clearfix"></div>
+<div class="rl-master-container">
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                    </div>
+                    <p class="company-title">GlobeNewswire, Inc.</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075861/0/en/End-of-Day-Message.html">End of Day Message</a></h1>
+                    <p>LONDON, 10 Aug. 2020 (GLOBE NEWSWIRE) -- This is the End of Day Message for GlobeNewswire.   GlobeNewswire is operated by Intrado and is designated by the FCA as an approved primary information...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>3 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="PortnoyLaw_LogoHighResRoundLogoOnly.jpg" class="logo_image_center" src="/news-release/logo/877613/0/877613.jpg?lastModified=05%2F15%2F2020%2015%3A49%3A29&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">Portnoy Law</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075859/0/en/Hebron-Technology-Investors-Last-Day-to-Participate-Actively-in-the-Class-Action-Lawsuit.html">Hebron Technology Investors: Last Day to Participate Actively in the Class Action Lawsuit</a></h1>
+                    <p>Investors with losses are encouraged to contact the firm today, August 10, 2020; click here to submit trade information  ​LOS ANGELES, Aug.  10, 2020  (GLOBE NEWSWIRE) -- The Portnoy Law Firm advises...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>8 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="CMLS+New+logo_PMS.JPG" class="logo_image_center" src="/news-release/logo/472512/0/472512.jpg?lastModified=03%2F29%2F2019%2013%3A00%3A39&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">CMLS Financial Ltd.</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075860/0/en/CMLS-Financial-releases-August-2020-Commercial-Mortgage-Commentary.html">CMLS Financial releases August 2020 Commercial Mortgage Commentary</a></h1>
+                    <p>TORONTO, Aug.  10, 2020  (GLOBE NEWSWIRE) -- CMLS Financial, one of Canada’s largest, independently owned mortgage services companies, has released their latest Commercial Mortgage Commentary, an...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>8 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                    </div>
+                    <p class="company-title">Pomerantz LLP</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075858/0/en/SHAREHOLDER-ALERT-Pomerantz-Law-Firm-Reminds-Shareholders-with-Losses-on-their-Investment-in-Wins-Finance-Holdings-Inc-of-Class-Action-Lawsuit-and-Upcoming-Deadline-WINS.html">SHAREHOLDER ALERT: Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in Wins Finance Holdings, Inc. of Class Action Lawsuit and Upcoming Deadline&#160;– WINS</a></h1>
+                    <p>NEW YORK, Aug.  10, 2020  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against Wins Finance Holdings, Inc. (“Wins” or the “Company”) (NASDAQ: WINS) and...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>13 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="ReportLinker logo.jpg" class="logo_image_center" src="/news-release/logo/853201/0/853201.jpg?lastModified=06%2F04%2F2020%2011%3A02%3A50&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">ReportLinker</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075857/0/en/The-Global-Canoeing-and-Kayaking-Equipment-Market-is-expected-to-grow-by-124-44-mn-during-2020-2024-progressing-at-a-CAGR-of-2-during-the-forecast-period.html">The Global Canoeing and Kayaking Equipment Market is expected to grow by $ 124.44 mn during 2020-2024 progressing at a CAGR of 2% during the forecast period</a></h1>
+                    <p>New York, Aug.  10, 2020  (GLOBE NEWSWIRE) -- Reportlinker.com announces the release of the report "Global Canoeing and Kayaking Equipment Market 2020-2024" -...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>14 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="logo.jpg" class="logo_image_center" src="/news-release/logo/818470/0/818470.jpg?lastModified=08%2F16%2F2019%2008%3A38%3A18&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">Avance Gas Holding Ltd</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075856/0/en/Avance-Gas-Holding-Ltd-Notice-of-Annual-General-Meeting-2020.html">Avance Gas Holding Ltd - Notice of Annual General Meeting 2020</a></h1>
+                    <p>Bermuda, 10 August 2020 - Avance Gas Holding Ltd (the "Company") annouces that its 2020 Annual General Meeting will be held on August 31, 2020. A copy of the Notice of Annual General Meeting and...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>22 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="Bunker Hill.png" class="logo_image_center" src="/news-release/logo/495409/0/495409.png?lastModified=08%2F10%2F2020%2013%3A15%3A10&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">Bunker Hill Mining Corp. </p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075855/0/en/Bunker-Announces-Second-Increase-to-Previously-Announced-Brokered-Private-Placement-to-C-20-4-Million.html">Bunker Announces Second Increase to Previously Announced Brokered Private Placement to C$20.4 Million</a></h1>
+                    <p>TORONTO, Aug.  10, 2020  (GLOBE NEWSWIRE) -- Bunker Hill Mining Corporation (the “Company”) (CSE: BNKR) is pleased to announce that, due to strong demand, the Company has further increased the size of...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>23 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                    </div>
+                    <p class="company-title">Pomerantz LLP</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075854/0/en/SHAREHOLDER-ALERT-Pomerantz-Law-Firm-Reminds-Shareholders-with-Losses-on-their-Investment-in-Deutsche-Bank-Aktiengesellschaft-of-Class-Action-Lawsuit-and-Upcoming-Deadline-DB.html">SHAREHOLDER ALERT:&#160; Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in Deutsche Bank Aktiengesellschaft of Class Action Lawsuit and Upcoming Deadline – DB</a></h1>
+                    <p>NEW YORK, Aug.  10, 2020  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against Deutsche Bank Aktiengesellschaft (“Deutsche Bank” or the “Bank”) (NYSE: DB) and...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>28 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                            <div class="logo_image-noborder">
+                                <img alt="Reports and Data.jpeg-01" class="logo_image_center" src="/news-release/logo/810795/0/810795.jpg?lastModified=09%2F03%2F2019%2010%3A33%3A19&amp;size=2" />
+                            </div>
+                    </div>
+                    <p class="company-title">Reports and Data</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075853/0/en/Coating-Additives-Market-To-Reach-USD-12-74-Billion-By-2027-Reports-and-Data.html">Coating Additives Market To Reach USD 12.74 Billion By 2027 | Reports and Data</a></h1>
+                    <p>New York, Aug.  10, 2020  (GLOBE NEWSWIRE) -- The Global Coating Additives Market is forecast to reach USD 12.74 Billion by 2027, according to a new report by Reports and Data. This can be mainly...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>30 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+            <div id="main-content-L1" class="rl-container">
+                <div class="results-link">
+                    <div class="image_spacer">
+                    </div>
+                    <p class="company-title">Pomerantz LLP</p>
+                    <h1 class="post-title16px"><a href="/news-release/2020/08/10/2075851/0/en/SHAREHOLDER-ALERT-Pomerantz-Law-Firm-Reminds-Shareholders-with-Losses-on-their-Investment-in-Ideanomics-Inc-of-Class-Action-Lawsuit-and-Upcoming-Deadline-IDEX.html">SHAREHOLDER ALERT:  Pomerantz Law Firm Reminds Shareholders with Losses on their Investment in Ideanomics, Inc. of Class Action Lawsuit and Upcoming Deadline – IDEX</a></h1>
+                    <p>NEW YORK, Aug.  10, 2020  (GLOBE NEWSWIRE) -- Pomerantz LLP announces that a class action lawsuit has been filed against Ideanomics, Inc. (“Ideanomics” or the “Company”) (NASDAQ: IDEX) and certain of...</p>
+                    <div class="meta-margin">
+                        <p class="post-metadata"><span>34 minutes ago</span>
+                            <span class="post-type "></span>  </p>
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+</div>
+<div id="main-content-L1" class="padding-top-none">
+    <div>   
+<ul class="ui-html-pager ui-no-bullets">
+<li class="ui-html-pager-current"><a id="pagerPos" href="/Index?page=1#pagerPos">1</a></li>
+<li><a id="pagerPos" href="/Index?page=2#pagerPos">2</a></li>
+<li><a id="pagerPos" href="/Index?page=3#pagerPos">...</a></li>
+<li><a id="pagerPos" href="/Index?page=100#pagerPos">100</a></li>
+<li class="ui-html-pager-next"><a id="pagerPos" href="/Index?page=2#pagerPos">Next &raquo;</a></li>
+</ul>             <p class="dt-green search-metadata">Showing 1-10 of about 2027039 articles.</p>
+    </div>
+</div>
+    </div>
+
+<div class="spacer"></div>
+</div><!--End container-->
+    <!-- End Body -->
+
+<div id="footer">
+    <!--Left section of the footer goes here-->
+    <div id="footer-L">
+        <div class="footer-title"><h5>Newswire Distribution Network &amp; Management</h5></div>
+        <!--Left half of left column
+    <div class="footer-split-L1">
+        <ul>
+
+        </ul>
+    </div>-->
+        <!--Right half of left column
+    <div class="footer-split-R1">-->
+        <ul>
+            <li><a href="/Index">Home</a></li>
+            <li><a href="/NewsRoom">Newsroom</a></li>
+            <li><a href="/Rss/List">RSS Feeds</a></li>
+            <li><a href="/Home/about/Privacy">Legal</a></li>
+        </ul>
+        <!--</div>-->
+    </div>
+    <!--end left-->
+    <!--Middle section of the footer goes here-->
+    <div id="footer-R">
+        <div class="footer-title"><h6>About Us</h6></div>
+        <div class="footer-text"><strong>GlobeNewswire</strong> is one of the world's largest newswire distribution networks, specializing in the delivery of corporate press releases financial disclosures and multimedia content to the media, investment community, individual investors and the general public.
+    </div>
+</div>
+
+<!--end mid-->
+<div class="spacer"></div>
+<div id="copyright">&copy; 2020 GlobeNewswire, Inc. All Rights Reserved.</div>
+</div>
+    <!--End footer-->
+
+<!-- Start cookie disclosure-->
+<div class="cookie-disclosure display-none">
+    <div class="inner">
+        <p id="cookie-text"></p>
+        <div class="action-container">
+            <a href="#" class="btn-primary jquery-accept-disclosure">Ok</a>
+        </div>
+    </div>
+</div>
+<!-- End cookie disclosure-->
+<script async type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=775335310"></script>
+</body>
+</html>
+

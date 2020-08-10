@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:false}};(window.NREUM||(NREUM={})).loader_config={xpid:"VgIHVV9VCxADUVRRAggBXlY=",licenseKey:"bfc00e1ee3",applicationID:"355359682"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(21),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,c){try{p?p-=1:o(c||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,s.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:s.now();i("err",[t,n])}var i=t("handle"),a=t(22),c=t("ee"),s=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(9),t(8),"addEventListener"in window&&t(5),s.xhrWrappable&&t(10),d=!0)}c.on("fn-start",function(t,e,n){d&&(p+=1)}),c.on("fn-err",function(t,e,n){d&&!n[l]&&(f(n,l,function(){return!0}),this.thrown=!0,o(n))}),c.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),c.on("internal-error",function(t){i("ierr",[t,s.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(9),c=t(8),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",g="pushState",y=t("loader");y.features.stn=!0,t(7),"addEventListener"in window&&t(5);var x=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof x&&(this.bstStart=y.now())}),o.on(w,function(t,e){var n=t[0];n instanceof x&&i("bst",[n,e,this.bstStart,y.now()])}),a.on(m,function(t,e,n){this.bstStart=y.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,y.now(),this.bstType])}),c.on(m,function(){this.bstStart=y.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,y.now(),"requestAnimationFrame"])}),o.on(g+p,function(t){this.time=y.now(),this.startPath=location.pathname+location.hash}),o.on(g+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t("wrap-function")(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var c=r.apply(this,t);return o.emit(n+"start",[t,a],c),c.then(function(t){return o.emit(n+"end",[null,t],c),t},function(t){throw o.emit(n+"end",[t],c),t})})}var o=t("ee").get("fetch"),i=t(22),a=t(21);e.exports=o;var c=window,s="fetch-",f=s+"body-",u=["arrayBuffer","blob","json","text","formData"],d=c.Request,l=c.Response,p=c.fetch,h="prototype",m="nr@context";d&&l&&p&&(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(c,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],7:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],8:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],9:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],10:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,g,"fn-",c)}function i(t){y.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<y.length;t++)r([],y[t]);y.length&&(y=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",g=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],y=[];e.exports=u;var x=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(v,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],11:[function(t,e,n){function r(t){if(!c(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),w=Date.now(),v={spanId:h,traceId:m,timestamp:w};return(t.sameOrigin||s(t)&&l())&&(v.traceContextParentHeader=o(h,m),v.traceContextStateHeader=i(h,w,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&s(t)&&d())&&(v.newrelicHeader=a(h,m,w,n,r,f)),v}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",c=1,s="",f="";return o+"@nr="+i+"-"+c+"-"+n+"-"+r+"-"+t+"-"+a+"-"+s+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var c={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(c.d.tk=i),btoa(JSON.stringify(c))}function c(t){return f()&&s(t)}function s(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function l(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var p=t(19),h=t(13);e.exports={generateTracePayload:r,shouldGenerateTrace:c}},{}],12:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<l;r++)t.removeEventListener(d[r],this.listener,!1);e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime]))}}function o(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=s(e),t.sameOrigin=t.parsedOrigin.sameOrigin}function i(t,e){t.params.status=e.status;var n=w(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(13),f=t(11).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(17),m=t(16),w=t(14),v=window.XMLHttpRequest;a.features.xhr=!0,t(10),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,t.addEventListener("load",function(n){i(e,t)},!1),h&&(h>34||h<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var c=0;c<l;c++)e.addEventListener(d[c],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof v&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof v&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url&&(n=t[0].url),n&&(this.parsedOrigin=s(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)})}},{}],13:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,c=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||c),"/"===o.pathname&&(r[t]=o),o}},{}],14:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(16);e.exports=r},{}],15:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(21),c=t(22),s=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,e){u[e]=o(l+e,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(p+"tracer",[f.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw s.emit("fn-err",[arguments,this,t],n),t}finally{s.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(p+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,e])}},{}],16:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],17:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],18:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?s("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&s("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();n.length>0&&s("lcp",[n[n.length-1]])}function i(t){if(t instanceof u&&!l){var e,n=Math.round(t.timeStamp);e=n>1e12?Date.now()-n:f.now()-n,l=!0,s("timing",["fi",n,{type:t.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,c,s=t("handle"),f=t("loader"),u=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),c=new PerformanceObserver(o);try{a.observe({entryTypes:["paint"]}),c.observe({entryTypes:["largest-contentful-paint"]})}catch(d){}}if("addEventListener"in document){var l=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(t){document.addEventListener(t,i,!1)})}}},{}],19:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",c=0;c<i.length;c++)o=i[c],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(31)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],20:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,s=c.match(a);s&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(o="Safari",i=s[1])}e.exports={agent:o,version:i,match:r}},{}],21:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],22:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],23:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o,i){if(!l.aborted||i){t&&t(n,r,o);for(var a=e(o),c=m(n),s=c.length,f=0;f<s;f++)c[f].apply(a,r);var d=u[y[n]];return d&&d.push([x,n,r,a]),a}}function p(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function w(t){return d[t]=d[t]||o(n)}function v(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var g={},y={},x={on:p,addEventListener:p,removeEventListener:h,emit:n,get:w,listeners:m,context:e,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(21),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=b.info=NREUM.info,e=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(y,function(e,n){t[e]||(t[e]=n)}),s("mark",["onload",a()+b.offset],null,"api");var n=p.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===p.readyState&&i()}function i(){s("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(c=Math.max((new Date).getTime(),c))-b.offset}var c=(new Date).getTime(),s=t("handle"),f=t(21),u=t("ee"),d=t(20),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var g=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=e.exports={offset:c,now:a,origin:g,features:{},xhrWrappable:x,userAgent:d};t(15),t(18),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),s("mark",["firstbyte",c],null,"api");var E=0,R=t(23)},{}],"wrap-function":[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o,e)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}]},{},["loader",2,12,4,3]);</script>
+<meta name="twitter:card" content="summary" />
+<meta name="robots" content="index" />
+<meta http-equiv="content-language" content="en" />
+<link rel="canonical" href="https://www.cancer.gov/" />
+<meta property="og:site_name" content="National Cancer Institute" />
+<meta name="description" content="Accurate, up-to-date, comprehensive cancer information from the U.S. government&#039;s principal agency for cancer research." />
+<meta property="og:type" content="Website" />
+<meta property="og:url" content="https://www.cancer.gov/" />
+<meta name="dcterms.subject" content="NCI Homepage" />
+<meta property="og:title" content="Comprehensive Cancer Information" />
+<meta property="og:description" content="Accurate, up-to-date, comprehensive cancer information from the U.S. government&#039;s principal agency for cancer research." />
+<meta name="dcterms.issued" content="01/01/1980 - 07:00" />
+<meta name="dcterms.isReferencedBy" content="event1" />
+<meta name="dcterms.isPartOf" content="NCI Homepage" />
+<meta name="dcterms.type" content="cgvHomeLanding" />
+<meta property="og:image" content="https://www.cancer.gov/sites/g/files/xnrzdm211/files/cgov_image/social_media/900/100/files/hero-image-home-social.jpg" />
+<meta name="dcterms.coverage" content="nciglobal,ncienterprise" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, minimum-scale=1" />
+<script type="text/javascript" src="//assets.adobedtm.com/6a4249cd0a2c/949e98979342/launch-5f2a5357bf66.min.js"></script>
+<script>window.CDEConfig = {  
+  "exitDisclaimerHref": {
+    "en": "/policies/linking",
+    "es": "/espanol/politicas/enlaces"
+  },
+  "showFloatingDelighters":  true,
+  "environmentConfig": [],
+  "ctsConfig": {
+    "apiServer": "ctsproxy.cancer.gov",
+    "printCacheEndpoint": "https://www.cancer.gov/CTS.Print/GenCache",
+    "zipConversionEndpoint": "https://www.cancer.gov/cts_api/zip_code_lookup"
+  },
+  "general": {
+    "apiServer": "https://webapis.cancer.gov",
+    "mediaServer": "https://nci-media.cancer.gov"
+  },
+  "glossaryConfig": {
+    "apiServer": "https://webapis.cancer.gov/glossary/v1/",
+  },
+  "r4rConfig": {
+      "apiServer": "https://webapis.cancer.gov/r4r/v1/"
+   }
+};</script>
+<link rel="shortcut icon" href="/core/misc/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.cancer.gov/" />
+<link rel="alternate" hreflang="es" href="https://www.cancer.gov/espanol" />
+<link rel="revision" href="https://www.cancer.gov/" />
+
+    <title>Comprehensive Cancer Information - National Cancer Institute</title>
+    <link rel="preconnect" href="https://static.cancer.gov" />
+    <link id="gFonts" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans:400,400i,700,700i" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/apple-touch-icon.png?v=1" />
+    <link rel="icon" type="image/png" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon-32x32.png?v=1" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon-16x16.png?v=1" sizes="16x16" />
+    <link rel="mask-icon" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/safari-pinned-tab.svg?v=1" color="#c0143c" />
+    <link rel="shortcut icon" href="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/favicon.ico?v=1" />
+    <meta name="apple-mobile-web-app-title" content="Cancer.gov" />
+    <meta name="application-name" content="Cancer.gov" />
+    <meta name="msapplication-config" content="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/icons/favicons/browserconfig.xml?v=1" />
+    <link rel="stylesheet" media="all" href="/sites/g/files/xnrzdm211/files/css/css_DIc9KrTWrQbxwXuwQ02SR1t2iNpTR-PoVwK9Z8cfZ-4.css?qepy4f" />
+<link rel="stylesheet" media="all" href="/profiles/custom/cgov_site/themes/custom/cgov/cgov_common/dist/css/Common.css?qepy4f" />
+<link rel="stylesheet" media="all" href="/profiles/custom/cgov_site/themes/custom/cgov/cgov_common/dist/css/Homelanding.css?qepy4f" />
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/g/files/xnrzdm211/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+
+  </head>
+  <body class="none-theme has-translated-content">
+        <a href="#content" class="skipnav focusable">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+  <div class="alert-drawer-wrapper" role="alertdialog"></div>
+<script type="text/javascript">window.c19.insert()</script>
+
+
+
+
+<header class="push" role="banner">
+  <div id="nvcgSlSiteBanner" class="row">
+       <div class="slot-item only-SI nci-logo-pages large-12 columns">
+  <a href="/"><img src="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/logos/nci-logo-full.svg"
+      alt="National Cancer Institute" width="60%"></a>
+</div>
+
+
+
+  </div>
+</header>
+
+<div id="page">
+  <!-- Global nav/utilit bar/language  -->
+  <div class="fixedtotop">
+    <div class="headroom-area">
+      <!-- LANGUAGE BAR -->
+<div class="language-bar">
+  <div class="row sitewide-language">
+    <div id="LangList1" class="large-12 columns">
+  <ul class="links"><li hreflang="es" data-drupal-link-system-path="&lt;front&gt;" class="es"><a href="/espanol" class="language-link" hreflang="es" data-drupal-link-system-path="&lt;front&gt;">Español</a></li></ul>
+</div>
+
+  </div>
+</div>
+<!-- END LANGUAGE BAR -->
+
+      <!-- UTILITY NAV -->
+      <div id="nvcgSlUtilityBar" class="utility-background hide-for-medium-down">
+          <div class="slot-item only-SI row utility">
+  <div class="rawHtml">
+    <div class="large-12 columns utility">
+      <span><a href="/contact">1-800-4-CANCER</a></span>
+      <span><a href="https://livehelp.cancer.gov"
+        onclick="window.open('https://livehelp.cancer.gov/','LiveHelp','scrollbars=yes,resizable=yes,menubar=yes,toolbar=yes,location=yes,width=650,height=600');
+        event.preventDefault();">Live Chat</a></span>
+      <span><a href="/publications">Publications</a></span>
+      <span id="utility-dictionary" class="link"> <a href="/publications/dictionaries/cancer-terms">Dictionary</a></span>
+    </div>
+    </div>
+</div>
+
+
+
+      </div>
+      <!-- END UTILITY NAV -->
+    </div>
+    <!-- end "headroom-area" -->
+    <!-- BEGIN NAVIGATION -->
+    <!-- Begin nav-search bar -->
+    <div class="nav-search-bar gradient header">
+      <div id="nvcgSlMainNav" class="row">
+        <div class="slot-item first-SI">
+          <div class="navigation">
+              <div class="slot-item first-SI"><div class="navigation"><div class="mobile-menu-bar"><button type="button" class="open-panel nav-header menu-btn">Menu</button><a href="/contact" class="nav-contact">Contact</a><a href="/publications/dictionaries/cancer-terms" class="nav-dictionary">Dictionary</a><button type="button" class="nav-search">Search</button></div></div></div>
+
+
+
+            <nav id="mega-nav" role="navigation">
+  <ul class="menu nav-menu">
+    
+      <li class='nav-item lvl-1 has-children item-1'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer'>About Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/understanding'>Understanding Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/understanding/what-is-cancer'>What Is Cancer?</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/understanding/statistics'>Cancer Statistics</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/understanding/disparities'>Cancer Disparities</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/causes-prevention'>Cancer Causes and Prevention</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/causes-prevention/risk'>Risk Factors </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/causes-prevention/genetics'>Genetics</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/causes-prevention/patient-prevention-overview-pdq'>Cancer Prevention Overview</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/causes-prevention/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/screening'>Cancer Screening</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/screening/patient-screening-overview-pdq'>Cancer Screening Overview</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/screening/screening-tests'>Screening Tests</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/screening/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging'>Diagnosis and Staging</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/symptoms'>Symptoms </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/diagnosis'>Diagnosis</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/staging'>Staging</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/prognosis'>Prognosis</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/questions'>Questions to Ask about Your Diagnosis</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/diagnosis-staging/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment'>Cancer Treatment</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/types'>Types of Cancer Treatment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/side-effects'>Side Effects of Cancer Treatment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/clinical-trials'>Clinical Trials Information</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/drugs'>A to Z List of Cancer Drugs</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/cam'>Complementary &amp; Alternative Medicine (CAM)</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/questions'>Questions to Ask about Your Treatment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/treatment/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping'>Coping with Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/feelings'>Feelings and Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/adjusting-to-cancer'>Adjusting to Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/self-image'>Self-Image &amp; Sexuality</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/day-to-day'>Day-to-Day Life</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/caregiver-support'>Support for Caregivers</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/survivorship'>Survivorship</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/questions'>Questions to Ask About Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coping/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer'>Advanced Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/care-choices'>Choices for Care</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/talking'>Talking about Your Advanced Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/feelings'>Coping with Your Feelings During Advanced Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/planning'>Planning for Advanced Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/caregivers'>Advanced Cancer and Caregivers</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/questions'>Questions to Ask about Advanced Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/advanced-cancer/research'>Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/managing-care'>Managing Cancer Care</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/managing-care/services'>Finding Health Care Services</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/managing-care/track-care-costs'>Costs &amp; Medical Information</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/managing-care/advance-directives'>Advance Directives</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/managing-care/using-trusted-resources'>Using Trusted Resources</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coronavirus'>Coronavirus &amp; Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coronavirus/coronavirus-cancer-patient-information'>Coronavirus Information for Patients</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-cancer/coronavirus/coronavirus-impact-clinical-trials'>Clinical Trials during Coronavirus </a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper">
+  <div class="sub-nav-group-subwrapper">
+    <ul class="sub-nav-group">
+      <li><a href="/about-cancer/understanding" class="sub-nav-group-header">Understanding Cancer</a>
+        <ul>
+          <li><a href="/about-cancer/understanding/what-is-cancer">What Is Cancer</a></li>
+          <li><a href="/about-cancer/understanding/statistics">Cancer Statistics</a></li>
+          <li><a href="/about-cancer/understanding/disparities">Cancer Disparities</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/causes-prevention" class="sub-nav-group-header">Causes &amp; Prevention</a>
+        <ul>
+          <li><a href="/about-cancer/causes-prevention/risk">Risk Factors</a></li>
+          <li><a href="/about-cancer/causes-prevention/genetics">Genetics</a></li>
+          <li><a href="/about-cancer/causes-prevention/patient-prevention-overview-pdq">Cancer Prevention Overview</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/screening" class="sub-nav-group-header">Screening</a>
+        <ul>
+          <li><a href="/about-cancer/screening/patient-screening-overview-pdq">Cancer Screening Overview</a></li>
+          <li><a href="/about-cancer/screening/screening-tests">Screening Tests</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/diagnosis-staging" class="sub-nav-group-header">Diagnosis &amp; Staging</a>
+        <ul>
+          <li><a href="/about-cancer/diagnosis-staging/symptoms">Symptoms</a></li>
+          <li><a href="/about-cancer/diagnosis-staging/diagnosis">Diagnosis</a></li>
+          <li><a href="/about-cancer/diagnosis-staging/staging">Staging</a></li>
+          <li><a href="/about-cancer/diagnosis-staging/prognosis">Prognosis</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/treatment" class="sub-nav-group-header">Treatment</a>
+        <ul>
+          <li><a href="/about-cancer/treatment/types">Types of Treatment</a></li>
+          <li><a href="/about-cancer/treatment/side-effects/">Side Effects</a></li>
+          <li><a href="/about-cancer/treatment/clinical-trials">Clinical Trials</a></li>
+          <li><a href="/about-cancer/treatment/drugs">Cancer Drugs</a></li>
+          <li><a href="/about-cancer/treatment/cam">Complementary &amp; Alternative Medicine</a></li>
+        </ul>
+      </li>
+      <br><br>
+      <li><a href="/about-cancer/coronavirus" class="sub-nav-group-header">Coronavirus and Cancer</a></li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/coping" class="sub-nav-group-header">Coping</a>
+        <ul>
+          <li><a href="/about-cancer/coping/feelings">Feelings &amp; Cancer</a></li>
+          <li><a href="/about-cancer/coping/adjusting-to-cancer">Adjusting to Cancer</a></li>
+          <li><a href="/about-cancer/coping/self-image">Self Image &amp; Sexuality</a></li>
+          <li><a href="/about-cancer/coping/day-to-day">Day to Day Life</a></li>
+          <li><a href="/about-cancer/coping/survivorship">Survivorship</a></li>
+          <li><a href="/about-cancer/coping/caregiver-support">Support for Caregivers</a></li>
+          <li><a href="/about-cancer/coping/questions">Questions to Ask About Cancer</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/advanced-cancer" class="sub-nav-group-header">Advanced Cancer</a>
+        <ul>
+          <li><a href="/about-cancer/advanced-cancer/care-choices">Choices For Care</a></li>
+          <li><a href="/about-cancer/advanced-cancer/talking">Talking About Advanced Cancer</a></li>
+          <li><a href="/about-cancer/advanced-cancer/feelings">Coping With Your Feelings</a></li>
+          <li><a href="/about-cancer/advanced-cancer/planning">Planning for Advanced Cancer</a></li>
+          <li><a href="/about-cancer/advanced-cancer/caregivers">Advanced Cancer &amp; Caregivers</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/about-cancer/managing-care" class="sub-nav-group-header">Managing Cancer Care</a>
+        <ul>
+          <li><a href="/about-cancer/managing-care/services">Finding Health Care Services</a></li>
+          <li><a href="/about-cancer/managing-care/track-care-costs">Managing Costs and Medical Information</a></li>
+          <li><a href="/about-cancer/managing-care/advance-directives">Advance Directives</a></li>
+          <li><a href="/about-cancer/managing-care/using-trusted-resources">Using Trusted Resources</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+        </div>
+      </li>
+      
+      <li class='nav-item lvl-1 has-children item-2'>
+        <div class='nav-item-title'>
+          <a href='/types'>Cancer Types</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/types/aya'>Adolescents and Young Adults with Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/aya/research'>Reports, Research, and Literature</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/types/by-body-location'>Cancers by Body Location</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers'>Childhood Cancers</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers/late-effects-pdq'>Late Effects of Childhood Cancer Treatment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers/pediatric-care-pdq'>Pediatric Supportive Care</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers/patient/rare-childhood-cancers-pdq'>Rare Cancers of Childhood Treatment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers/pediatric-genomics-hp-pdq'>Childhood Cancer Genomics</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/childhood-cancers/research'>Study Findings</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/types/metastatic-cancer'>Metastatic Cancer</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/types/metastatic-cancer/research'>Metastatic Cancer Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/types/common-cancers'>Common Cancer Types</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/types/recurrent-cancer'>Recurrent Cancer</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper"><div class="sub-nav-group-subwrapper">
+<ul class="sub-nav-group cancer-types-border-container">
+	<li><a href="/types/common-cancers" class="sub-nav-group-header">Common Cancer Types</a>
+		<ul>
+			<li><a href="/types/bladder">Bladder Cancer</a></li>
+			<li><a href="/types/breast">Breast Cancer</a></li>
+			<li><a href="/types/colorectal">Colorectal Cancer</a></li>
+			<li><a href="/types/kidney">Kidney (Renal Cell) Cancer</a></li>
+			<li><a href="/types/leukemia">Leukemia</a></li>
+		</ul>
+		<ul>
+			<li><a href="/types/liver">Liver Cancer</a></li>
+			<li><a href="/types/lung">Lung Cancer</a></li>
+			<li><a href="/types/lymphoma">Lymphoma</a></li>
+			<li><a href="/types/pancreatic">Pancreatic Cancer</a></li>
+		</ul>
+		<ul>
+			<li><a href="/types/prostate">Prostate Cancer</a></li>
+			<li><a href="/types/skin">Skin Cancer</a></li>
+			<li><a href="/types/thyroid">Thyroid Cancer</a></li>
+			<li><a href="/types/uterine">Uterine Cancer</a></li>
+		</ul>
+	</li>
+</ul>
+<ul class="sub-nav-group">
+	<li><a href="/types" class="sub-nav-group-header">All Cancer Types</a>
+		<ul>
+			<li><a href="/types">A to Z List of Cancers</a></li>
+			<li><a href="/types/by-body-location">Cancers by Body Location</a></li>
+			<li><a href="/types/childhood-cancers">Childhood Cancers</a></li>
+			<li><a href="/types/aya">Adolescent &amp; Young Adult Cancers</a></li>
+			<li><a href="/types/metastatic-cancer">Metastatic Cancer</a></li>
+			<li><a href="/types/recurrent-cancer">Recurrent Cancer</a></li>
+		</ul>
+	</li>
+</ul>
+</div></div>
+        </div>
+      </li>
+      
+      <li class='nav-item lvl-1 has-children item-3'>
+        <div class='nav-item-title'>
+          <a href='/research'>Research</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/research/nci-role'>NCI’s Role in Cancer Research</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/nci-role/intramural'>Intramural Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/nci-role/extramural'>Extramural Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/nci-role/cancer-research-workforce'>Cancer Research Workforce</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/nci-role/partners-collaborators'>Tech Transfer &amp; Small Business Partnerships</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/research/areas'>Research Areas</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/biology'>Cancer Biology Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/genomics'>Cancer Genomics Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/causes'>Research on Causes of Cancer</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/diagnosis'>Cancer Diagnosis Research </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/prevention'>Cancer Prevention Research </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/screening'>Screening &amp; Early Detection</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/treatment'>Cancer Treatment Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/public-health'>Cancer &amp; Public Health</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/disparities'>Cancer Health Disparities</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/childhood'>Childhood Cancers Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/areas/global-health'>Global Cancer Research</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/research/infrastructure'>Cancer Research Infrastructure</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/infrastructure/cancer-centers'>NCI-Designated Cancer Centers</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/infrastructure/clinical-trials'>Clinical Trials</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/infrastructure/fnlcr'>Frederick National Laboratory for Cancer Research </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/infrastructure/bioinformatics'>Bioinformatics, Big Data, and Cancer</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/research/key-initiatives'>Key Initiatives</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/research/progress'>Progress</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/progress/annual-report-nation'>Annual Report to the Nation</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/progress/cancer-types-research-advances'>Research Advances by Cancer Type</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/progress/discovery'>Stories of Discovery</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/progress/250-years-milestones'>Milestones in Cancer Research and Discovery</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/research/resources'>Resources for Researchers</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/resources/cryoem'>Cryo-EM</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/research/resources/terminology'>Terminology Resources</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper"><div class="sub-nav-group-subwrapper">
+    <ul class="sub-nav-group">
+      <li class=""><a href="/research/nci-role" class="sub-nav-group-header">NCI's Role in Cancer Research</a>
+        <ul class="">
+          <li class=""><a href="/research/nci-role/intramural" class="">Intramural Research</a></li>
+          <li class=""><a href="/research/nci-role/extramural" class="">Extramural Research</a></li>
+          <li class=""><a href="/research/nci-role/cancer-research-workforce" class="">Cancer Research Workforce</a></li>
+
+          <li class=""><a href="/research/nci-role/partners-collaborators" class="">Tech Transfer &amp; Small Business Partnerships</a></li>
+        </ul>
+      </li>
+<br><br>
+<li class=""><a href="/research/key-initiatives" class="sub-nav-group-header">Key Initiatives</a>
+        <ul class="">        
+            <li class=""><a href="/research/key-initiatives/moonshot-cancer-initiative" class="">Cancer Moonshot</a></li>
+            <li><a href="/research/key-initiatives/covid-19" class="">COVID-19 Information for Researchers</a></li>
+            <li><a href="/research/areas/childhood/childhood-cancer-data-initiative" class="">Childhood Cancer Data Initiative</a></li>
+            <li><a href="/about-nci/organization/ccg/research/computational-genomics/gdc" class="">Genomic Data Commons</a></li>
+            <li class=""><a href="/research/key-initiatives/ras" class="">RAS Initiative</a></li>
+    </ul></li>
+    <br> <br>
+    </ul><ul class="sub-nav-group">
+      <li class=""><a href="/research/areas" class="sub-nav-group-header">NCI Research Areas</a>
+        <ul class="">
+          <li class=""><a href="/research/areas/biology" class="">Cancer Biology</a></li>
+          <li class=""><a href="/research/areas/genomics" class="">Cancer Genomics</a></li>
+          <li><a href="/research/areas/causes" class="">Causes of Cancer</a></li>
+          <li class=""><a href="/research/areas/diagnosis" class="">Diagnosis</a></li>
+          <li><a href="/research/areas/prevention" class="">Prevention</a></li>
+          <li><a href="/research/areas/screening" class="">Screening &amp; Early Detection</a></li>
+          <li class=""><a href="/research/areas/treatment">Treatment</a></li>
+          <li><a href="/research/areas/public-health" class="">Cancer &amp; Public Health</a></li>
+          <li><a href="/research/areas/disparities" class="">Cancer Health Disparities</a></li>
+          <li class=""><a href="/research/areas/childhood" class="">Childhood Cancer</a></li>
+          <li><a href="/research/areas/global-health" class="">Global Health</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li class=""><a href="/research/infrastructure" class="sub-nav-group-header">Research Infrastructure</a>
+        <ul class="">
+          <li><a href="/research/infrastructure/cancer-centers" class="">NCI-Designated Cancer Centers</a></li>
+            <li><a href="/research/infrastructure/clinical-trials" class="">NCI's Clinical Trials Programs</a></li>
+            <li><a href="/research/infrastructure/fnlcr" class="">Frederick National Lab</a></li>
+            <li class=""><a href="/research/infrastructure/bioinformatics" class="">Bioinformatics &amp; Cancer</a></li>
+          
+        </ul>
+      </li>
+
+<br> <br>
+
+    </ul><ul class="sub-nav-group">
+      <li class=""><a href="/research/progress" class="sub-nav-group-header">Progress</a>
+        <ul class="">
+          <li class=""><a href="/research/progress/annual-report-nation" class="">Annual Report to the Nation</a></li>
+          <li><a href="/research/progress/cancer-types-research-advances" class="">Research Advances by Cancer Type</a></li>
+          <li><a href="/research/progress/discovery">Stories of Discovery</a></li>
+        </ul>
+      </li><br><br>
+      <li>
+        <a href="/research/resources" class="sub-nav-group-header">Resources for Researchers</a>
+      </li>
+    </ul>
+  </div>
+        </div>
+      </li>
+      
+      <li class='nav-item lvl-1 has-children item-4'>
+        <div class='nav-item-title'>
+          <a href='/grants-training'>Grants &amp; Training</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/grants-training/grants-funding'>Research Grants</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/grants-funding/funding-opportunities'>Research Funding Opportunities</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/grants-funding/contacts'>Research Program Contacts</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/grants-funding/funding-strategy'>Funding Strategy</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/grants-training/policies-process'>Grants Policies and Process</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/policies-process/overview'>Introduction to Grants Process</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/policies-process/nci-policies'>NCI Grant Policies</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/policies-process/legal'>Legal Requirements</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/grants-training/apply-grant'>Apply for a Grant</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/apply-grant/development'>Step 1: Application Development &amp; Submission</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/apply-grant/receipt'>Step 2: Application Receipt &amp; Assignment</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/apply-grant/peer-review'>Step 3: Peer Review and Funding Outcomes</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/apply-grant/award-issuance'>Step 4: Award Negotiation &amp; Issuance</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award'>Manage Your Award</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/contacts'>Grants Management Contacts</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/monitoring'>Monitoring</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/prior-approvals'>Prior Approvals</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/report-audit'>Annual Reporting and Auditing</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/grant-transfer'>Transfer of a Grant</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/manage-award/grant-closeout'>Grant Closeout</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training'>Training</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/at-nci'>Cancer Training at NCI</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/resources-trainees'>Resources for Trainees</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/funding'>Funding for Cancer Training</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/idwb'>Building a Diverse Workforce</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/about'>About Center for Cancer Training (CCT)</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/training/contact'>CCT Staff &amp; Contact</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/grants-training/nci-bottom-line-blog'>NCI Bottom Line Blog</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper">
+  <div class="sub-nav-group-subwrapper">
+    <ul class="sub-nav-group">
+      <li><a href="/grants-training/grants-funding" class="sub-nav-group-header">Research Grants</a>
+        <ul>
+          <li><a href="/grants-training/grants-funding/funding-opportunities">Funding Opportunities</a></li>
+          <li><a href="/grants-training/grants-funding/contacts">Research Program Contacts</a></li>
+          <li><a href="/grants-training/grants-funding/funding-strategy">Funding Strategy</a></li>
+        </ul>
+      </li>
+      <br />
+      <li><a href="/grants-training/policies-process" class="sub-nav-group-header">Grants Policies &amp; Process</a> 
+        <ul>
+          <li><a href="/grants-training/policies-process/overview">Introduction to Grants Process</a></li>
+          <li><a href="/grants-training/policies-process/nci-policies">NCI Policies</a></li>
+          <li><a href="/grants-training/policies-process/legal">Legal Requirements</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/grants-training/apply-grant" class="sub-nav-group-header">Apply for a Grant</a> 
+        <ul>
+          <li><a href="/grants-training/apply-grant/development">Application Development &amp; Submission</a></li>
+          <li><a href="/grants-training/apply-grant/receipt">Receipt &amp; Assignment</a></li>
+          <li><a href="/grants-training/apply-grant/peer-review">Peer Review &amp; Outcomes</a></li>
+          <li><a href="/grants-training/apply-grant/award-issuance">Award Issuance</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/grants-training/manage-award" class="sub-nav-group-header">Manage Your Award</a>
+        <ul>
+          <li><a href="/grants-training/manage-award/contacts">Grants Management Contacts</a></li>
+          <li><a href="/grants-training/manage-award/monitoring">Monitoring</a></li>
+          <li><a href="/grants-training/manage-award/prior-approvals">Prior Approvals</a></li>
+          <li><a href="/grants-training/manage-award/report-audit">Annual Reporting &amp; Auditing</a></li>
+          <li><a href="/grants-training/manage-award/grant-transfer">Transfer of a Grant</a></li>
+          <li><a href="/grants-training/manage-award/grant-closeout">Grant Closeout</a></li>
+        </ul>
+      </li>
+      <br />
+      <li>
+        <a href="/grants-training/contracts-business" class="sub-nav-group-header">Contracts &amp; Small Business</a>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/grants-training/training" class="sub-nav-group-header">Training</a> 
+        <ul>
+          <li><a href="/grants-training/training/at-nci">Cancer Training at NCI (Intramural)</a></li>
+          <li><a href="/grants-training/training/resources-trainees">Resources for Trainees</a></li>
+          <li><a href="/grants-training/training/funding">Funding for Cancer Training (Extramural)</a></li>
+          <li><a href="/grants-training/training/diversity-training">Building a Diverse Workforce</a></li>
+          <li><a href="/grants-training/training/contact">Training Program Contacts</a></li>
+        </ul>
+      </li>
+	  <br />
+      <li>
+        <a href="/grants-training/nci-bottom-line-blog" class="sub-nav-group-header">NCI Bottom Line Blog</a>
+      </li>
+    </ul>
+  </div>
+</div>
+        </div>
+      </li>
+      
+      <li class='nav-item lvl-1 has-children item-5'>
+        <div class='nav-item-title'>
+          <a href='/news-events'>News &amp; Events</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/press-releases/2020'>News Releases</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/news-events/media-resources'>Resources for News Media</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/media-resources/contacts'>Media Contacts</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/media-resources/reporting-fellowships'>Cancer Reporting Fellowships</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/news-events/events'>Events</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/events/scientific-meetings'>Scientific Meetings &amp; Lectures</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/events/conferences'>Conferences</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/events/advisory-board-meetings'>Advisory Board Meetings</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/events/social-media'>Social Media Events</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/news-events/cancer-currents-blog'>Cancer Currents Blog</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper">
+  <div class="sub-nav-group-subwrapper">
+    <ul class="sub-nav-group">
+      <li><a href="/news-events/press-releases/2020" class="sub-nav-group-header">All News Releases</a>
+        <ul>
+<li><a href="/news-events/press-releases/2020">2020</a></li>   
+<li><a href="/news-events/press-releases/2019">2019</a></li>          
+<li><a href="/news-events/press-releases/2018">2018</a></li>
+          <li><a href="/news-events/press-releases/2017">2017</a></li>
+          <li><a href="/news-events/press-releases/2016">2016</a></li>
+          <li><a href="/news-events/press-releases/2015">2015</a></li>
+          
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/news-events/media-resources" class="sub-nav-group-header">Media Resources</a>
+        <ul>
+          <li><a href="/news-events/media-resources/contacts">Media Contacts</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/news-events/events" class="sub-nav-group-header">Events</a>
+        <ul>
+          <li><a href="/news-events/events/scientific-meetings">Scientific Meetings &amp; Lectures</a></li>
+          <li><a href="/news-events/events/conferences">Conferences</a></li>
+          <li><a href="/news-events/events/advisory-board-meetings">Advisory Board Meetings</a></li>
+          <li><a href="/news-events/events/social-media">Social Media</a></li>
+        </ul>
+      </li>
+    </ul><ul class="sub-nav-group">
+      <li><a href="/news-events/cancer-currents-blog" class="sub-nav-group-header">Cancer Currents Blog</a></li>
+    </ul>
+  </div>
+</div>
+
+        </div>
+      </li>
+      
+      <li class='nav-item lvl-1 has-children item-6'>
+        <div class='nav-item-title'>
+          <a href='/about-nci'>About NCI</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-nci/overview'>NCI Overview</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/overview/history'>History</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/overview/contributing'>Contributing to Cancer Research</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/overview/strategic-planning'>Strategic Planning </a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-nci/leadership'>Leadership</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/leadership/director'>Director's Page</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/leadership/nci-deputy-director'>Deputy Director's Page</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/leadership/previous'>Previous NCI Directors</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/organization'>NCI Organization</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/advisory-boards'>Advisory Boards and Review Groups</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-nci/budget'>Budget &amp; Appropriations</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/budget/about-annual-plan'>About the Annual Plan &amp; Budget Proposal</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/budget/congressional-justification'>NCI Congressional Justification</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/budget/fact-book'>NCI Budget Fact Book</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/careers'>Careers at NCI</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/visit'>Visitor Information</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-2 has-children'>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative'>Legislative Activities</a>
+        </div>
+        
+    <ul class='mobile-item'>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/hearings'>Hearings &amp; Testimonies </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/current-congress'>Current Congress </a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/committees'>Committees of Interest</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/resources'>Legislative Resources</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/recent-public-laws'>Recent Public Laws</a>
+        </div>
+        
+      </li>
+      
+      <li class='lvl-3 '>
+        <div class='nav-item-title'>
+          <a href='/about-nci/legislative/contact'>Contact</a>
+        </div>
+        
+      </li>
+      
+    </ul>
+    
+      </li>
+      
+    </ul>
+    
+        <div class='sub-nav-mega' aria-expanded='true' aria-haspopup='true'>
+          <div class="sub-nav-group-wrapper"><div class="sub-nav-group-subwrapper">
+<ul class="sub-nav-group">
+	<li><a href="/about-nci/overview" class="sub-nav-group-header">Overview &amp; Mission</a>
+		<ul>
+			<li><a href="/about-nci/overview/history">History of NCI</a></li>
+			<li><a href="/about-nci/overview/contributing">Contributing to Cancer Research</a></li>
+			<li><a href="/about-nci/overview/strategic-planning">Strategic Planning at NCI</a></li>
+
+		</ul>
+	</li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/leadership" class="sub-nav-group-header">Senior Leadership</a>
+		<ul>
+			<li><a href="/about-nci/leadership/director">Director</a></li>
+			<li><a href="/about-nci/leadership/nci-deputy-director">Principal Deputy Director</a></li>
+			<li><a href="/about-nci/leadership/previous">Previous Directors</a></li>
+		</ul>
+	</li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/organization" class="sub-nav-group-header">NCI Organization</a>
+		<ul>
+			<li><a href="/about-nci/organization">Divisions, Offices &amp; Centers</a></li>
+		</ul>
+	</li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/advisory-boards" class="sub-nav-group-header">Advisory Boards &amp; Review Groups</a></li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/budget" class="sub-nav-group-header">Budget &amp; Appropriations</a>
+		<ul>
+			<li><a href="/about-nci/budget/">Current Year Budget</a></li>
+			<li><a href="https://www.cancer.gov/about-nci/budget/plan">Annual Plan &amp; Budget Proposal</a></li>
+			<li><a href="/about-nci/budget/congressional-justification">Congressional Justification</a></li>
+			<li><a href="/about-nci/budget/fact-book">NCI Budget Fact Book</a></li>
+		</ul>
+	</li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/legislative" class="sub-nav-group-header">Legislative Activities</a>
+		<ul>
+			<li><a href="/about-nci/legislative/hearings">Hearings &amp; Testimonies</a></li>
+			<li><a href="/about-nci/legislative/current-congress">Current Congress</a></li>
+			<li><a href="/about-nci/legislative/committees">Committees of Interest</a></li>
+			<li><a href="/about-nci/legislative/resources">Legislative Resources</a></li>
+			<li><a href="/about-nci/legislative/recent-public-laws">Recent Public Laws</a></li>
+		</ul>
+	</li>
+</ul><ul class="sub-nav-group">
+        <li><a href="/about-nci/contracts" class="sub-nav-group-header">Contracts</a></li><br /><br />
+	<li><a href="/about-nci/careers" class="sub-nav-group-header">Careers</a></li>
+</ul><ul class="sub-nav-group">
+	<li><a href="/about-nci/visit" class="sub-nav-group-header">Visitor Information</a></li>
+</ul>
+</div></div>
+        </div>
+      </li>
+      
+  </ul>
+</nav>
+
+
+          </div>
+        </div>
+        <div class="slot-item last-SI">
+  <div class="rawHtml">
+    <div class="search" role="search">
+      <form
+        action="/search/results"
+        method="get"
+        id="siteSearchForm"
+        name="siteSearchForm"
+      >
+        <label class="show-for-sr" for="swKeyword">Search</label>
+        <input
+          placeholder="search"
+          class="searchString ui-autocomplete-input"
+          id="swKeyword"
+          maxlength="255"
+          name="swKeyword"
+          onblur="bSearchBoxBool=false;"
+          onfocus="bSearchBoxBool=true;"
+          value=""
+          autocomplete="off"
+          type="text"
+          aria-autocomplete="list"
+          aria-haspopup="true"
+        >
+        <button class="searchSubmit" id="sitesearch" onclick="return siteSearchSubmit();" type="submit">
+          <span class="show-for-sr">Search</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+      </div>
+    </div>
+  </div>
+  <!-- End nav-search bar -->
+  <!-- END NAVIGATION -->
+
+  </div><!-- END Global nav/utility bar/language -->
+
+  <!-- Begin MAIN CONTENT AREA -->
+  <div class="main-content" id="content" tabindex="0">
+      <div data-drupal-messages-fallback class="hidden"></div>
+<div id="nvcgSlHeroHeader" class="row hero-slot">
+		  
+
+<div class="slot-item only-SI large-12 columns hero">
+  <div class="rawHtml">
+        <div class="row">
+          <div class="hero-text columns large-12">
+        <p>NCI is the nation&#039;s leader in cancer research</p>
+      </div>
+          </div>
+        <picture>
+      <source media="(max-width: 640px)" srcset="/sites/g/files/xnrzdm211/files/cgov_hero_banner/2019-06/Hero_image_home_tablet.jpg">
+      <source media="(max-width: 1024px) and (min-width: 641px)" srcset="/sites/g/files/xnrzdm211/files/cgov_hero_banner/2019-06/Hero_image_home_tablet.jpg">
+        <img src="/sites/g/files/xnrzdm211/files/cgov_hero/banner/2019-06/Hero_image_home_desktop.jpg" width="1350" height="297" alt="Doctors in lab coats collaborating" />
+
+
+    </picture>
+  </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+		<div class="row">
+				<div class="page-options-container">
+  <!-- PAGE OPTIONS -->
+  
+  <div id="PageOptionsControl1" class="page-options no-resize large-5 columns">
+      <ul>
+                          <li class="page-options--print">
+            <a title="Print" aria-label="Print" href="#"></a>
+          </li>
+                          <li class="page-options--email">
+            <a title="Email" aria-label="Email" href="#"></a>
+          </li>
+                          <li class="social-share social-share--facebook">
+            <a title="Facebook" aria-label="Facebook" href="#"></a>
+          </li>
+                          <li class="social-share social-share--twitter">
+            <a title="Twitter" aria-label="Twitter" href="#"></a>
+          </li>
+                          <li class="social-share social-share--pinterest">
+            <a title="Pinterest" aria-label="Pinterest" href="#"></a>
+          </li>
+              </ul>
+  </div>
+  <!-- END PAGE OPTIONS -->
+</div>
+
+	</div>
+<div id="nvcgSlBodyLayout" class="nvcgSlBodyLayout">
+	
+  <div class="row feature-primary-title">
+      <h3>Featured Content</h3>
+  </div>
+
+  <div class="row feature-primary flex-columns">
+      <div class="slot-item equalheight large-4 columns card gutter">
+    
+      
+          
+                    
+    
+      
+        	<div class="feature-card">
+		<a href="/types/ovarian">
+							<div class="image-hover">    <img src="/sites/g/files/xnrzdm211/files/styles/cgov_featured/public/cgov_image/featured/900/800/files/portrait-of-a-female-cancer-patient-feature-card.jpg?itok=481VUnZD" width="425" height="319" alt="" />
+
+
+
+</div>
+						<h3>Learn About Ovarian Cancer</h3>
+							<p>Find information about treatment, prevention, screening, research, and clinical trials for ovarian cancer.</p>
+					</a>
+	</div>
+
+  
+  </div>
+  <div class="slot-item equalheight large-4 columns card gutter">
+    
+      
+          
+                    
+    
+      
+        	<div class="feature-card">
+		<a href="/news-events/events/conferences/asco-2020/education-program">
+							<div class="image-hover">        <img src="/sites/g/files/xnrzdm211/files/styles/cgov_featured/public/cgov_image/media_image/2020-08/ASCO-2020-education-feature%20card.jpg?h=b48714fe&amp;itok=F_-ak4JG" width="425" height="319" alt="NCI virtual presentations available at ASCO’s Virtual Education Program, August 8-10." />
+
+
+
+
+</div>
+						<h3>NCI at ASCO 2020</h3>
+							<p>Join NCI at the American Society of Clinical Oncology (ASCO) Virtual Education Program on August 8–10.</p>
+					</a>
+	</div>
+
+  
+  </div>
+  <div class="slot-item equalheight large-4 columns card gutter">
+    
+      
+          
+                    
+    
+      
+        	<div class="feature-card">
+		<a href="/research/infrastructure/clinical-trials/nctn">
+							<div class="image-hover">    <img src="/sites/g/files/xnrzdm211/files/styles/cgov_featured/public/cgov_image/featured/100/200/9/files/nctn-clinical-trials-network-structure-feature-card.jpg?itok=vHbcSVR5" width="425" height="319" alt="" />
+
+
+
+</div>
+						<h3>NCI&#039;s National Clinical Trials Network</h3>
+							<p>An overview of NCI&#039;s state-of-the-art clinical trials infrastructure.</p>
+					</a>
+	</div>
+
+  
+  </div>
+
+  </div>
+  <div class="row">
+      <div class="large-12 columns guide-title">
+          <h2></h2>
+      </div>
+  </div>
+  <div class="accordion">
+    <div class="row guide-card flex-columns guide-card--home">
+        <div class="slot-item equalheight large-4 columns card gutter">
+    <h2>Cancer Research Resources</h2>
+<ul><li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="662533a5-a310-4084-b0ce-72c11628432e" href="/grants-training/grants-funding/funding-opportunities">Funding Opportunities</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="76252e10-03be-4a70-a1fb-8de48f67517a" href="/grants-training/grants-funding/funding-strategy">Funding Strategy</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="4f09c718-7e44-4c57-a897-ae9b0e1f7260" href="/grants-training/apply-grant">Apply for a Grant</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="734c9376-d743-4125-b984-23cc54e5b880" href="/grants-training/manage-award">Manage Your Award</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e8c984a9-90ae-4d32-b877-28ece7843cc8" href="/grants-training/training/at-nci">Training at NCI</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="8c6de115-13b8-4bfa-9dc9-57db30120746" href="/grants-training/training/funding">Funding for Cancer Training</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="48cef78f-1346-4884-9a52-f678aaedfbd3" href="/research/resources">Resources for Researchers</a></li>
+	<li class="card__view-more"><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="b6849605-ff7d-42b8-addd-5799384396fb" href="/grants-training">Find more research resources</a></li>
+</ul>
+
+  </div>
+  <div class="slot-item equalheight large-4 columns card gutter">
+    <h2>About Cancer</h2>
+<ul><li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="9850ed7e-61cc-46c3-b7ce-321cda95b679" href="/about-cancer/understanding/what-is-cancer">What is Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="f5e127e6-3ad6-41be-b23d-df254ea79ee9" href="/about-cancer/causes-prevention">Causes &amp; Prevention</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="75aefa03-f54a-43c2-a8e1-0dca70c1d17f" href="/about-cancer/diagnosis-staging">Diagnosis &amp; Staging</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="33e3a4f6-428e-41b1-a123-ed0f227a47fb" href="/about-cancer/diagnosis-staging/prognosis">Prognosis</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="205ee0d9-d4f3-4bfc-9c94-8f33f2ed1ec6" href="/about-cancer/treatment">Cancer Treatment</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e7202b67-b320-4e4e-bdfe-bd307e7cba5e" href="/about-cancer/treatment/side-effects">Cancer Treatment Side Effects</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="79afa25a-e4c9-4203-a919-3c5a9aa7c604" href="/about-cancer/treatment/clinical-trials/search">Find a Clinical Trial</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="ed1cb076-5cd3-48c3-b6fe-b71c973289d8" href="/about-cancer/understanding/statistics">Cancer Statistics</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="c0f08a8b-caed-4014-9ec8-d5a1c6c138ad" href="/about-cancer/coping">Coping with Cancer</a></li>
+	<li class="card__view-more"><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e119b18f-5781-48db-9a4a-42f62aaa4e52" href="/about-cancer">Learn more about cancer</a></li>
+</ul>
+
+  </div>
+  <div class="slot-item equalheight large-4 columns card gutter">
+    <h2>Find a Cancer Type</h2>
+<ul><li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="2f6e6fda-233f-497a-a8d5-02018e8821c6" href="/types/breast">Breast Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d7a79036-7383-4b9f-9cc9-0318b4468b52" href="/types/childhood-cancers">Childhood Cancers</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="60ec4af0-59be-4c4e-8a61-9277d72dc74b" href="/types/colorectal">Colorectal Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="d4dc35c7-c3f3-4c62-9723-668954043439" href="/types/leukemia">Leukemia</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="3139a3d9-c3a1-448d-a9e2-51489861951a" href="/types/lung">Lung Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="0d1c7b24-24e7-49aa-a698-cc44d586b0c7" href="/types/lymphoma">Lymphoma</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="e202f1d0-5d55-49ce-a7c1-04efacbfbfdf" href="/types/metastatic-cancer">Metastatic Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="69737f18-6246-41f1-b66e-3516d0ae0e5e" href="/types/pancreatic">Pancreatic Cancer</a></li>
+	<li><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="00270a09-f049-4fbe-b7a5-f4bd3f740847" href="/types/prostate">Prostate Cancer</a></li>
+	<li class="card__view-more"><a class="arrow-link" data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="ad501257-4b52-4cdd-978b-f7a415c471bf" href="/types">View all cancer types</a></li>
+</ul>
+
+  </div>
+
+    </div>
+  </div>
+<div class="rawHtml">
+  <!-- Begin Social Media row --> <div class="row social-media-title"> <h2>Follow Us</h2></div><div class="social-media-row row"> <div class="social-media-card"> <div class="social-media-icon"><a href="https://twitter.com/thenci" data-indexed-link="Join the Conversation|Join the Conversation|1"><img src="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/social-media/twitter/twitter-circle-icon.svg" alt="Twitter logo"></a></div> <div class="social-media-text"> <h3><a href="https://twitter.com/thenci" data-indexed-link="Join the Conversation|Join the Conversation|1">Twitter</a></h3> </div> </div> <div class="social-media-card"> <div class="social-media-icon"><a href="https://www.facebook.com/cancer.gov" data-indexed-link="Join the Conversation|Join the Conversation|2"><img src="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/social-media/facebook/facebook-circle-icon.svg" alt="Facebook logo"></a></div> <div class="social-media-text"> <h3><a href="https://www.facebook.com/cancer.gov" data-indexed-link="Join the Conversation|Join the Conversation|2">Facebook</a></h3> </div> </div> <div class="social-media-card"> <div class="social-media-icon"><a href="https://www.linkedin.com/company/3424/" data-indexed-link="Join the Conversation|Join the Conversation|3"><img src="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/social-media/linkedin/linkedin-circle-icon.svg" alt="LinkedIn logo"></a></div> <div class="social-media-text"> <h3><a href="https://www.linkedin.com/company/3424/" data-indexed-link="Join the Conversation|Join the Conversation|3">LinkedIn</a></h3> </div> </div> <div class="social-media-card"> <div class="social-media-icon"><a href="https://www.instagram.com/nationalcancerinstitute/" data-indexed-link="Join the Conversation|Join the Conversation|4"><img src="/profiles/custom/cgov_site/themes/custom/cgov/static/images/design-elements/social-media/instagram/instagram-circle-icon.svg" alt="Instagram logo"></a></div> <div class="social-media-text"> <h3><a href="https://www.instagram.com/nationalcancerinstitute/" data-indexed-link="Join the Conversation|Join the Conversation|4">Instagram</a></h3> </div> </div></div><!-- End Social Media row -->
+</div>
+
+  <div class="multimedia-slot">
+      <div class="row multimedia flex-columns">
+        <div id="nvcgSlLayoutMultimediaA" class="equalheight small-8 columns card">
+      <div class="slot-item"><div class="multimedia-feature-card">
+              <figure class="video ">
+                        <div id="ytplayer-jC8CUIID2HA" class="flex-video widescreen" data-video-url="/media/oembed?url=https%3A//youtu.be/dxnjAc-rqz8&amp;max_width=0&amp;max_height=0&amp;hash=dkYQmrDqRh1AQxx8gKr69VfeO2qf9g-jTNRslx6ujAE" data-video-title="How Monoclonal Antibodies Treat Cancer">
+        <div class="video-preview--container" tabindex="0">
+            <img src="/sites/g/files/xnrzdm211/files/oembed_thumbnails/GwTeBF2BRTrV17o8vZ66Tm0-88Qrk7bJCpMVMhme0Hc.jpg" width="480" height="360" alt="" />
+
+
+          <div class="video-preview--play-button">
+            <svg height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+              <path class="play-button--bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+              <path d="M 45,24 27,14 27,34" fill="#fff"></path>
+            </svg>
+          </div>
+          <p>How Monoclonal Antibodies Treat Cancer</p>
+        </div>
+      </div>
+                </figure>
+  
+  <p class="mmfc-video-caption">
+    <p>Learn how monoclonal antibodies such as trastuzumab, pembrolizumab, and rituximab are used to treat cancer.</p>
+  </p>
+</div>
+</div>
+  </div>
+<div id="nvcgSlLayoutFeatureB" class="equalheight small-4 columns card">
+      <div class="slot-item">
+      
+          
+                    
+    
+      
+        	<div class="feature-card">
+		<a href="/about-nci/leadership">
+							<div class="image-hover">    <img src="/sites/g/files/xnrzdm211/files/styles/cgov_featured/public/cgov_image/featured/100/100/3/files/senior-leadership-illustration-feature-card.gif?itok=TBhDBbYz" width="425" height="319" alt="" />
+
+
+
+</div>
+						<h3>Senior Leaders</h3>
+							<p>Information about NCI Director Norman E. Sharpless, M.D., and other senior NCI leaders.</p>
+					</a>
+	</div>
+
+  </div>
+  </div>
+
+      </div>
+  </div>
+
+
+  <!-- List Style:list_item_title_desc_image-->
+          <div class="managed list">
+      
+        <ul>
+          
+
+          
+          
+          
+    
+              <li class="general-list-item general list-item has-media">
+          <div class="list-item-image image container">
+      <a class="item-image image" href="/resources-for">  <img src="/sites/g/files/xnrzdm211/files/styles/cgov_thumbnail/public/cgov_image/thumbnail/100/100/5/files/Resources-by-Audience-thumb.jpg?itok=yFpaIzAl" width="228" height="171" alt="" />
+
+
+</a>
+    </div>
+  
+    <div class="title-and-desc title desc container">
+        <h3>  <a class="title" href="/resources-for">Resources for You</a>
+      </h3>
+        <div class="description">
+              <p class="body">Find information and resources that fit your needs as a patient, caregiver, health professional, researcher, or other visitor.</p>
+      </div>
+
+    </div>
+  </li>
+
+
+      </ul>
+
+    </div>
+  
+<div class="rawHtml">
+  <!--
+If we update or change the order of the DOC rotator please update the code snippet to be in the correct order. The order is determined by the position in the HTML below.
+data-indexed-link="LINK_TITLE|DOC Rotator|1" in each of the code snippets. The numbers are for analytics purposes, not position.
+-->
+
+<div class="row carousel-title">
+    <div class="large-6 columns">
+        <h2>NCI Divisions, Offices, and Centers</h2>
+    </div>
+    <div class="large-6 columns arrows arrows-for-other-nci-sites clearfix">
+        <button type="button" class="previous"> <span
+                style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Previous</span>
+        </button>
+        <button type="button" class="next"> <span
+                style="position: absolute; bottom: 0; right: 0; clip: rect(1px, 1px, 1px, 1px);">Next</span> </button>
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <div class="slider other-nci-sites">
+            <div>
+                <div class="image-hover"> <a href="http://ccr.cancer.gov/" class="green-arrows container"
+                        data-indexed-link="Center for Cancer Research|DOC Rotator|7">
+                        <p class="site-name">Center for Cancer Research</p>
+                        <p class="site-link">Visit CCR Site</p>
+                    </a> </div>
+            </div>
+
+            <div>
+                <div class="image-hover"> <a href="/about-nci/organization/dcb" class="blue-circles container"
+                        data-indexed-link="Division of Cancer Biology|DOC Rotator|1">
+                        <p class="site-name">Division of Cancer Biology</p>
+                        <p class="site-link">Visit DCB Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://cancercontrol.cancer.gov/" class="red-triangles container"
+                        data-indexed-link="Division of Cancer Control and Population Sciences|DOC Rotator|2">
+                        <p class="site-name">Division of Cancer Control and Population Sciences</p>
+                        <p class="site-link">Visit DCCPS Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://dceg.cancer.gov/" class="blue-triangles container"
+                        data-indexed-link="Division of Cancer Epidemiology and Genetics|DOC Rotator|3">
+                        <p class="site-name">Division of Cancer Epidemiology and Genetics</p>
+                        <p class="site-link">Visit DCEG Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://prevention.cancer.gov/" class="green-plaid container"
+                        data-indexed-link="Division of Cancer Prevention|DOC Rotator|4">
+                        <p class="site-name">Division of Cancer Prevention</p>
+                        <p class="site-link">Visit DCP Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://dctd.cancer.gov/" class="orange-waves container"
+                        data-indexed-link="Division of Cancer Treatment and Diagnosis|DOC Rotator|5">
+                        <p class="site-name">Division of Cancer Treatment and Diagnosis</p>
+                        <p class="site-link">Visit DCTD Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="https://deainfo.nci.nih.gov/" class="purple-circles container"
+                        data-indexed-link="Division of Extramural Activities|DOC Rotator|6">
+                        <p class="site-name">Division of Extramural Activities</p>
+                        <p class="site-link">Visit DEA Site</p>
+                    </a> </div>
+            </div>
+
+            <div>
+                <div class="image-hover"> <a href="/grants-training/training/about" class="red-squares container"
+                        data-indexed-link="Center for Cancer Training|DOC Rotator|9">
+                        <p class="site-name">Center for Cancer Training</p>
+                        <p class="site-link">Visit CCT Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="/about-nci/organization/ccg" class="orange-plaid container"
+                        data-indexed-link="Center for Cancer Genomics|DOC Rotator|10">
+                        <p class="site-name">Center for Cancer Genomics</p>
+                        <p class="site-link">Visit CCG Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="/about-nci/organization/cgh" class="pink-triangles container"
+                        data-indexed-link="Center for Global Health|DOC Rotator|11">
+                        <p class="site-name">Center for Global Health</p>
+                        <p class="site-link">Visit CGH Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="/about-nci/organization/crchd" class="yellow-hexagons container"
+                        data-indexed-link="Center to Reduce Cancer Health Disparities|DOC Rotator|12">
+                        <p class="site-name">Center to Reduce Cancer Health Disparities</p>
+                        <p class="site-link">Visit CRCHD Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="https://cbiit.nci.nih.gov/" class="navy-squares container"
+                        data-indexed-link="Center for Biomedical Informatics and Information Technology|DOC Rotator|13">
+                        <p class="site-name">Center for Biomedical Informatics and Information Technology</p>
+                        <p class="site-link">Visit CBIIT Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://cssi.cancer.gov/" class="emerald-xes container"
+                        data-indexed-link="Center for Strategic Scientific Initiatives|DOC Rotator|14">
+                        <p class="site-name">Center for Strategic Scientific Initiatives</p>
+                        <p class="site-link">Visit CSSI Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="/about-nci/organization/ccct" class="fuchsia-waves container"
+                        data-indexed-link="Coordinating Center for Clinical Trials|DOC Rotator|15">
+                        <p class="site-name">Coordinating Center for Clinical Trials</p>
+                        <p class="site-link">Visit CCCT Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://sbir.cancer.gov/" class="slate-grid container"
+                        data-indexed-link="SBIR Development Center|DOC Rotator|16">
+                        <p class="site-name">SBIR Development Center</p>
+                        <p class="site-link">Visit SBIR Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="https://techtransfer.cancer.gov/" class="red-squares container"
+                        data-indexed-link="Technology Transfer Center|DOC Rotator|17">
+                        <p class="site-name">Technology Transfer Center</p>
+                        <p class="site-link">Visit TTC Site</p>
+                    </a> </div>
+            </div>
+            <div>
+                <div class="image-hover"> <a href="http://frederick.cancer.gov/" class="blue-dots container"
+                        data-indexed-link="Frederick National Laboratory for Cancer Research|DOC Rotator|8">
+                        <p class="site-name">Frederick National Laboratory for Cancer Research</p>
+                        <p class="site-link">Visit FNLCR Site</p>
+                    </a> </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+
+  </div>
+
+</div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div id="nvcgSlFooter">
+      <div class="slot-item only-SI">
+        <div class="site-footer__container">
+  <div class="site-footer__header">
+    <h1>
+      National Cancer Institute
+      <span>at the National Institutes of Health</span>
+    </h1>
+  </div>
+ 
+ 
+  <div class="site-footer__nav">
+    <div class="site-footer__icons">
+      <h2>FOLLOW US</h2>
+      <ul>
+        <li>
+          <a
+            class="facebook icon"
+            href="/social-media#facebook">
+            <span class="show-for-sr">Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="twitter icon"
+            href="/social-media#twitter">
+            <span class="show-for-sr">Twitter</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="instagram icon no-exit-notification"
+            href="/social-media#instagram">
+            <span class="show-for-sr">Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="youtube icon"
+            href="/social-media#youTube">
+            <span class="show-for-sr">YouTube</span></a>
+        </li>
+        <li>
+          <a
+            class="linkedin icon"
+            href="/social-media#linkedIn">
+            <span class="show-for-sr">LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="govdelivery icon"
+            href="https://public.govdelivery.com/accounts/USNIHNCI/subscriber/new">
+            <span class="show-for-sr">GovDelivery</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="rss icon"
+            href="/syndication/rss"
+            title="">
+            <span class="show-for-sr">RSS</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+ 
+    <div class="site-footer__contact">
+      <h2>CONTACT INFORMATION</h2>
+      <ul>
+        <li>
+          <a href="/contact" title="">Contact Us</a>
+        </li>
+        <li><a href="https://livehelp.cancer.gov">LiveHelp Online Chat</a></li>
+      </ul>
+    </div>
+ 
+    <div class="site-footer__info">
+      <h2>MORE INFORMATION</h2>
+      <ul>
+        <li>
+          <a href="/about-website" title="">
+            About This Website</a>
+        </li>
+        <li>
+          <a href="/espanol" title="">Cancer.gov en español</a>
+        </li>
+        <li>
+          <a href="/multimedia" title="">Multimedia</a>
+        </li>
+        <li>
+          <a href="/publications" title="">Publications</a>
+        </li>
+        <li>
+          <a href="/about-website/sitemap" title="">Site Map</a>
+        </li>
+        <li>
+          <a href="/digital-standards" title="">
+            Digital Standards for NCI Websites</a>
+        </li>
+      </ul>
+    </div>
+ 
+    <div class="site-footer__policies">
+      <h2>POLICIES</h2>
+ 
+      <ul>
+        <li>
+          <a href="/policies/accessibility" title="">Accessibility</a>
+        </li>
+        <li>
+          <a href="/policies/comments" title="">Comment Policy</a>
+        </li>
+        <li>
+          <a href="/policies/disclaimer" title="">Disclaimer</a>
+        </li>
+        <li>
+          <a href="/policies/foia" title="">FOIA</a>
+        </li>
+        <li>
+          <a href="/policies/privacy-security" title="">
+            Privacy &amp; Security</a>
+        </li>
+        <li>
+          <a href="/policies/copyright-reuse" title="">
+            Reuse &amp; Copyright</a>
+        </li>
+        <li>
+          <a href="/syndication" title="">
+            Syndication Services</a>
+        </li>
+        <li>
+          <a href="/policies/linking" title="">
+            Website Linking</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__agencies">
+    <ul>
+      <li>
+        <a href="http://www.hhs.gov/">U.S. Department of Health and Human Services</a>
+      </li>
+      <li><a href="http://www.nih.gov">National Institutes of Health</a></li>
+      <li><a href="https://www.cancer.gov/">National Cancer Institute</a></li>
+      <li><a href="http://usa.gov">USA.gov</a></li>
+    </ul>
+  </div>
+ 
+  <div class="site-footer__tagline">
+    <h4>NIH ... Turning Discovery Into Health <sup>®</sup></h4>
+  </div>
+  <a class="back-to-top" href="#top">TOP</a>
+</div>
+
+
+      </div>
+    </div>
+  </footer>
+  <!-- END FOOTER -->
+
+
+  </div>
+
+    <script src="/sites/g/files/xnrzdm211/files/js/js_JUqmqBSK0ZOpPBlxC6Y3i9dah-xL9r5RpSTOSniBF74.js"></script>
+<script src="/profiles/custom/cgov_site/themes/custom/cgov/cgov_common/dist/js/Common.js?qepy4f"></script>
+<script src="/profiles/custom/cgov_site/themes/custom/cgov/cgov_common/dist/js/Homelanding.js?qepy4f"></script>
+
+    <script type="text/javascript">_satellite.pageBottom();</script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"bfc00e1ee3","applicationID":"355359682,336353556","transactionName":"NVVTbBMHDEQDBUVcDgwfcFsVDw1ZTRZQUgQ9U1BbCQM=","queueTime":0,"applicationTime":30,"atts":"GRJQGlsdH0o=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,5747 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+		
+	<meta charset="utf-8" />
+	<title>PCWorld - News, tips and reviews from the experts on PCs, Windows, and more</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	
+	<script>
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+	</script>
+	
+	<!-- ad-related js -->
+	
+	<script src="/www/js/jquery/jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript" src="/www/js/jquery/jquery_cookie.js"></script>
+	
+	
+	<script type="text/javascript" src="/www/js/apollo-locales.js"></script>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<script src="//d2zv5rkii46miq.cloudfront.net/0/latest/cmp_shim.js"></script>
+
+<script>
+var consent = consent || {};
+consent.isEU = consent.isEU || null;
+consent.personalization = consent.personalization || null;
+consent.ads = consent.ads || {};
+consent.ads.queue = consent.ads.queue || [];
+
+consent.infostorage = consent.infostorage || {};
+consent.infostorage.queue = consent.infostorage.queue || [];
+
+consent.adsel = consent.adsel || {};
+consent.adsel.queue = consent.adsel.queue || [];
+
+consent.contentsel = consent.contentsel || {};
+consent.contentsel.queue = consent.contentsel.queue || [];
+
+consent.socmedia = consent.socmedia || {};
+consent.socmedia.queue = consent.socmedia.queue || [];
+
+consent.blueconic = consent.blueconic || {};
+consent.blueconic.queue = consent.blueconic.queue || [];
+
+consent.digitalelement = consent.digitalelement || {};
+consent.digitalelement.queue = consent.digitalelement.queue || [];
+
+consent.purposes = consent.purposes || {};
+consent.purposes.standard = consent.purposes.standard || [];
+consent.purposes.custom = consent.purposes.custom || [];
+consent.vendors = consent.vendors || {};
+consent.vendors.standard = consent.vendors.standard || [];
+consent.vendors.custom = consent.vendors.custom || [];
+
+var dataLayer = window.dataLayer = window.dataLayer || [];
+</script>
+
+
+
+
+
+
+<style type="text/css">
+#sp_privacy_manager_container {
+	z-index: 10000000 !important;
+}
+</style>
+
+<script> 											
+window._sp_ = window._sp_ || {};
+window._sp_.config = window._sp_.config || {};
+
+//Replace YOUR_ACCOUNT_ID with the account ID provided
+//by Sourcepoint
+window._sp_.config.account_id = 146;
+
+// replace 'mms.sp-prod.net' with your CNAME'd messaging subdomain		
+window._sp_.config.mms_domain = 'cmp.pcworld.com' ; 
+//window._sp_.config.mms_domain = 'mms.sp-prod.net' ; 
+
+// messaging-specific configuration
+window._sp_.mms = window._sp_.mms || {};
+window._sp_.mms.cmd = window._sp_.mms.cmd || [];
+
+//CMP Flags
+window._sp_.config.cmp = _sp_.config.cmp || {};
+window._sp_.config.cmp.enabled = true;
+window._sp_.config.cmp.waitForConsentData = true;
+
+//Code to call the server and display a message
+window._sp_.mms.cmd.push( function () {
+    window._sp_.mms.startMsg();
+});
+</script>
+
+<script src="/www/js/messaging.js?v=dec2019update"></script>
+
+
+<script type="text/javascript">(function () { var e = false; var c = window; var t = document; function r() { if (!c.frames["__uspapiLocator"]) { if (t.body) { var a = t.body; var e = t.createElement("iframe"); e.style.cssText = "display:none"; e.name = "__uspapiLocator"; a.appendChild(e) } else { setTimeout(r, 5) } } } r(); function p() { var a = arguments; __uspapi.a = __uspapi.a || []; if (!a.length) { return __uspapi.a } else if (a[0] === "ping") { a[2]({ gdprAppliesGlobally: e, cmpLoaded: false }, true) } else { __uspapi.a.push([].slice.apply(a)) } } function l(t) { var r = typeof t.data === "string"; try { var a = r ? JSON.parse(t.data) : t.data; if (a.__cmpCall) { var n = a.__cmpCall; c.__uspapi(n.command, n.parameter, function (a, e) { var c = { __cmpReturn: { returnValue: a, success: e, callId: n.callId } }; t.source.postMessage(r ? JSON.stringify(c) : c, "*") }) } } catch (a) { } } if (typeof __uspapi !== "function") { c.__uspapi = p; __uspapi.msgHandler = l; c.addEventListener("message", l, false) } })();</script>
+<script>
+        window._sp_ccpa = {
+            config: {
+                mmsDomain: "https://cmp.pcworld.com",
+                ccpaOrigin: "https://ccpa-service.sp-prod.net",
+                accountId: "146",
+                getDnsMsgMms: true,
+                alwaysDisplayDns: false,
+            }
+        }
+</script>
+<script src="https://ccpa.sp-prod.net/ccpa.js"></script>
+
+<script>
+__cmp('getConsentData',null,function(e){
+	
+	consent.isEU = e.gdprApplies;
+	if (!consent.isEU) {
+		
+		
+		consent.personalization=false;
+		
+		__uspapi('getUSPData', 1, (uspData, success) => {
+			if(success) {
+				try {
+					console.log('uspapi success: ', uspData);
+					var uspDataString = uspData.uspString;
+					var uspDataArray = [];
+					uspDataArray = uspDataString.split("");
+					if (typeof uspDataArray[2] !== "undefined" && uspDataArray[2] !== "Y") {
+						console.log('User has not opted in to CCPA - run everything');
+						consent.personalization=true;
+						$(window).trigger("runConsent", [consent.socmedia.queue]);
+						$(window).trigger("runConsent", [consent.blueconic.queue]);
+					}
+		
+					$(window).trigger("runConsent", [consent.adsel.queue]);
+				}
+				catch(e) {
+					console.log('error with uspData retrieval: ', e);
+				}
+				
+			} else {
+				console.log('uspapi fail: ', uspData);
+			}
+			
+		});	
+		
+		$(window).trigger("runConsent", [consent.contentsel.queue]);
+		$(window).trigger("runConsent", [consent.digitalelement.queue]);
+		$(window).trigger("runConsent", [consent.ads.queue]);
+		$(window).trigger("runConsent", [consent.infostorage.queue]);
+		
+	
+		dataLayer.push({
+			'event': 'consentKnown' 
+		});
+		bindReshowCmp();
+	}
+	else if (e.consentData !== null && e.consentData !== "") { // else if.. visitor is from EU and consent is known...
+		getConsentInfo();
+		bindReshowCmp();
+	}
+	else { //else consent is not known
+	    bindReshowCmp();
+	}
+});
+
+function getConsentInfo() {
+	
+	__cmp('getVendorConsents',[],function (e) {
+		
+		consent.purposes.standard = Object.keys(e.purposeConsents);
+		consent.vendors.standard = Object.keys(e.vendorConsents);
+		
+		consent.personalization = consent.purposes.standard.includes("2");
+		
+		
+		
+		
+		
+		
+		
+		if (consent.purposes.standard.includes("1")) { // if information storage consent is TRUE run queue
+			
+			$(window).trigger("runConsent", [consent.infostorage.queue]);
+		}
+		if (consent.purposes.standard.includes("3")) { // if ad selection consent is TRUE run queue
+			
+			$(window).trigger("runConsent", [consent.adsel.queue]);
+		}
+		if (consent.purposes.standard.includes("4")) { // if content selection consent is TRUE run queue
+			
+			$(window).trigger("runConsent", [consent.contentsel.queue]);
+		}
+		//special case for blueconic
+		if (consent.purposes.standard.includes("1") && consent.purposes.standard.includes("2") && consent.purposes.standard.includes("3") && consent.purposes.standard.includes("4") && consent.purposes.standard.includes("5")) {
+			
+			$(window).trigger("runConsent", [consent.blueconic.queue]);
+		}
+		
+		//special case for Digital Element
+		if (consent.purposes.standard.includes("2") && consent.purposes.standard.includes("3") && consent.purposes.standard.includes("4") && consent.purposes.standard.includes("5")) {
+			
+			$(window).trigger("runConsent", [consent.digitalelement.queue]);
+		}
+	});
+
+	__cmp('getCustomVendorConsents',[],function (e) { 
+		
+		consent.purposes.custom = [];
+		e.consentedPurposes.forEach(function(item, index) {
+			consent.purposes.custom.push(item.name);
+		});
+		
+		consent.vendors.custom = [];
+		e.consentedVendors.forEach(function(item, index) {
+			consent.vendors.custom.push(item.name);
+		});
+		
+		
+		
+		if (consent.purposes.custom.includes("Social Media Consents")) { // if social media consent is TRUE run queue
+			
+			$(window).trigger("runConsent", [consent.socmedia.queue]);
+		}
+		
+		
+		if (consent.vendors.custom.includes("Google Ad Manager")) {
+			
+			$(window).trigger("runConsent", [consent.ads.queue]);
+		}
+		
+	});
+	
+	dataLayer.push({
+		'event': 'consentKnown' 
+	});
+}
+
+var idgCMPSourcepointCallback = function(){
+	if (consent.isEU) {		
+		getConsentInfo();
+	}
+}
+
+$(window).on("runConsent", function(event, queueToRun) {
+		watchConsentQueue(queueToRun)
+});
+
+function runQueue(queue){
+	for (var x=0;x<queue.length;x++) {
+		var nextFn = queue.shift();
+		nextFn();
+		
+	}	
+}
+
+function watchConsentQueue(queue){
+	setInterval(function() { runQueue(queue); },500);
+}
+function bindReshowCmp() {
+	var url = document.location.pathname;
+	if (url.indexOf("/about/member-preferences") > -1) {
+		$(document).ready(function() {
+			$(".cmpSettings").show();
+			$(".reshowLink").on("click", function(e) {
+				e.preventDefault();
+				window._sp_.privacyManager.loadPrivacyManagerModal(3934, '5cd195e5f9f3332a80a0e25f');
+			});
+		});
+	}
+}
+</script>
+
+
+
+
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+<script>
+consent.blueconic.queue.push(function(){
+	var bcscript = document.createElement("script");
+	bcscript.async = true;
+	bcscript.type = "text/javascript";
+    var useSSL = "https:" == document.location.protocol;
+    bcscript.src = (useSSL ? "https:" : "http:") + "//cdn.blueconic.net/idg.js";
+    var node=document.getElementsByTagName("script")[0];
+    node.parentNode.insertBefore(bcscript, node);
+});
+</script>
+	
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+<script>
+// this javascript is for retrieving locale-specific ad units for DFP - see mapping in apollo-locales.js
+// getting locale and editions for the site the reader is viewing
+let brandAbbrev = "pcw";
+let brandConfigBrandId = "2";
+//let myLocale = getLocale(); // getting locale on page load from URL, IP, geolocation - this will always be something. If 0, it's the global/default/core view.
+let countryCode = "";
+let getSlugFromId = getApolloLocaleIdMap();
+let getIdFromSlug = getApolloLocaleSlugMap();
+
+// if selectedLocale cookie exists, get locale
+if (typeof getSelectedLocale() !== 'undefined'  && getSelectedLocale() === getLocale()) { // get locale from cookie if available otherwise, use another locale source (from geolocation, url slug, etc.)
+ 	countryCode = getSlugFromId[getSelectedLocale()];
+} else {
+	countryCode = getSlugFromId[getLocale()];
+}
+//console.log("+++ 1) in locales.editions.jsp - COUNTRY CODE IS DEFINED AS: "+countryCode+"+++");
+// if countryCode is empty string at this point, it means localeId = 0 which is global (default/core)...
+if (countryCode == "") {
+	countryCode = "us"; // country code for default global is currently US
+}
+//console.log("====INSIDE locales-editions.jsp - getSelectedLocale() = " + getSelectedLocale() + " and getLocale() = " + getLocale() + " and countryCode = " + countryCode);
+//US social media accounts are the default if locale cannot be determined
+var twitterUrl = "https://twitter.com/pcworld";
+var linkedInUrl = "";
+var facebookUrl = "http://www.facebook.com/PCWorld";
+var youTubeUrl = "";
+var twitterHandle = "pcworld";
+
+if (countryCode === 'asean') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'middle-east') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'uk') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'in') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+	youTubeUrl = "";
+}
+if (countryCode === 'africa') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+	youTubeUrl = "";
+}
+if (countryCode === 'au') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'nz') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'nl') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+
+//US business unit is the default if locale cannot be determined
+var busUnit = "";
+//cookie policy page
+var localeEdition = "";
+var busUnitAddress = "";
+if (countryCode === 'asean') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'middle-east') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'uk') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'in') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'africa') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'au') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'nz') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'nl') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+</script>
+
+	
+
+	
+    <script src="/www/js/init_device.js"></script>    
+    
+    	
+    
+    
+   	
+   	
+		
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<script async="async" src="//cdn.adsafeprotected.com/iasPET.1.js"></script>
+
+
+
+
+	<script async src="//js-sec.indexww.com/ht/p/183980-214854100715128.js"></script>
+
+	
+<script type="text/javascript" src="/www/js/ads/gpt_includes.js?v=20200805114218"></script>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function refreshCountdown(slotName) {
+	IDG.GPT.log(slotName + " refresh countdown: " + IDG.GPT.refreshCountdown[slotName].timeRemaining);
+	IDG.GPT.refreshCountdown[slotName].timeRemaining -= 1;
+	
+	if (IDG.GPT.refreshCountdown[slotName].timeRemaining == 0) {
+		clearInterval(IDG.GPT.refreshCountdown[slotName].interval);
+		IDG.GPT.log(slotName + ' - time to refresh ad!');
+		
+		//perform ad refresh
+		IDG.GPT.refreshAd(slotName);		
+	}
+}
+
+var refreshInterval = 30;
+
+var testRefreshInterval = IDG.GPT.getUrlParameter("interval");
+if (typeof testRefreshInterval !== "undefined" && typeof parseInt(testRefreshInterval) === "number") {
+	refreshInterval = parseInt(testRefreshInterval);
+}
+
+IDG.GPT.log("Ad refreshing ON - every " + refreshInterval + " seconds");
+
+IDG.GPT.viewable = {};
+IDG.GPT.visibility = {};
+IDG.GPT.refreshCountdown = {};
+
+IDG.GPT.impressionViewable = function (){
+	googletag.pubads().addEventListener('impressionViewable', function (event) {
+		var currentSlot = event.slot.getSlotElementId();
+		if (currentSlot !== 'inread' && currentSlot !== 'gpt-skin' && currentSlot !== 'gpt-superstitial' && currentSlot !== 'gpt-overlay' ) {
+			IDG.GPT.viewable[currentSlot] = true;
+			IDG.GPT.log("The ad in " + currentSlot + " counts as a viewable impression.");
+			
+			IDG.GPT.refreshCountdown[currentSlot] = {};
+			//if slot visibility > 50, start countdown timer
+			if (IDG.GPT.visibility[currentSlot] >= 50) {
+				IDG.GPT.refreshCountdown[currentSlot].timeRemaining = refreshInterval;
+				IDG.GPT.refreshCountdown[currentSlot].interval = setInterval(function(){
+					refreshCountdown(currentSlot);
+				}, 1000)			
+				IDG.GPT.log('Impression viewable - starting countdown for ' + currentSlot);
+			}
+		}
+	});
+};
+
+
+
+IDG.GPT.visibilityChanged = function() {
+	googletag.pubads().addEventListener('slotVisibilityChanged', function (event) {
+		var currentSlot = event.slot.getSlotElementId();
+		var currentVisibility = event.inViewPercentage;
+		
+		if (currentSlot !== 'inread' && currentSlot !== 'gpt-skin' && currentSlot !== 'gpt-superstitial' && currentSlot !== 'gpt-overlay' ) {
+			if (typeof IDG.GPT.visibility[currentSlot] !== "undefined") {
+				//if this slot has a viewable impression...
+				if (typeof IDG.GPT.viewable[currentSlot] === "boolean" && IDG.GPT.viewable[currentSlot] == true) {
+					//if stored value < 50 and current value >=50, start countdown timer
+					if (IDG.GPT.visibility[currentSlot] < 50 && currentVisibility >= 50) {
+						IDG.GPT.refreshCountdown[currentSlot].timeRemaining = refreshInterval;
+						IDG.GPT.refreshCountdown[currentSlot].interval = setInterval(function(){
+							refreshCountdown(currentSlot);
+						}, 1000)
+						IDG.GPT.log('Came into view - restarting countdown for ' + currentSlot);
+					}
+					//else if stored value >= 50 and current value < 50, stop countdown timer (if exists)
+					else if (IDG.GPT.visibility[currentSlot] >= 50 && currentVisibility < 50) {
+						clearInterval(IDG.GPT.refreshCountdown[currentSlot].interval);
+						IDG.GPT.log('Went out of view - stopping countdown for ' + currentSlot);
+					}
+				}
+				//update visibility
+				IDG.GPT.visibility[currentSlot] = currentVisibility;
+			}
+			else {
+				//set initial visibility
+				IDG.GPT.visibility[currentSlot] = currentVisibility;
+			}
+			
+			IDG.GPT.log(currentSlot + " visibility: " + currentVisibility);
+		}
+	});
+};
+
+IDG.GPT.googleCommandPush(IDG.GPT.impressionViewable);
+IDG.GPT.googleCommandPush(IDG.GPT.visibilityChanged);
+
+
+
+</script>
+
+
+<script type="text/javascript">
+	if (adLayer==null || adLayer=='undefined') {
+		var adLayer=[];
+	}
+	
+		
+			adLayer["itemType"]="homepage";
+		
+		
+	
+</script>
+	
+<script type="text/javascript">
+	// Set up ad related variables
+	try {
+		IDG.GPT.unitName = "/8456/IDG.US_CSMB_PCWorld.com";
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+
+	try {
+		IDG.GPT.unitName = IDG.GPT.unitName + "/" + "homepage_door";
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+	// global variables
+	var global_ShowSuper = true;
+	var global_ShowHero = true;
+	
+	//XFP global targeting, more targeting thm_pre
+	var url = window.location.href;
+	if(url.indexOf("?")>1){
+		url=url.split('?')[0];
+	}
+	
+
+	try {
+		IDG.GPT.addTarget("URL", encodeURIComponent(url));
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+	try {IDG.GPT.addTarget("zone", 'index-home');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	
+	
+	
+	
+	
+	try {
+		if (null != IDG.GPT.getQsVal("env")) {		
+			IDG.GPT.addTarget("env", IDG.GPT.getQsVal("env").replace(/\W/g, "") );
+		}
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}	
+	
+	
+	
+		
+
+	try {
+		IDG.GPT.addTarget("page_type", '');
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//k/v for Inskin partner
+	var fn_pageskin = screen.width >= 1330 ? "true" : "false";
+	try {
+		IDG.GPT.addTarget("inskin_yes", fn_pageskin);
+        IDG.GPT.log("Inskin: added k/v pair inskin_yes : "+fn_pageskin);
+	} catch (exception) {
+		console.log("Inskin: google_dfp can't use IDG.GPT " + exception);
+	}
+</script>
+
+
+
+<script type="text/javascript">
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+	
+
+</script>
+  
+<script src="/www.idgcsmb/js/thm_pre.js?v=20200805114218"></script>
+
+
+	
+	
+		<script>
+		// IDGMPM-16419 - moved out of adsel queue for IDGMPM-16933
+		googletag.cmd.push(function() {
+		  if (googletag.pubads().getTargeting('permutive').length == 0) {
+			
+			//IDGMPM-18418 - capture paermutive key-values
+			window.headertag = window.headertag || {};
+			window.headertag.cmd = window.headertag.cmd || [];
+			window.headertag.cmd.push(function() {
+				try {
+					var segs = JSON.parse(localStorage._pdfps || '[]').slice(0,250);
+					window.headertag.setUserKeyValueData({ segments: {"permutive": segs} });                
+				} catch (e) {}
+			});
+			
+		    var kvs = localStorage.getItem('_pdfps');
+		    googletag.pubads().setTargeting('permutive', kvs ? JSON.parse(kvs) : []);
+		    console.log('ad targeting permutive kvs: ', kvs);
+		  }
+		});
+		</script>
+	
+
+<script type="text/javascript" src="/www/js/ads/gpt_starter.js?1234"></script>
+	<script>
+		loadGPT();
+	</script>
+
+	
+		<script type="text/javascript" src="/www/js/ads/ias_gpt_launcher.js?v=20200805114218"></script>
+	
+
+	
+
+
+
+		
+		
+	
+
+	
+
+    <link rel="canonical" href="https://www.pcworld.com" />
+	
+	
+	
+	
+	
+	<meta name="description" content="Covering everything from laptops to smartphones, from Windows 10 to productivity software, PCWorld delivers the information and expert advice you need to get the job done.   " />
+	
+	
+	
+		
+		
+		
+		 
+	
+	<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="http://www.pcworld.com/index.rss" />
+	
+
+	
+		<link rel="stylesheet" href="https://use.typekit.net/ehr0jod.css" />
+	
+	
+	<meta property="twitter:account_id" content="6070762" />
+	<meta property="fb:app_id" content="1542125639335283" />
+	
+		
+		
+		
+			
+			
+				
+			
+			
+			
+		
+		
+	<meta property="og:type" content="website">	
+	<meta property="og:url" content="https://www.pcworld.com">
+    <meta property="og:site_name" content="PCWorld">   
+    
+    
+    <meta property="og:image" content="https://csmb.staticworld.net/images/furniture/pcworld/NoPrimaryImage.png">
+    
+    
+    
+    
+    	<meta property="og:title" content="PCWorld - News, tips and reviews from the experts on PCs, Windows, and more"> 
+    
+    
+    <meta property="og:description" content="Covering everything from laptops to smartphones, from Windows 10 to productivity software, PCWorld delivers the information and expert advice you need to get the job done.   ">
+    
+    
+		<meta property="fb:pages" content="7352931005" />
+	
+
+	
+	
+	
+		<meta name="google-site-verification" content="FjWdymWSdutZJ-XIYfqJXlQZbLR7hMWmkwR5MQ0yqeY" />
+	
+	
+	
+		<meta name="msvalidate.01" content="04917178B598F0648B9BAD693FEC29A3" />
+	
+	
+	
+	
+	
+		<link id="mobile-size" rel="stylesheet" href="/www.idgcsmb/css/inline-header-mobile.css?v=20200805114218" />
+		<script>
+			if (window.matchMedia("(min-width: 768px)").matches) {
+				document.getElementById('mobile-size').insertAdjacentHTML('afterend', '<link id="desktop-size" rel="stylesheet" href="/www.idgcsmb/css/inline-header.css?v=20200805114218" />');
+			}
+		</script>
+		<link rel="stylesheet" href="/www.idgcsmb.pcw/css/inline-header.css?v=20200805114218" />
+	 
+	
+	
+	    
+	
+	<link rel="stylesheet" href="/www.idgcsmb/css/print.css" media="print" />
+	
+	<!-- this must be first -->
+	<link href="/www.idgcsmb/css/colorbox.css" rel="stylesheet" />
+	<!-- <link href="/www.idgcsmb/css/equalizer.css" rel="stylesheet" /> -->
+	<link href="/www.idgcsmb/css/global-layout.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb.pcw/css/global-layout.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb/css/global-colors.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb.pcw/css/global-colors.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb/css/global-typography.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb.pcw/css/global-typography.css?v=20200805114218" rel="stylesheet" />
+	
+	
+	
+	
+	
+	<link href="/www.idgcsmb/css/video.player.css?v=20200805114218" rel="stylesheet" media="all" />
+
+	
+	
+	
+		
+			
+			
+				<link href="/www.idgcsmb/css/carousel.css?v=20200805114218" rel="stylesheet" />
+			
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
+	<!-- this must be last -->
+	<link href="/www.idgcsmb/css/helpers.css" rel="stylesheet" />
+	
+	
+		<script>
+		try {
+			performance.mark("mark_head_css_done_blocking");
+		}
+		catch(e) {
+			console.log("Error saving performance mark -- this function may not be supported in this browser");
+		}
+		</script>
+	
+	<!--  fav and touch icons -->
+	<link rel="shortcut icon" href="/www.idgcsmb.pcw/favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://csmb.staticworld.net/images/furniture/pcworld/pcw-apple-touch-icon-precomposed-144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="129x129" href="https://csmb.staticworld.net/images/furniture/pcworld/pcw-apple-touch-icon-precomposed-129.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://csmb.staticworld.net/images/furniture/pcworld/pcw-apple-touch-icon-precomposed-114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://csmb.staticworld.net/images/furniture/pcworld/pcw-apple-touch-icon-precomposed-72.png" />
+	<link rel="apple-touch-icon" href="https://csmb.staticworld.net/images/furniture/pcworld/pcw-apple-touch-icon-precomposed.png" />
+	
+
+	
+		
+	
+	
+	
+	
+	<script type="text/javascript">
+	var _sf_async_config={};
+	_sf_async_config.uid = 29363;
+	
+	
+	
+		_sf_async_config.useCanonical = true;
+	
+	
+	
+		
+			
+		
+			
+		
+		
+		
+		
+	_sf_async_config.domain = "pcworld.com";
+	</script>
+	
+	
+	
+	
+	
+	<!-- <link href="/www.idgcsmb/webfonts/ss-social.css" rel="stylesheet" />
+	<link href="/www.idgcsmb/webfonts/ss-standard.css" rel="stylesheet" />  -->
+	<!--[if lte IE 8]>  
+		<link href="/www.idgcsmb/webfonts/ss-ie8.css" rel="stylesheet" />
+	<![endif]-->
+
+
+	
+	<!-- Use Twitter Summary Card with Large Image for articles and videos; summary otherwise -->
+	
+		
+		
+			<meta name="twitter:card" content="summary">
+		
+	
+	<meta property="twitter:description" content="Covering everything from laptops to smartphones, from Windows 10 to productivity software, PCWorld delivers the information and expert advice you need to get the job done.   ">
+	
+	
+		
+		
+			<meta name="twitter:site" content="@pcworld">
+			
+				
+				
+					<meta name="twitter:image" content="https://images.pcworld.com/images/pcworld_300.jpg">
+				
+						
+			
+				
+				
+					<meta name="twitter:title" content="PCWorld - News, tips and reviews from the experts on PCs, Windows, and more">
+				
+				
+			
+			
+				
+					<meta name="twitter:url" content="www.pcworld.com/">
+				
+				
+			
+		
+		
+		
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "WebSite",
+		"url": "https://www.pcworld.com/",
+		"potentialAction": {
+		"@type": "SearchAction",
+		"target": "https://www.pcworld.com/search?query={search_term}",
+		"query-input": "required name=search_term"
+		}
+	}
+</script>
+	
+	
+	
+	
+	<script src="/www/js/ads/ad.js"></script>
+	
+	<script>var oneRegPlacementID = "";</script>
+	
+	
+	
+	
+	
+		
+		
+		
+	
+	
+	
+		
+		
+		
+		
+		  
+		
+	
+	
+	
+	
+	
+	
+	
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		
+		
+	
+	
+	<script>
+	var supMontMods = false;
+	</script>
+	
+
+
+	
+	
+			
+			
+			
+			
+	
+	
+	
+	
+	
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+		
+		
+		
+			
+		
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+ 
+		 
+	 
+		<script>	
+		{	
+			let categorySlug = '';
+			
+			const stripOutIllegal = s => s.replace(/[~'"=!+#;^()<>&[]]/g,'');
+			
+			window.ntvConfig = window.ntvConfig || {} ;
+			window.ntvConfig.keyValues = window.ntvConfig.keyValues || {};
+			const segs = localStorage.getItem('_pnativo');
+			if (segs) {
+				window.ntvConfig.keyValues.permutive = JSON.parse(segs).join(",");
+			}
+			
+			const metaKeywordsTag = document.querySelector("meta[name='keywords']");
+			if ( metaKeywordsTag && (metaKeywordsTag.hasAttribute('content')) ) {
+				const kwds = metaKeywordsTag.content.split(',').filter(kw => kw.length <= 40);
+				window.ntvConfig.keyValues.contextual = stripOutIllegal(kwds.join(','));
+			}
+			[categorySlug].forEach(function(val) {
+				if (val.length !== 0) {
+					window.ntvConfig.keyValues.channel = stripOutIllegal(val);
+				}
+			});
+			if (typeof(window.ntvConfig.keyValues.channel) === "undefined") {
+				window.ntvConfig.keyValues.channel = "";
+			}
+		}
+		</script>
+	
+	 
+	 
+	
+		<script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+	
+	
+	
+	<script type="text/javascript">
+		var prodNames = '';
+		var prodManufacturers = '';
+		var prodCategories = '';
+		var prodVendors = '';
+	</script>
+		
+	
+	
+	<script>
+	var idg_uuid = $.cookie('idg_uuid') || "";
+	
+	//get edition from countryCode
+	var edition = '';
+	if (typeof countryCode !== 'undefined') {//should be defined in locales-editions.jsp if brand has editions
+		edition = countryCode;
+	}
+
+	var dlJobFunction = '';
+	var dlJobPosition = '';
+	var dlIndustry = '';
+	
+	var catIdList = '';
+	var goldenTaxList = '';
+	var primaryCatList = '';
+	
+	dataLayer.push({
+		'ancestorGoldenCategories': '',
+		'articleId': '',
+		'articleDisplayId':'',
+		'articleHasVideo':'',
+		'articleLocale': '',
+		'articleTitle': '',
+		'articleType': '',
+		'audience':'consumer',
+		'author':'',
+		'blogName':'',
+		'brandpost': 'false',
+		'categoryIdAll': (catIdList.length > 0 ? catIdList.split(',') : []),
+		'categoryIdList':catIdList,
+		'categoryIdPrimary': '',
+		'contentStrategy': '',
+		'contentType':'home page',
+		'datePublished':'',
+		'dateUpdated':'',
+		'daysSincePublished':'',
+		'daysSinceUpdated':'',
+		'displayType':'home page',
+		'edition':edition,
+		'environment':'production',
+		'ga_enabled':'true',
+		'gaTrackingId':'UA-739745-1',
+		'geolocEnabled':'true',
+		'goldenTaxArray': (goldenTaxList.length > 0 ? goldenTaxList.split(',') : []),
+		'goldenTaxonomyIdAll': ', ',
+		'goldenTaxonomyIdList': '',
+		'goldenTaxonomyIdPrimary': '',
+		'isBlog':'false',
+		'isInsiderContent':'',
+		'isICN': 'false',
+		'oneRegPlacementID':oneRegPlacementID,
+		'pageNumber':'',
+		'platform':'Web',
+		'podcastSponsored': 'false',
+		'primaryCatArray': (primaryCatList.length > 0 ? primaryCatList.split(',') : []),
+		'primaryCategory': '',
+		'primaryCategoryAll': ', ',
+		'primaryCategoryList': '',
+		'primaryAncestorCategoryList': '',
+		'prodCategories':prodCategories.slice('|', -1),
+		'prodManufacturers':prodManufacturers.slice('|', -1),
+		'prodNames':prodNames.slice('|', -1),
+		'prodVendors':prodVendors.slice('|', -1),
+		'property': 'pcworld',
+		'propertyCountry':'US',
+		'purchaseIntent':'',
+		'skimlinksId':'111346X1569483',
+		'source':'',
+		'sponsorName':'',
+		'suppressMonetization': supMontMods.toString(),
+		'tags': '',
+		'userId':idg_uuid,
+		'videoAutoplay':'false',
+		'youtubeId':''
+	});
+	</script>
+	 
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+<script>
+	var dataLayer = window.dataLayer = window.dataLayer || [];
+	var adBlockStatus = 'false';
+	
+	//look for variable set in ad.js
+	if (window.canRunAds === undefined) {
+		adBlockStatus = 'true';
+	} else {
+		adBlockStatus = 'false';
+	}
+	
+	dataLayer.push({
+		'adBlockStatus': adBlockStatus
+	});
+</script>
+
+
+
+
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?GTM-WR6LD2P"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WR6LD2P');</script>
+	<!-- End Google Tag Manager -->
+
+	
+		<script>
+			try {
+				performance.mark("mark_head_js_done_blocking");
+			}
+			catch(e) {
+				console.log("Error saving performance mark -- this function may not be supported in this browser");
+
+			}
+		</script>
+	
+	
+	
+	
+		<script>
+			function bindPerformanceMarks(){
+			//even though it's called slotRenderEnded, it's the first thing to happen -  corresponds to when we get a response back from DFP
+			googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+				var slotId = event.slot.getSlotElementId();
+				//console.log("slotId = "+slotId);
+								
+				if (slotId == 'gpt-superstitial' && !event.isEmpty) {//also ensure it's not an empty ad response
+					performance.mark("mark_welcome_render_begin");
+				}
+			});
+			googletag.pubads().addEventListener('slotOnload', function(event) {
+				var slotId = event.slot.getSlotElementId();
+				//console.log("slotId = "+slotId);
+								
+				if (slotId == 'gpt-superstitial') {
+					performance.mark("mark_welcome_render_end");
+				}
+			});
+			googletag.pubads().addEventListener('impressionViewable', function(event) {
+				var slotId = event.slot.getSlotElementId();
+				//console.log("slotId = "+slotId);
+								
+				if (slotId == 'gpt-superstitial') {
+					performance.mark("mark_welcome_impression_viewable");
+									
+				}
+			});
+				}
+				try {
+					IDG.GPT.googleCommandPush(bindPerformanceMarks);
+				}
+				catch(e){
+					console.log('error binding performance marks: ' + e);
+				}
+		</script>
+	
+	
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+	
+	
+		<script>
+			var numberFromDataLayer = function(property) {
+			  if (window.dataLayer && dataLayer[0] && typeof dataLayer[0][property] == "number") {
+			    return dataLayer[0][property];
+			  }
+			  return null;
+			};
+			
+			var stringFromDataLayer = function(property) {
+			  if (window.dataLayer && dataLayer[0] && typeof dataLayer[0][property] == "string") {
+			    return dataLayer[0][property];
+			  }
+			  return "";
+			};
+		</script>
+	
+	
+	
+	
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+<script>
+// IDGMPM-16419 - updated in IDGMPM-16933
+	!function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"f5b3be27-f789-4ef1-8867-37c67da5b361","84c7e805-5ce9-41f4-b988-3529488bab1c",{});
+	  permutive.addon('web', {
+	    page: {
+	      type: stringFromDataLayer('displayType'),
+	      language: 'en',
+	      tags: stringFromDataLayer('tags').split(","),
+	      audience: stringFromDataLayer('audience'),
+	      description: 'Covering everything from laptops to smartphones, from Windows 10 to productivity software, PCWorld delivers the information and expert advice you need to get the job done.   ',
+	      
+ 		  
+	      ads: {
+	        adblocker: (adBlockStatus == "true"), //detected further up the page
+	        enabled: true
+	      }	     
+	    }
+	  });
+
+	  dlJobPosition = dlJobPosition || null;
+	  dlIndustry = dlIndustry || null;
+
+	  if (dlJobPosition !== '' || dlIndustry !== '' || stringFromDataLayer('userId') !== '') {
+		  if (stringFromDataLayer('userId') !== '') {
+				var userData = {};
+
+				var hermesAttrs = {
+					"companySize" : "543ea0bd-604a-4011-99e7-806fc8979b5e",
+					"country" : "ea76d652-29bd-4a6c-ae50-a5d08ea28c5e",
+				};
+				var userKeys = Object.keys(hermesAttrs);
+
+				$.ajax({
+					type: "get",
+				    crossDomain: true,
+					url: "https://lqxgcyk808.execute-api.us-east-1.amazonaws.com/prod_h2/api/v1/profiles/" + idg_uuid,
+					dataType: "json",
+					data: {}, 
+					headers : {
+						"Content-Type": "application/x-www-form-urlencoded",
+						"x-api-key":"HLyMXLISSW7HAYGgbx2Vb1Gf1OLcGmMG5BcwZ4Vb"
+					}
+				}).done(function(responseData){ 
+					userKeys.forEach(function(key) {
+						if (typeof(responseData.attrs[hermesAttrs[key]].option_label) !== "undefined") { 
+							userData[key] = responseData.attrs[hermesAttrs[key]].option_label;
+						}
+						else { 
+							userData[key] = responseData.attrs[hermesAttrs[key]].value;
+						}
+					});
+
+					window.permutive.track('User', {
+					  companySize: userData['companySize'],
+					  country: userData['country'],
+					  id: (stringFromDataLayer('userId') !== "" ? stringFromDataLayer('userId') : null),
+					  jobIndustry: (dlIndustry !== "" ? dlIndustry : null),
+					  jobPosition: (dlJobPosition !== "" ? dlJobPosition : null),
+					  loggedIn: (stringFromDataLayer('insiderSignedIn') == 'true')
+					})
+					
+					
+				}).fail(function(data){
+					//console.log("Error retrieving data: " + data.responseJSON.error);
+				});  
+
+			}
+			else {
+				window.permutive.track('User', {
+				  companySize: null,
+				  country: null,
+				  id: (stringFromDataLayer('userId') !== "" ? stringFromDataLayer('userId') : null),
+				  jobIndustry: (dlIndustry !== "" ? dlIndustry : null),
+				  jobPosition: (dlJobPosition !== "" ? dlJobPosition : null),
+				  loggedIn: (stringFromDataLayer('insiderSignedIn') == 'true')
+				});
+			}
+	  }
+	
+	  //product js vars defined in document-head	  
+	  if (prodNames !== '' || prodManufacturers !== '' || prodCategories !== '' || prodVendors !== '') {
+		  window.permutive.track('Product', {
+			  names: stringFromDataLayer('prodNames').split("|"),
+			  categories: stringFromDataLayer('prodCategories').split("|"),
+			  manufacturers: stringFromDataLayer('prodManufacturers').split("|"),
+			  vendors: stringFromDataLayer('prodVendors').split("|")
+		});
+
+	  }
+		 
+
+</script>
+
+<script>
+	$.ajax({
+		url: "https://cdn.permutive.com/f5b3be27-f789-4ef1-8867-37c67da5b361-web.js",
+	  	dataType: "script",
+	  	cache: true, // default is false
+	  	async: true // default is true
+	});
+</script>
+	
+	
+	
+	
+	
+	
+	
+	
+</head>
+
+	<body id="homepage" class="home pcworld">
+		 
+		
+			<div id="skinAdTarget"></div>
+		
+		
+
+		
+
+
+
+
+
+
+
+
+
+
+
+		<div id="page-wrapper" class="page-wrapper">
+
+			
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+			
+		
+			
+			 
+				
+				
+				
+				
+				
+			
+			 
+			 
+			 
+			 
+			  
+			  
+			 
+			 
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+		
+		
+		
+		
+		
+		
+		
+			<div id="page-top">
+				<div class="page-top-inner" itemscope itemtype="http://schema.org/Organization">
+				<link itemprop="url" href="http://www.pcworld.com"> 
+					<div class="network-header">
+						<div class="network-header-inner">
+							<div id="network-tools">
+				
+								<div id="saved-comparisons"></div>				
+								<ul class="hmenu" id="heroLogin">				
+									<li class="subscribeHeader"><li class="subscribeHeader"><a href="https://simplecirc.com/subscribe/pcworld">Subscribe</a><div class="subscribe-hover" style="">
+				                        <div class="pointer">&#9650;</div>
+				                        <span>Learn more about PCWorld's Digital Editions</span>
+				                        <img alt="PCWorld Magazine Cover" src="//alt.idgesg.net/images/furniture/pcworld/footer-subscribe-mag-pcw.png">
+				                      </div></li>
+				                     	<li><a href="https://simplecirc.com/subscriber_login/pcworld">Manage Subscription</a></li>
+				                     
+									
+								</ul>
+							</div><!-- /#network-tools -->
+				
+							<div id="network-social">						
+								<a href="http://www.facebook.com/PCWorld" class="network-fb ss-icon ss-social-circle banner-social banner-fb" alt="Facebook" itemprop="sameAs" rel="nofollow">
+									&#xF610;
+								</a>
+								<a href="https://twitter.com/pcworld" class="network-tw ss-icon ss-social-circle banner-social banner-tw" alt="Twitter" itemprop="sameAs" rel="nofollow">
+									&#xF611;
+								</a>
+								
+								<a href="https://www.youtube.com/user/PCWorldVideos" class="network-youtube ss-icon ss-social-circle banner-social banner-youtube" alt="YouTube">
+									&#xF630;
+								</a>
+							
+							
+							
+								  
+									
+
+
+
+
+
+
+
+
+
+
+<div class="gcse-searchbox" >
+    <script>
+		(function() {
+			var cx = '011881588825642368632:orxexosxxku';
+			var gcse = document.createElement('script');
+			gcse.type = 'text/javascript';
+			gcse.async = true;
+			gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(gcse, s);
+		})();
+	</script>
+	<gcse:searchbox-only resultsUrl="/search"></gcse:searchbox-only>
+	<script>
+		$(window).load(function(){
+			const hdrSearchBox = document.querySelector(".gcse-searchbox input.gsc-input");
+			hdrSearchBox.setAttribute("placeholder", "Start Searching");
+		});
+	</script>
+</div>
+								
+								
+							
+								
+							</div><!-- /#network-social -->									
+						</div>
+					</div><!-- /.network-header -->
+			
+			
+					<header id="banner">
+						<a id="mobile-offscreen-toggle" class="ss-standard ss-rows" href="javascript://"></a>
+						<div id="logo">
+							<a href="/" class="ir banner-logo" id="logoImage">Home</a>	
+						</div>
+						<div id="mobile-search-toggle" class="ss-standard ss-search"></div>
+					</header>
+			
+			
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+	const currentYear = new Date().getFullYear();
+	const blackFridayCoupons = '<li><a href="https://www.pcworld.com/couponcodes/campaigns/black-friday">Black Friday '+currentYear+' Coupons</a></li>';
+	const cyberMondayCoupons = '<li><a href="https://www.pcworld.com/couponcodes/campaigns/cyber-monday">Cyber Monday '+currentYear+' Coupons</a></li>';	
+	let couponLinks = '<li><a href="https://www.pcworld.com/couponcodes">All Coupon Codes</a></li>';
+	
+	fetch("/saving-united/top-shops")
+	.then(response => response.text())
+	.then(text => {
+		const parser = new DOMParser();
+	  	const htmlDocument = parser.parseFromString(text, "text/html");
+	  	const section = htmlDocument.documentElement.querySelector("body");
+	  	const shopsObj = JSON.parse(section.textContent);
+	  
+	  	for (let i = 0; i < shopsObj.length; i++) {
+			let anchorText = shopsObj[i].anchor_text;
+			let anchorTextURL = shopsObj[i].url;
+			couponLinks = couponLinks + "<li><a href="+anchorTextURL+">"+anchorText+"</a></li>";
+	  	}
+	  
+	  	couponLinks = couponLinks + blackFridayCoupons + cyberMondayCoupons;
+	  	document.getElementById("couponChildren").innerHTML = couponLinks;
+	}).catch(err => console.error(err));
+  </script>
+  <style>
+  @media only screen and (max-width: 767px) and (min-width: 320px) {
+  	  #page-top.open-nav {
+  	    position: relative;
+  	  }
+	  .pcworld #panel-nav li.dealsNav ul.dealsList .couponCodes .couponChildLinks li {
+	  	display: table;
+	  	padding: 2px 0 !important;
+	  }
+	  .pcworld #panel-nav li.dealsNav ul.dealsList li {
+	  	display: table;
+    	padding: 10px 0 0px 3px !important;
+	  }
+  }
+  </style>
+
+
+
+
+<div id="main-nav">
+	<div class="container clearfix">
+		<ul class="fmenu" id="panel-nav">
+			<li class="newsNav"><a href="/news/" id="whatsHotNav">News</a></li>
+			<li class="reviewsNav"><a href="/reviews/" id="reviewsNav">Reviews</a></li>
+			<li class="howtoNav"><a href="/howto/" id="howtoNav">How-To</a></li>
+			<li class="videoNav"><a href="/video/" id="videoNav">Video</a></li>
+			
+			
+				<li class="dealsNav"><a id="dealsNav">Deals <span class="ss-dropdown right"></span></a> 
+					<ul class="dealsList">
+						<li><a href="/deals" id="dealsNav">All Deals</a></li>
+						<li class="couponCodes"><a class="couponCodeMob"><span>Coupon Codes</span><span class="rightArrow">&raquo;</span> </a>
+							<ul id="couponChildren" class="couponChildLinks">						
+							
+							</ul>
+						</li>
+						<li><a href="https://shop.pcworld.com">Shop</a></li>
+						<li><a href="https://software.pcworld.com">Software Store</a></li>
+					</ul>
+				</li>
+			
+
+		</ul>
+
+		<ul class="fmenu" id="site-nav">
+			
+				<li><a href="/category/business/">Business</a>
+					
+				</li>
+			
+				<li><a href="/category/laptop-computers/">Laptops</a>
+					
+				</li>
+			
+				<li><a href="/category/smartphones/">Smartphones</a>
+					
+				</li>
+			
+				<li><a href="/category/hardware/">Hardware</a>
+					
+				</li>
+			
+				<li><a href="/category/security/">Security</a>
+					
+				</li>
+			
+				<li><a href="/category/software/">Software</a>
+					
+				</li>
+			
+				<li><a href="/category/gadgets/">Gadgets</a>
+					
+				</li>
+			
+			<li class="displayMobileOnly"><a href="/magazines">Subscribe</a></li>
+			
+		</ul>
+		
+			<div id="extra-nav-toggle"><a href="#extra-nav" class="ss-dropdown"></a></div>
+			
+			<div id="extra-nav">
+				<ul>
+					
+						<li><a href="/resources/">Resources</a></li>
+					
+						<li><a href="/category/computers/">PCs</a></li>
+					
+						<li><a href="/category/smartphones/">Smartphones</a></li>
+					
+						<li><a href="/category/printers/">Printers</a></li>
+					
+						<li><a href="/category/ultrabooks/">Ultrabooks</a></li>
+					
+					<li><a href="/blogs">Blogs</a></li>
+					<li><a href="/sponsors">Sponsorships</a></li>
+				</ul>
+				<ul>
+					
+						<li><a href="/category/antivirus-software/">Viruses</a></li>
+					
+						<li><a href="/category/cameras/">Cameras</a></li>
+					
+						<li><a href="/category/components/">Components</a></li>
+					
+						<li><a href="/category/computers-accessories/">Computer Accessories</a></li>
+					
+						<li><a href="/category/consumer-advice/">Consumer Advice</a></li>
+					
+						<li><a href="/category/digital-assistants/">Digital Assistants</a></li>
+					
+						<li><a href="/category/displays/">Displays</a></li>
+					
+						<li><a href="/category/e-readers/">E-readers</a></li>
+					
+				</ul>
+				<ul>
+					
+						<li><a href="/category/components-graphics/">Graphics Cards</a></li>
+					
+						<li><a href="/category/storage-drives/">Hard Drives</a></li>
+					
+						<li><a href="/category/home-theater/">Home Theater</a></li>
+					
+						<li><a href="/category/input-devices/">Input Devices</a></li>
+					
+						<li><a href="/category/input-keyboards/">Keyboards</a></li>
+					
+						<li><a href="/category/laptop-accessories/">Laptop Accessories</a></li>
+					
+						<li><a href="/category/mobile/">Mobile</a></li>
+					
+						<li><a href="/category/networking/">Networking</a></li>
+					
+				</ul>
+				<ul>
+					
+						<li><a href="/category/operating-systems/">Operating Systems</a></li>
+					
+						<li><a href="/category/storage-optical/">Optical Drives</a></li>
+					
+						<li><a href="/category/cpu-processors/">CPUs</a></li>
+					
+						<li><a href="/category/servers/">Servers</a></li>
+					
+						<li><a href="/category/smartwatches/">Smartwatches</a></li>
+					
+						<li><a href="/category/streaming-services/">Streaming Services</a></li>
+					
+						<li><a href="/category/storage/">Storage</a></li>
+					
+						<li><a href="/category/tablets/">Tablets</a></li>
+					
+						<li><a href="/category/windows/">Windows</a></li>
+					
+				</ul>
+			</div>
+		
+	</div>
+</div>	<!--/#main-nav-->
+
+
+
+
+
+
+
+
+
+		
+		
+				</div> 
+			</div> 
+		
+		
+		
+		
+		<!-- Events Header -->	
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+				
+		
+		
+		<div id="homepageLeaderboardWrapper">
+			<div id="homepageLeaderboardInner">
+				
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-leaderboard" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-leaderboard", "true");
+	    			$('#gpt-leaderboard').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-leaderboard [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	 
+			</div>
+		</div>
+		
+		
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.home-hero{height:324px;}
+.home-hero-split .home-hero-one .home-hero-image { background:url(https://images.idgesg.net/images/article/2020/07/hp_envy_x360_1-100851434-hero-2up.jpg) 0 0 no-repeat;background-size:100%; }
+.home-hero-split .home-hero-two .home-hero-image { background:url(https://images.idgesg.net/images/article/2017/06/adobe_photoshop_logo-resized-100726692-hero-2up.jpg) 0 0 no-repeat;background-size:100%; }
+.home-hero-one, .home-hero-two { position:relative; }
+
+.home-hero-split .home-hero-text h2{ margin-top:0; margin-bottom:0.2;}
+
+.home-hero-split .home-hero-one .home-hero-text{left:212px;top:16px;
+	width:275px; position:absolute;}
+
+.home-hero-split .home-hero-two .home-hero-text{left:27px;top:197px;
+	width:263px; position:absolute;}
+
+.home-hero-text.lightTheme { background: url(//csmb.staticworld.net/images/furniture/techhive/white-background70.png) 0 0 repeat;padding:5px 15px 6px; }
+.home-hero-text.darkTheme { background: url(//csmb.staticworld.net/images/furniture/techhive/black-background70.png) 0 0 repeat;padding:5px 15px 6px; }
+	
+	
+.home-hero-split .home-hero-one .home-hero-text a h2{color:#FFFFFF;font-size:33px}
+.home-hero-split .home-hero-two .home-hero-text a h2{color:#FFFFFF;font-size:35px}
+.home-hero-split .home-hero-one .home-hero-text a h2, .home-hero-split .home-hero-two .home-hero-text a h2{ line-height:1.2}
+.home-hero-split .home-hero-one .home-hero-text a h2:hover, .home-hero-split .home-hero-two .home-hero-text a h2:hover{ opacity:.8; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+
+
+.home-hero-split .home-hero-one .home-hero-text p{color:#000000;}
+.home-hero-split .home-hero-two .home-hero-text p{color:#FFFFFF;}
+
+@media only screen and (min-width:581px) and (max-width:768px) {	
+	.home-hero-image img { display:block; width:100%; }	
+  	.home-hero { background:#f7f7f7; height:auto; display:block; position:relative; width:100%; overflow:hidden; }  	
+  	.home-hero-split .home-hero-one { float:left; height: auto; width: 50%; }
+  	.home-hero-split .home-hero-two{ float:left; height: auto; width: 50%; }
+	.home-hero-split .home-hero-one .home-hero-image, .home-hero-split .home-hero-two .home-hero-image  { background:none; height:auto; max-height:194px; width:100%; display:block; clear:both; overflow:hidden; position:relative; }
+	.home-hero-split .home-hero-one .home-hero-text, .home-hero-split .home-hero-two .home-hero-text{left:0px; width:100%; background-color:#494949; padding:5px 15px 6px; top:0; bottom:0; margin-top:0; display:block; clear:both; position:relative; overflow:hidden; text-align:left;  }
+	.home-hero-split .home-hero-one .home-hero-text a h2, .home-hero-split .home-hero-two .home-hero-text a h2{color:#fff;font-size:20px; text-align:left; line-height:1;}
+	.home-hero-split .home-hero-one .home-hero-text p, .home-hero-split .home-hero-two .home-hero-text p{ display:none; }	
+	.home-hero-split .home-hero-text h2{ line-height:1.25;}
+}
+@media only screen and (min-width:601px) and (max-width:768px) {	
+	.home-hero-split .home-hero-one .home-hero-image, .home-hero-split .home-hero-two .home-hero-image  { max-height:250px;}
+
+}
+
+@media only screen and (min-width:1px) and (max-width:580px) {
+	.home-hero-two{ display:none;}	
+	.home-hero-image img { display:block; width:100%; }	
+  	.home-hero { background:#f7f7f7; height:auto; display:block; position:relative; width:100%; }  	
+  	.home-hero-split .home-hero-one, .home-hero-split .home-hero-two { float:none; height: auto; width: 100%; }
+	.home-hero-split .home-hero-one .home-hero-image, .home-hero-split .home-hero-two .home-hero-image { background:none; height:auto; width:100%; display:block; clear:both; overflow:hidden; position:relative; }
+	.home-hero-split .home-hero-one .home-hero-text, .home-hero-split .home-hero-two .home-hero-text{left:0px; width:100%; background-color:#494949; padding:5px 15px 6px; top:0; bottom:0; margin-top:0; display:block; clear:both; position:relative; overflow:hidden; text-align:left;  }
+	.home-hero-split .home-hero-one .home-hero-text  a h2, .home-hero-split .home-hero-two .home-hero-text  a h2{color:#fff;font-size:22px; text-align:left;}	
+	.home-hero-split .home-hero-text h2{ line-height:1.30;}
+	.home-hero-inner{position:relative;}
+	.dots{
+	position:absolute;
+	top:20px;
+	right:20px;
+	font-size:10px;
+	opacity:.8;
+	background: url(//csmb.staticworld.net/images/furniture/techhive/black-background70.png) 0 0 repeat;
+	border-radius:7px;
+	padding:6px 4px 4px 8px;
+	}
+	.dots .ss-record{
+	display:inline;
+	margin-right:5px;
+	color:#333;
+	}
+	.dots .ss-record:before{
+	font-size:10px;
+	}	
+	.dots .ss-record.dotone{
+	color:#fff;
+	}
+}
+
+@media only screen and (min-width:769px) {
+	.home-hero-image img { display:none; }
+}
+
+
+</style>
+
+<div class="home-hero home-hero-split">
+	<div class="home-hero-inner">
+		<div class="home-hero-one">
+			<a href="/article/3566275/hp-envy-x360-13-review-with-ryzen-4000.html"><div class="home-hero-image"><img src="https://images.idgesg.net/images/article/2020/07/hp_envy_x360_1-100851434-large.jpg" /></div></a>
+			<div class="home-hero-text ">
+				<a href="/article/3566275/hp-envy-x360-13-review-with-ryzen-4000.html"><h2>HP Envy x360 13: Nice laptop if you can get it</h2></a>
+				<p></p>
+			</div>
+		</div>
+		<div class="home-hero-two">
+			<a href="/article/3569134/how-to-use-photoshop-blur-filters.html"><div class="home-hero-image"><img src="https://images.idgesg.net/images/article/2017/06/adobe_photoshop_logo-resized-100726692-large.jpg" /></div></a>
+			<div class="home-hero-text ">
+				<a href="/article/3569134/how-to-use-photoshop-blur-filters.html"><h2>How to use Photoshop Blur filters</h2></a>
+				<p></p>
+			</div>
+		</div>
+	</div><!--/home-hero-inner-->
+</div><!--/home-hero-->
+
+
+
+
+
+
+
+			
+		
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.home-features-wrap .iPadOverlay{
+	background:url(//csmb.staticworld.net/images/furniture/techhive/iPadScrollPrompt.png) 50% 50% no-repeat;
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	z-index:5000;
+	display:none;
+}
+
+@media only screen and (min-width:768px) and (max-width:768px) {
+.home-features-wrap .iPadOverlay{ width:420px; }
+}
+@media only screen and (min-width:1024px) and (max-width:1024px) {
+	.home-features-wrap .iPadOverlay{ width:630px; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi){
+.home-features-wrap .iPadOverlay{ background-size:200px 75px; }
+}
+</style>
+
+
+
+
+
+<div class="home-features-wrap">
+	<div class="home-features clearfix">
+		<!-- <div class="features-fade left"></div> -->
+		<!-- <a class="prev browse left"></a> -->
+			<div class="home-features-carousel">
+				<!-- <div class="iPadOverlay"></div> -->
+				<!-- removed .items wrapper div since it interfered with slick scrolling functionality -->
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3569182/whats-wrong-with-intel-and-how-to-fix-it-former-principal-engineer-unloads.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100811981 " src="https://images.idgesg.net/images/article/2019/09/intel-logo-mwc-2017-100811981-medium.3x2.jpg" alt="intel logo mwc 2017" /></div>
+											<p>What's wrong with Intel, and how to fix it: Former principal engineer unloads</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3569356/samsungs-incredibly-powerful-galaxy-note-20-ultra-doesnt-need-to-exist.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100853664 " src="https://images.idgesg.net/images/article/2020/08/samsung-note-20-angles-100853664-medium.3x2.jpg" alt="samsung note 20 angles" /></div>
+											<p>Samsung's incredibly powerful Galaxy Note 20 Ultra doesn't need to exist</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3568170/hps-pc-chief-explains-why-sustainable-pcs-matter-in-a-pandemic.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100774742 " src="https://images.idgesg.net/images/article/2018/10/hp-spectre-folio-open-100774742-medium.3x2.jpg" alt="hp spectre folio open" /></div>
+											<p>HP's PC chief explains why sustainable PCs matter in a pandemic</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3273404/best-cpus-for-gaming.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100758206 " src="https://images.idgesg.net/images/article/2018/05/cpu-hub-100758206-medium.3x2.jpg" alt="cpu hub" /></div>
+											<p>The best CPUs for gaming: Core i9-10850K and Ryzen 5 3600 price cuts shake things up</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3568643/annoying-android-problems-bluetooth-google-photos-brightness-autocorrect.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100853034 " src="https://images.idgesg.net/images/article/2020/07/android-fix-main-100853034-medium.3x2.jpg" alt="android fix main" /></div>
+											<p>How to remedy these five annoying Android issues that a restart won't cure</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3568359/windows-10-at-5-years-how-it-transformed-the-pc.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100853026 " src="https://images.idgesg.net/images/article/2020/07/microsoft-surface-studio-primary-100853026-medium.3x2.jpg" alt="microsoft surface studio primary" /></div>
+											<p>Windows 10 at 5 years: How it transformed the PC</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3563288/adata-falcon-nvme-ssd-fast-reader-so-so-writer-great-value.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100853068 " src="https://images.idgesg.net/images/article/2020/07/adata-falcon-nvme-ssd-primary-100853068-medium.3x2.jpg" alt="adata falcon nvme ssd primary" /></div>
+											<p>Adata Falcon NVMe SSD: Fast reader, so-so writer, great value</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3568262/top-intel-exec-leaves-as-company-announces-major-reorg-following-disastrous-7nm-delay.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100601473 " src="https://images.techhive.com/images/idgnsImport/2015/08/id-2958088-150605-intel-logo-computex-2-100601473-medium.3x2.jpg" alt="Intel logo" /></div>
+											<p>Top Intel exec leaves as company announces major reorg following disastrous 7nm...</p>
+									</div>
+								</a>
+							</div>
+						
+					
+						
+							
+							<div class="home-feature">
+								<a href="/article/3568181/snapdragon-765g-benchmarks-performance-865-866-galaxy-s20-pixel-4-lg-velvet.html">										
+									<div class="feature-inner">	
+										<div class="imageContainer295x197">
+										
+										<img  class="medium.3x2Image  imgId100852714 " src="https://images.idgesg.net/images/article/2020/07/snapdragon-765-vs-865-100852714-medium.3x2.jpg" alt="snapdragon 765 vs 865" /></div>
+											<p>Tested: Android's newest chip shows we probably don't need premium phones anymore</p>
+									</div>
+								</a>
+							</div>
+						
+					
+				
+			</div><!--inner//scrollable-->
+		<!--  <div class="features-fade right"></div> -->
+		<!-- <a class="next browse right" style="z-index:10;"></a> -->
+	
+	
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-showcase" class="home-features-ad ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-showcase", "true");
+	    			$('#gpt-showcase').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-showcase [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+	
+	</div><!--slider-->
+	
+</div> <!-- end .home-features-wrap -->
+
+
+
+
+
+		
+		<script>
+		$(document).ready(function(){
+			$('.searchbox-input-class').each(function(){
+			    $(this).change(function(){
+			    	var qStr=$(this).val();
+			    	if($(this).val().indexOf('@')!=-1){
+			    		qStr=qStr.replace(/@/g,' ');
+			    		$(this).val(qStr);
+			    	}
+			    });
+			});
+		});
+		</script>
+	
+
+
+			<div class="container clearfix" id="main-content">
+
+				
+					
+					
+						
+
+
+
+
+
+
+
+
+
+
+						
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-leaderboardmobile" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-leaderboardmobile", "true");
+	    			$('#gpt-leaderboardmobile').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-leaderboardmobile [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<link href="/www/css/homepage-video.css?v=20200805114218" rel="stylesheet" />
+	<link href="/www.idgcsmb.pcw/css/homepage-video.css?v=20200805114218" rel="stylesheet" />
+
+
+<div class="video-module" id="homepage-video-module">
+	<div class="module-header">
+		<h3>Latest Video</h3>
+		<div class="all-videos"><a href="/video/">See All Video</a></div>
+	</div><!-- end .module-header -->
+	<div class="video-module-lead">
+		<div class="title-wrap">
+			<a  href="/video/104639/pc-hardware-hall-of-fame-2020-debate-and-inductees-the-full-nerd-ep-147">PC Hardware Hall of Fame - 2020 debate and inductees | The Full Nerd ep. 147</a>
+			<div class="title-rule"></div>
+		</div>
+		<img  class="poster-wide-largeImage  imgId100853780 " src="https://images.idgesg.net/images/article/2020/08/tfn20_147_tfnep147-100853780-poster-wide-large.jpg" alt="The Full Nerd" />
+		
+	</div>
+	<div class="video-module-carousel">
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104221/real-world-egpu-gaming-benchmarks-in-2020">
+						<img  class="poster-wide-smallImage  imgId100852029 " src="https://images.idgesg.net/images/article/2020/07/pho20_109_asusxgstationpro_v3-100852029-poster-wide-small.jpg" alt="Asus XG Station Pro" />
+					</a>
+				</div>
+				
+				<a  href="/video/104221/real-world-egpu-gaming-benchmarks-in-2020">Real-world eGPU gaming benchmarks in 2020</a>
+			</div>
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104479/sapphire-technologies-talks-all-things-gpus-and-pc-gaming-the-full-nerd-special-edition">
+						<img  class="poster-wide-smallImage  imgId100853056 " src="https://images.idgesg.net/images/article/2020/07/tfn20_se_tfnsesapphire-100853056-poster-wide-small.jpg" alt="The Full Nerd" />
+					</a>
+				</div>
+				
+				<a  href="/video/104479/sapphire-technologies-talks-all-things-gpus-and-pc-gaming-the-full-nerd-special-edition">Sapphire Technologies talks all things GPUs and PC gaming | The Full Nerd special edition</a>
+			</div>
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104259/silverstone-lucid-ld03-af-teardown">
+						<img  class="poster-wide-smallImage  imgId100851464 " src="https://images.idgesg.net/images/article/2020/07/pub20_049_silverstoneld03-af_v2-100851464-poster-wide-small.jpg" alt="pub20 049 silverstoneld03 af v2" />
+					</a>
+				</div>
+				
+				<a  href="/video/104259/silverstone-lucid-ld03-af-teardown">SilverStone Lucid LD03-AF teardown</a>
+			</div>
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104179/heat-pipes-vs-thermal-chambers-in-laptops-which-is-better-ask-a-pc-expert-part-3">
+						<img  class="poster-wide-smallImage  imgId100850767 " src="https://images.idgesg.net/images/article/2020/07/pin20_016_dellthermalengineer_part3-100850767-poster-wide-small.jpg" alt="Dell Thermal Engineer interview" />
+					</a>
+				</div>
+				
+				<a  href="/video/104179/heat-pipes-vs-thermal-chambers-in-laptops-which-is-better-ask-a-pc-expert-part-3">Heat pipes vs thermal chambers in laptops, which is better? | Ask a PC expert - Part 3</a>
+			</div>
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104106/will-thin-laptops-ever-perform-as-well-as-a-thick-laptop-ask-a-pc-expert-part-5">
+						<img  class="poster-wide-smallImage  imgId100850770 " src="https://images.idgesg.net/images/article/2020/07/pin20_016_dellthermalengineer_part5-100850770-poster-wide-small.jpg" alt="Dell Thermal Engineer interview" />
+					</a>
+				</div>
+				
+				<a  href="/video/104106/will-thin-laptops-ever-perform-as-well-as-a-thick-laptop-ask-a-pc-expert-part-5">Will thin laptops ever perform as well as a thick laptop? | Ask a PC expert - Part 5</a>
+			</div>
+		
+			<div class="item">
+				<div class="img-wrap">
+					<a  href="/video/104105/should-you-re-paste-a-laptop-cpu-is-liquid-metal-better-ask-a-pc-expert-part-4">
+						<img  class="poster-wide-smallImage  imgId100850769 " src="https://images.idgesg.net/images/article/2020/07/pin20_016_dellthermalengineer_part4-100850769-poster-wide-small.jpg" alt="Dell Thermal Engineer interview" />
+					</a>
+				</div>
+				
+				<a  href="/video/104105/should-you-re-paste-a-laptop-cpu-is-liquid-metal-better-ask-a-pc-expert-part-4">Should you re-paste a laptop CPU? Is liquid metal better? | Ask a PC expert - Part 4</a>
+			</div>
+		
+	</div>
+</div><!--  end .video-module -->
+
+<!--  interscroller on CSMB sites only -->
+ 
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="interscroller" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("interscroller", "true");
+	    			$('#interscroller').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: interscroller [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+
+
+
+
+	<script>
+		// check to see if the slick function already exists on the page
+		if (typeof($.fn.slick) != 'function') {
+			// if not, call in the slick plugin, then call the carousel initialization as the callback function after the plugin loads
+			$.getScript("/www/js/utils/slick/slick.min.js", slickVideoInit)
+		} else {
+			// otherwise, just initialize the carousel
+			slickVideoInit();
+		}
+		
+		function slickVideoInit() {
+			$('.video-module-carousel').slick({
+				infinite: true,
+				slidesToShow: 3,
+				slidesToScroll: 3,
+				
+				responsive: [
+					{
+						breakpoint: 768,
+						settings: "unslick"
+					}
+				]
+		
+			});
+		}
+	</script>
+
+
+	
+
+	
+	
+			
+	
+
+<div id="main" role="main">
+	<div id="home-main-primary">
+		<h2>Latest Stories</h2>
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s2">
+		
+		<a  href="/article/3570296/samsung-galaxy-note-20-usb-c-wired-earbuds-how-to-get-for-free.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853985 " src="https://images.idgesg.net/images/article/2020/08/note-20-usb-c-earbuds-100853985-medium.jpg" alt="note 20 usb c earbuds" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T09:03-0700" content="2020-08-10T09:03-0700">Aug 10, 2020 9:03 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Michael-Simon/"><span itemprop="name">Michael Simon</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570296/samsung-galaxy-note-20-usb-c-wired-earbuds-how-to-get-for-free.html">
+				They're not in the box but Samsung is still offering free earbuds with the Galaxy Note 20
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Samsung has decided to dump the wired earbuds from the Galaxy Note 20 box, but you can still get a pair for free.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s2">
+		
+		<a  href="/article/3570221/samsung-takes-pressure-off-apple-by-dumping-the-galaxy-note-20-earbuds.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														 bug updated
+													">
+			
+			<img  class="mediumImage  imgId100853975 " src="https://images.idgesg.net/images/article/2020/08/note-20-headphones-100853975-medium.jpg" alt="note 20 headphones" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+				<span  class="eyebrow bug updated">updated</span> 
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T08:29-0700" content="2020-08-10T08:29-0700">Aug 10, 2020 8:29 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Michael-Simon/"><span itemprop="name">Michael Simon</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570221/samsung-takes-pressure-off-apple-by-dumping-the-galaxy-note-20-earbuds.html">
+				Samsung takes pressure off Apple by dumping the Galaxy Note 20 earbuds
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Samsung has removed the AKG headphones from the Galaxy Note 20 and Note 20 Ultra box—and now that Apple rumor doesn't seem so crazy.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s2">
+		
+		<a  href="/article/3570770/the-jabra-elite-75t-true-wireless-earphones-just-hit-an-all-time-low.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853980 " src="https://images.idgesg.net/images/article/2020/08/jabraelite75t-100853980-medium.jpg" alt="jabraelite75t" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T07:54-0700" content="2020-08-10T07:54-0700">Aug 10, 2020 7:54 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Ian-Paul/"><span itemprop="name">Ian Paul</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570770/the-jabra-elite-75t-true-wireless-earphones-just-hit-an-all-time-low.html">
+				The Jabra Elite 75t true wireless earphones just hit an all-time low
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Amazon is selling the Jabra Elite 75t for $150.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s2">
+		
+		<a  href="/article/3570153/back-to-school-deal-amazon-slashes-the-prices-of-fire-hd-8-and-10-tablets.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100852198 " src="https://images.idgesg.net/images/article/2020/07/firehd10-100852198-medium.jpg" alt="firehd10" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T07:20-0700" content="2020-08-10T07:20-0700">Aug 10, 2020 7:20 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Ian-Paul/"><span itemprop="name">Ian Paul</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570153/back-to-school-deal-amazon-slashes-the-prices-of-fire-hd-8-and-10-tablets.html">
+				Back-to-School deal: Amazon slashes the prices of Fire HD 8 and 10 tablets
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Amazon is selling the Fire HD 8 for $60 and the Fire HD 10 for $100.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c4132 s2">
+		
+		<a  href="/article/3566275/hp-envy-x360-13-with-ryzen-4000-review.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100851434 " src="https://images.idgesg.net/images/article/2020/07/hp_envy_x360_1-100851434-medium.jpg" alt="hp envy x360 1" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T06:45-0700" content="2020-08-10T06:45-0700">Aug 10, 2020 6:45 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Gordon-Mah-Ung/"><span itemprop="name">Gordon Mah Ung</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3566275/hp-envy-x360-13-with-ryzen-4000-review.html">
+				HP Envy x360 13: An affordable laptop with Ryzen 4000 and other perks
+				</a>
+			</p>
+			<p class="crawl-summary">
+				With its Ryzen 5 4500U, the HP Envy x360 13 gives you premium performance without the premium pricing
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			    
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-crawl" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-crawl", "true");
+	    			$('#gpt-crawl').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-crawl [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	 
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3029 s2">
+		
+		<a  href="/article/3569134/how-to-use-photoshop-blur-filters.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100726692 " src="https://images.idgesg.net/images/article/2017/06/adobe_photoshop_logo-resized-100726692-medium.jpg" alt="adobe photoshop logo resized" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T03:30-0700" content="2020-08-10T03:30-0700">Aug 10, 2020 3:30 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/JD-Sartain/"><span itemprop="name">JD Sartain</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3569134/how-to-use-photoshop-blur-filters.html">
+				Photoshop Blur filters: What they are and how to use them
+				</a>
+			</p>
+			<p class="crawl-summary">
+				What do they do, how do they work, & what are they used for?
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3018 s7 sistersite">
+		
+		<a  href="https://www.techhive.com/article/3570409/sony-ht-g700-soundbar-review.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853789 " src="https://images.idgesg.net/images/article/2020/08/sony-ht-g700-main-100853789-medium.jpg" alt="sony ht g700 main" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-10T03:00-0700" content="2020-08-10T03:00-0700">Aug 10, 2020 3:00 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Ben-Patterson/"><span itemprop="name">Ben Patterson</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="https://www.techhive.com/article/3570409/sony-ht-g700-soundbar-review.html">
+				Sony HT-G700 review: This Atmos- and DTS:X-enabled soundbar boasts a trifecta of virtual 3D modes, but no Wi-Fi
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Its arsenal of virtual 3D modes is impressive, but without Wi-Fi, the HT-G700 is missing a bevy of key features given its price tag.
+			</p>
+					
+			<p class="offsite">
+				<span class="ss-right right"><a  href="https://www.techhive.com/article/3570409/sony-ht-g700-soundbar-review.html">on techhive.com</a></span>
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s19 sistersite">
+		
+		<a  href="https://www.macworld.com/article/3570168/samsung-galaxy-note-20-vs-iphone-11-pro-this-1-000-spec-showdown-has-a-clear-winner.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853760 " src="https://images.idgesg.net/images/article/2020/08/iphone-11-pro-note-20-100853760-medium.jpg" alt="iphone 11 pro note 20" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-09T14:24-0700" content="2020-08-09T14:24-0700">Aug 9, 2020 2:24 PM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Michael-Simon/"><span itemprop="name">Michael Simon</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="https://www.macworld.com/article/3570168/samsung-galaxy-note-20-vs-iphone-11-pro-this-1-000-spec-showdown-has-a-clear-winner.html">
+				Samsung Galaxy Note 20 vs iPhone 11 Pro: This $1,000 spec showdown has a clear winner
+				</a>
+			</p>
+			<p class="crawl-summary">
+				The Samsung Galaxy Note 20 and the iPhone 11 Pro cost the same but they're not created equally.
+			</p>
+					
+			<p class="offsite">
+				<span class="ss-right right"><a  href="https://www.macworld.com/article/3570168/samsung-galaxy-note-20-vs-iphone-11-pro-this-1-000-spec-showdown-has-a-clear-winner.html">on macworld.com</a></span>
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c4030 s2">
+		
+		<a  href="/article/3570609/trump-ban-of-tencent-holdings-could-affect-fortnite-league-of-legends-and-other-games.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100839446 " src="https://images.idgesg.net/images/article/2020/04/fortnite-season-3-100839446-medium.jpg" alt="fortnite season 3" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T07:46-0700" content="2020-08-07T07:46-0700">Aug 7, 2020 7:46 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Mark-Hachman/"><span itemprop="name">Mark Hachman</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570609/trump-ban-of-tencent-holdings-could-affect-fortnite-league-of-legends-and-other-games.html">
+				Trump ban of Tencent Holdings could affect Fortnite, League of Legends and other games
+				</a>
+			</p>
+			<p class="crawl-summary">
+				President Trump unexpectedly ordered a ban on transactions with Tencent and its subsidiaries after 45 days. We don't know how far the ban will stretch into Tencent's interests, which encompass the games League of Legends, Fortnite, PubG, Path of Exile, and more.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3029 s19 sistersite">
+		
+		<a  href="https://www.macworld.com/article/3570416/adobe-photoshop-elements-2020-is-55-today-45-off-msrp.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100818197 " src="https://images.idgesg.net/images/article/2019/11/adobe-photoshop-elements-2020-select-subject-results-100818197-medium.jpg" alt="adobe photoshop elements 2020 select subject results" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T07:27-0700" content="2020-08-07T07:27-0700">Aug 7, 2020 7:27 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Ian-Paul/"><span itemprop="name">Ian Paul</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="https://www.macworld.com/article/3570416/adobe-photoshop-elements-2020-is-55-today-45-off-msrp.html">
+				Adobe Photoshop Elements 2020 is $55 today, $45 off MSRP
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Amazon is selling Adobe Photoshop Elements 2020 for $55, today only.
+			</p>
+					
+			<p class="offsite">
+				<span class="ss-right right"><a  href="https://www.macworld.com/article/3570416/adobe-photoshop-elements-2020-is-55-today-45-off-msrp.html">on macworld.com</a></span>
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3067 s7 sistersite">
+		
+		<a  href="https://www.techhive.com/article/3570213/this-one-day-sale-on-sony-gear-features-super-deals-on-tvs-soundbars-and-more.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853887 " src="https://images.idgesg.net/images/article/2020/08/sony4ktv-100853887-medium.jpg" alt="sony4ktv" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T07:02-0700" content="2020-08-07T07:02-0700">Aug 7, 2020 7:02 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Ian-Paul/"><span itemprop="name">Ian Paul</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="https://www.techhive.com/article/3570213/this-one-day-sale-on-sony-gear-features-super-deals-on-tvs-soundbars-and-more.html">
+				This one-day sale on Sony gear features super deals on TVs, soundbars and more
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Amazon's one-day Sony sale features deals on TV and audio devices.
+			</p>
+					
+			<p class="offsite">
+				<span class="ss-right right"><a  href="https://www.techhive.com/article/3570213/this-one-day-sale-on-sony-gear-features-super-deals-on-tvs-soundbars-and-more.html">on techhive.com</a></span>
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c4119 s2">
+		
+		<a  href="/article/3570214/if-you-ever-set-up-a-google-account-you-might-be-due-some-money.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100775880 " src="https://images.idgesg.net/images/article/2018/10/google-logo-100775880-medium.jpg" alt="google logo" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T06:32-0700" content="2020-08-07T06:32-0700">Aug 7, 2020 6:32 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Michael-Simon/"><span itemprop="name">Michael Simon</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570214/if-you-ever-set-up-a-google-account-you-might-be-due-some-money.html">
+				If you ever set up a Google+ account, you might be due some money
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Google has settled a class-action lawsuit over the Google+ data breach, and you might be able to claim some of the $7.5 million in payments.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c4030 s2">
+		
+		<a  href="/article/2457868/best-free-pc-games.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														 bug updated
+													">
+			
+			<img  class="mediumImage  imgId100836267 " src="https://images.idgesg.net/images/article/2020/03/call-of-duty-warzone-primary-100836267-medium.jpg" alt="call of duty warzone primary" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+				<span  class="eyebrow bug updated">updated</span> 
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T05:41-0700" content="2020-08-07T05:41-0700">Aug 7, 2020 5:41 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Hayden-Dingman/"><span itemprop="name">Hayden Dingman</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/2457868/best-free-pc-games.html">
+				The best free PC games
+				</a>
+			</p>
+			<p class="crawl-summary">
+				The best free PC games will give you a good time even if you don't have a dime to spare. 
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c3028 s2">
+		
+		<a  href="/article/3570450/the-samsung-galaxy-tab-s7-delivers-ipad-pro-level-hardwarebut-android-or-dex-is-no-ipados.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100853826 " src="https://images.idgesg.net/images/article/2020/08/galaxy-tab-s7-ipad-pro-100853826-medium.jpg" alt="galaxy tab s7 ipad pro" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T03:30-0700" content="2020-08-07T03:30-0700">Aug 7, 2020 3:30 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Michael-Simon/"><span itemprop="name">Michael Simon</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="/article/3570450/the-samsung-galaxy-tab-s7-delivers-ipad-pro-level-hardwarebut-android-or-dex-is-no-ipados.html">
+				The Samsung Galaxy Tab S7+ delivers iPad Pro-level hardware—but Android (or DeX) is no iPadOS
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Samsung's newest Android tablet, the Galaxy Tab S7+, is built to compete with the iPad Pro, but the software lets it down.
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+			
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+	
+	
+	
+
+
+
+
+
+
+	<div class="excerpt c2123 s7 sistersite">
+		
+		<a  href="https://www.techhive.com/article/3568190/hisense-h9g-review.html">
+		<div class="excerpt-img imageContainer200x126
+														
+														
+													">
+			
+			<img  class="mediumImage  imgId100852988 " src="https://images.idgesg.net/images/article/2020/07/h9g-hero-100852988-medium.jpg" alt="h9g hero" />
+		</div>
+		</a>
+		
+		<div class="excerpt-text">
+
+			<p class="post-meta">
+			
+			
+			
+				
+				
+					<span class="timeago" title="2020-08-07T03:00-0700" content="2020-08-07T03:00-0700">Aug 7, 2020 3:00 AM</span> <span class="post-byline">
+						
+						
+							
+				        	
+				        	<span class="byline"><span> | </span>
+					        	By <a rel="author" itemprop="url" href="/author/Jon-L.-Jacobi/"><span itemprop="name">Jon L. Jacobi</span></a>
+							</span>
+				        	
+				        	
+				        	
+			        			        		
+					</span>
+				
+			
+			</p>
+			
+			<p class="crawl-headline">							
+				<a  href="https://www.techhive.com/article/3568190/hisense-h9g-review.html">
+				Hisense H9G 4K UHD TV review: Excellent color and HDR performance for the  price
+				</a>
+			</p>
+			<p class="crawl-summary">
+				Hisense's H9G 4K UHD TV offers an excellent picture for the price. It's available only in 55-inch and 65-inch flavors, but if that's what you're shopping for, it should be on your short-list.
+			</p>
+					
+			<p class="offsite">
+				<span class="ss-right right"><a  href="https://www.techhive.com/article/3568190/hisense-h9g-review.html">on techhive.com</a></span>
+			</p>
+				
+
+		</div>
+	</div>
+
+
+		
+		<p class="listing-footer">
+			<a href="/browse?start=15">Older stories &raquo;</a>
+		</p>
+	</div>
+</div><!--/#main-->
+						
+
+
+
+
+
+
+
+
+
+
+<div id="side" role="secondary">
+	
+
+	
+
+
+	
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-showcasemobile" class="side-promo side-module side-ad mobile-only ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-showcasemobile", "true");
+	    			$('#gpt-showcasemobile').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-showcasemobile [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<style>
+		body.techhive .digitalMagPromo{
+		font-family:'ff-enzo-web',sans-serif;
+		}
+		body.pcworld .digitalMagPromo{
+		font-family: "canada-type-gibson",sans-serif;
+		}
+		body.macworld .digitalMagPromo{
+		font-family: "proxima-nova",sans-serif;
+		}
+		body .digitalMagPromo{
+			background-color: #dcdddf;
+			margin-bottom:15px;
+		}
+		body .digitalMagPromo .header{
+			background-color: #3b3b3b;
+			color: #dcdddf;
+			padding: 12px 5px 10px 12px;
+			font-size: 20px;
+			letter-spacing:0.0em;
+		}
+		body .digitalMagPromo .header strong{
+			color: #ffffff;
+		}
+		body .digitalMagPromo section{
+			padding:15px 15px 10px;
+		}
+		.img{
+			margin:0 0 10px;
+			/*width: 300px;	*/		
+		}
+		body .digitalMagPromo .img img {
+			width: 100%;
+		}
+		body .digitalMagPromo .title{
+			margin:0 auto 7px;
+			/*width: 300px;*/
+			font-weight: bold;
+			font-size: 14px;
+		}
+		body .digitalMagPromo .title span{
+		color:#6c6d71;
+		margin:0 0 7px;
+		font-size:14px;
+		clear:both;
+		display:block;
+		font-weight:normal;
+		}
+		.title a{
+			color:#111;
+			font-size:18px;
+			line-height:1.3;
+		}		
+		.title a:hover{
+			color:#25A7D7;
+		}				
+		.summary{
+			margin:0 auto 10px;
+			/*width:300px;*/
+			font-size: 14px;
+			color:#595a5c;
+			line-height:1.6;
+			font-family: "Helvetica Neue",Arial,sans-serif;
+		}
+
+@media only screen and (min-width:768px) and (max-width:900px) {
+
+		body .digitalMagPromo .header{
+			font-size: 20px;
+		}
+		body .digitalMagPromo .title span{
+		font-size:13px;
+		}
+		.title a{
+			font-size:15px;
+		}	
+		.summary{
+			font-size: 12px;
+		}
+
+}
+
+@media only screen and (min-width:1px) and (max-width:767px) {
+		body .digitalMagPromo section{
+			padding:15px 10px 10px;
+		}
+		
+		body .digitalMagPromo .header{
+			padding: 12px 10px 9px 10px;
+			font-size: 18px;
+		}
+		body .digitalMagPromo .title span{
+		font-size:13px;
+		}
+		.title a{
+			font-size:15px;
+		}	
+		.summary{
+			font-size: 12px;
+		}
+
+}
+
+
+	</style>
+	
+		
+	<div class="digitalMagPromo">	
+		<div class="header">
+		PCWorld <strong>Digital Magazine</strong>
+		</div>
+		<section>
+		<div class="img">
+			<a href="/article/3570248/pcworlds-august-digital-magazine-dell-xps-15-9500-reviewed.html"><img  class="mediumImage  imgId100853768 " src="https://images.idgesg.net/images/article/2020/08/pcwdigitaledition_primary-aug20-100853768-medium.jpg" width="300" alt="pcwdigitaledition primary aug20" /></a>
+		</div>
+		<div class="title">
+			<span>IN THE CURRENT ISSUE</span>
+			<a href="/article/3570248/pcworlds-august-digital-magazine-dell-xps-15-9500-reviewed.html">PCWorld's August Digital Magazine: Dell XPS 15 9500 reviewed</a>
+		</div>		
+		<div class="summary">
+			Enjoy the best of PCWorld.com in a curated Digital Magazine for Android, iOS, and your web browser.
+		</div>
+		</section>
+	</div>
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #277 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			<div id="" class="blx blxPedithomepagepromoprimary blxM277  blox4_html  blxC774"><div class="home-split"> <a href="https://simplecirc.com/subscribe/pcworld"><img src="//csmb.staticworld.net/images/modules/pcw/pwde-left-2017-04.png"></a> </div>          </div>
+		
+	
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #261 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			<div id="" class="blx blxPbizdevhomepageprimary blxM261  blox4_html  blxC1620"><div class="home-split"> <a href="https://simplecirc.com/subscribe/pcworld"><img src="//csmb.staticworld.net/images/modules/pcw/pwde-right-2017-04.png"></a> </div>          </div>
+		
+	
+
+	
+
+
+
+	
+	
+	
+	
+				
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<section class="brand-post-module" >
+	<div id="sponsored-content" class="brandposts">BrandPosts <span><a href="#" class="learn-more">Learn More</a></span><div id="learn-more-popup" style="display:none;"><p>BrandPosts are written and edited by members of our sponsor community. BrandPosts create an opportunity for an individual sponsor to provide insight and commentary from their point-of-view directly to PCWorld's audience. The PCWorld editorial team does not participate in the writing or editing of BrandPosts.</p><div class="popup-close-btn"><a id="learn-more-close" href="#">CLOSE</a></div></div></div>
+	<div class="branded-post">
+		
+			
+				
+					
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="excerpt c3029">
+
+	
+		<a  href="/article/3396637/use-gpu-accelerated-videoproc-to-easily-process-4k-video-audio-and-dvds.html">
+			<div class="excerpt-img imageContainer300x200 bugblog">
+				
+				<img  class="smallImage  imgId100796990 " src="https://images.idgesg.net/images/article/2019/05/700x467-for-article1200full-100796990-small.jpg" alt="700x467 for article1200full" />
+			</div>
+		</a>
+	
+	<div class="excerpt-text">
+		<div class="post-text">
+			<div class="blog-branding-text">Sponsored by Digiarty Software</div>
+			<div class="title">
+				<a  href="/article/3396637/use-gpu-accelerated-videoproc-to-easily-process-4k-video-audio-and-dvds.html">
+				  	Use GPU-accelerated VideoProc to easily process 4K video, audio, and DVDs 
+				  	
+			  	</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+				
+				
+			
+		
+			
+				
+					
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="excerpt c3020">
+
+	
+		<a  href="/article/3394880/a-pc-s-core-tenet-select-the-desktop-that-s-right-for-you.html">
+			<div class="excerpt-img imageContainer300x200 bugblog">
+				
+				<img  class="smallImage  imgId100796135 " src="https://images.idgesg.net/images/article/2019/05/not_all_cores_image-100796135-small.jpg" alt="not all cores image" />
+			</div>
+		</a>
+	
+	<div class="excerpt-text">
+		<div class="post-text">
+			<div class="blog-branding-text">Sponsored by Intel</div>
+			<div class="title">
+				<a  href="/article/3394880/a-pc-s-core-tenet-select-the-desktop-that-s-right-for-you.html">
+				  	A PC’s Core Tenet: Select the Desktop That’s Right for You
+				  	
+			  	</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+				
+				
+			
+		
+			
+				
+					
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="excerpt c3547">
+
+	
+		<a  href="/article/3305064/say-goodbye-to-password-anxiety-free-password-manager-simplifies-and-organizes-your-online-life.html">
+			<div class="excerpt-img imageContainer300x200 bug sponsored">
+				
+				<img  class="smallImage  imgId100772455 " src="https://images.idgesg.net/images/article/2018/09/shutterstock_680231542ikpx-100772455-small.jpg" alt="shutterstock 680231542ikpx" />
+			</div>
+		</a>
+	
+	<div class="excerpt-text">
+		<div class="post-text">
+			<div class="blog-branding-text">Sponsored by Cyclonis</div>
+			<div class="title">
+				<a  href="/article/3305064/say-goodbye-to-password-anxiety-free-password-manager-simplifies-and-organizes-your-online-life.html">
+				  	Say Goodbye to Password Anxiety, Free Password Manager Simplifies and Organizes Your Online Life
+				  	
+			  	</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+				
+				
+			
+		
+	</div>
+	</section>
+	
+
+		
+	
+	
+
+	 
+	
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #173 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			<div id="" class="blx blxPedithomepagepromosecondary blxM173  blox4_html  blxC186"><div class="home-split"> <a href="http://www.pcworld.com/newsletters/signup.html"><img src="//csmb.staticworld.net/images/modules/pcw/2016-pcw-newsletter.png"></a> </div> </div>
+		
+	
+
+	
+
+
+	
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #309 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			<div id="" class="blx blxPbizdevhomepagesecondary blxM309  blox4_html  blxC1095"><div class="home-split"> <a href="https://www.pcworld.com/article/2854456/laptop-computers/the-best-pc-laptops-of-the-year.html"><img src="https://images.idgesg.net/promoimages/2019/11/201803-best-laptops-100817847-orig.png"></a> </div>      </div>
+		
+	
+
+	
+
+
+	   
+    
+    
+    	
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+	
+		
+
+	
+
+ 
+
+	
+
+	
+			
+			
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #190 blox4.featured-brands  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+	
+
+
+
+    
+    
+		
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-custom-promo" class="side-promo side-module side-ad ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-custom-promo", "true");
+	    			$('#gpt-custom-promo').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-custom-promo [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	 
+
+
+</div>
+
+
+
+						
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					
+				
+
+
+		   	</div>
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+<div id="panel-loader"></div>
+<!-- IDGMPM-11812, category.getCategoryType() returns an integer, and 9 stands for tentpole-->
+ 
+
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/www.idgcsmb/css/tso-links.css?v=20200805114218" />
+
+	<div id="tso-wrapper"><div id="tso" style="display:none"></div></div>
+	<script type="text/javascript">
+	function renderTSO(ads, requireHttps) {
+		$thm.debug("renderTSO:"+ads.length);
+		if (ads && ads.length > 0) {
+			var selectedAds = selectTSOAds(ads,10);
+			if (null != selectedAds && selectedAds.length > 0) {
+				var html = "<h3>Sponsored Links</h3>";
+				html += "<ul>";
+				for (var i=0; i<selectedAds.length;i++) {
+					html += "<li>";
+					html += "<a href='"+selectedAds[i].url+"'> "+selectedAds[i].title+"</a>";
+					if (null != selectedAds[i].pixel && selectedAds[i].pixel.length > 0) {
+						html += selectedAds[i].pixel;
+					}
+					html += "</li>";
+				}
+				html += "</ul>";
+				$("#tso").html(html).show();
+			}
+		}
+	}
+	function selectTSOAds(ads,max) {
+		if (ads.length <= max) {
+			return ads;
+		} else {
+			var uniq = {};
+			var found = 0;
+			var selectedAds = [];
+			while (found < max) {
+				var ad = ads[Math.floor(Math.random()*ads.length)];
+				if (uniq[ad.id] != null) {
+					continue;
+				} else {
+					uniq[ad.id] = true;
+					found++;
+					selectedAds.push(ad);
+				}
+			}
+			return selectedAds;
+		}
+		return null;
+	}
+	</script>
+	
+
+	
+
+
+
+
+
+		</div>
+	
+		
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/www.idgcsmb/css/footer.css?v=20200805114218" />
+<link rel="stylesheet" href="/www.idgcsmb.pcw/css/footer.css?v=20200805114218" />
+<div id="network"></div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<footer id="footer" class="clearfix">
+    <div class="container clearfix">
+    	<div class="footer-col">
+    		<a href="http://pcworld.com" id="footer-logo-pcw" class="ir">PCWorld</a>
+    		<p>PCWorld helps you navigate the PC ecosystem to find the products you want and the advice you need to get the job done.</p>
+    		<ul>
+    			<li><a href="/about/about.html">About Us</a></li>
+				<li><a href="/about/contact.html">Contact Us</a></li>
+				<li><a href="/faq" rel="nofollow">Digital Magazine</a></li>
+				<li><a href="https://simplecirc.com/give_a_gift/pcworld">Gift Subscription</a></li>
+				<li><a href="https://www.idg.com/idg-ad-choices/" rel="nofollow">Ad Choices</a></li>
+				<li><a href="/about/member-preferences.html">Member Preferences</a></li>
+				<li><a href="/about/cookie-policy.html">Cookie Policy</a></li>
+				<li><a href="/newsletters/signup.html">Newsletters</a></li>
+				<li><a href="https://www.idg.com/terms-of-service-agreement/" rel="nofollow">Terms of Service Agreement</a></li>
+				<li><a href="/index.rss">RSS</a></li>
+				<li><a href="/about/privacy.html" rel="nofollow">Privacy Policy</a></li>
+			</ul>
+			<ul class="right">
+				<li><a href="https://shop.pcworld.com">Shop</a></li>
+				<li><a href="/about/affiliates.html">E-commerce Affiliate Relationships</a></li>
+				<li><a href="/about/ccpa.html">California: Do Not Sell My Personal Info</a></li>
+			</ul>
+    	</div>
+    	<div class="footer-col">
+    		<h2>PCWorld Categories</h2>
+    		<ul>
+    			<li><a href="/category/business/">Business</a></li>
+				
+				<li><a href="/category/laptop-computers/">Laptops</a></li>
+				<li><a href="/category/mobile/">Mobile</a></li>
+				<li><a href="/category/computers-all/">PC Hardware</a></li>
+				
+				<li><a href="/deals">Deals</a></li>
+			</ul>
+			<ul class="right">
+				<li><a href="/category/printers/">Printers</a></li>
+				<li><a href="/category/security/">Security</a></li>
+				<li><a href="/category/software/">Software</a></li>
+				<li><a href="/video/">Videos</a></li>
+				<li><a href="/category/windows/">Windows</a></li>
+			</ul>
+
+			<h3>IDG Network Sites</h3>
+			<ul>
+				<li><a href="https://www.idg.com/advertise-with-us/pcworld/" rel="nofollow">Advertise</a></li>
+				<li><a href="https://www.idg.com/technetwork/technetwork-permissions-guildelines/" rel="nofollow">Permissions</a></li>
+				<li><a href="http://www.macworld.com/" rel="nofollow">Macworld</a></li>
+				<li><a href="http://www.techadvisor.co.uk/">Tech Advisor</a></li>
+				<li><a href="http://www.techhive.com/" rel="nofollow">TechHive</a></li>
+			</ul>
+			<ul class="right">
+				<li><a href="https://www.idg.com/technetwork/" rel="nofollow">IDG TechNetwork</a></li>
+				<li><a href="https://www.idg.com/" rel="nofollow">IDG</a></li>
+				<li><a href="http://blog.idg.com/" rel="nofollow">IDG Blog</a></li>
+				<li><a href="https://www.idg.com/work-here/" rel="nofollow">Careers at IDG</a></li>
+			</ul>
+    	</div>
+    	<div class="footer-col">
+    		<div id="footer-subscribe" class="clearfix">
+	    		<a href="https://simplecirc.com/subscribe/pcworld">
+	    			<img src="//alt.idgesg.net/images/furniture/pcworld/footer-subscribe-mag-pcw.png" alt="PCWorld Magazine Cover">
+	    			<h2>Get PCWorld's Digital Editions</h2>
+	    			<span class="btn-link">Subscribe Now</span>
+	    		</a>
+    		</div>
+    		<div id="footer-social">
+    			<span>Follow us</span> <a href="http://www.facebook.com/PCWorld" class="network-fb ss-icon ss-social-circle banner-social banner-fb" alt="Facebook" itemprop="sameAs" rel="nofollow">
+						&#xF610;
+					</a>
+					<a href="https://twitter.com/pcworld" class="network-tw ss-icon ss-social-circle banner-social banner-tw" alt="Twitter" itemprop="sameAs" rel="nofollow">
+						&#xF611;
+					</a>
+					
+						<a href="https://www.youtube.com/user/PCWorldVideos" class="network-youtube ss-icon ss-social-circle banner-social banner-youtube" alt="YouTube">
+							&#xF630;
+						</a>
+					 			    			
+    		</div>
+    		
+    		 <p>Visit other IDG sites:</p>
+    		
+    		<div id="idgInfo" class="styled-select">		
+		            <select onchange="location = this.options[this.selectedIndex].value;" id="jumpMenu" name="jumpMenu" d30tagged="1" style="visibility: visible;">
+		                <option value="">Select One</option>
+		                
+		                	
+		                
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		<option value="https://www.greenbot.com">Greenbot</option>
+	
+		<option value="https://www.macworld.com">Macworld</option>
+	
+		<option value="https://www.pcworld.com">PCWorld</option>
+	
+		<option value="https://www.techconnect.com">TechConnect</option>
+	
+		<option value="https://www.techhive.com">TechHive</option>
+	
+
+		            </select>
+		    </div>
+		    
+		    <div class="copyright">
+		    	<img src="https://alt.idgesg.net/images/logos/logo-footer-white.png" alt="IDG Communications" />
+				<p><small><a href="http://idgcsmb.com/terms-of-service-agreement/">Copyright</a> &copy; 2020 IDG Communications, Inc.</small></p>		    
+			</div>
+    	</div>
+    </div> 
+</footer>
+
+
+
+		
+				
+		
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt-infunnel" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt-infunnel", "true");
+	    			$('#gpt-infunnel').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt-infunnel [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+		
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/www/js/jquery/jquery_cookie.js"></script> 
+
+<script src="/www.idgcsmb/js/jquery/jquery-ui-tools.js"></script>
+
+
+	<script>
+		$(document).ready(function() {
+			if (typeof $.cookie("geoPromoDontShow") === 'undefined' && typeof $.cookie("geoPromoSeen") === 'undefined' && navigator.languages.indexOf("es") > -1 && $thm.deviceWidthAtLeast($thm.deviceBreakpoints.wide)) {
+				$.get("/napi/tile?def=international.promo", 
+					function(data) {
+						$("body").prepend(data);
+						var visitTime = new Date();
+						visitTime.setTime(visitTime.getTime()+1000*60*60*24); //24 hours
+				      	$.cookie('geoPromoSeen', 'true', { expires: visitTime, path: '/' });
+						$(".geo-promo .ss-delete, a.cont-here, a.dont-show").click(function(e) {
+							e.preventDefault();
+							if ($(this).is(".dont-show")) {
+								visitTime.setTime(visitTime.getTime()+1000*60*60*24*30); //30 days
+						      	$.cookie('geoPromoDontShow', 'true', { expires: visitTime, path: '/' });
+							}
+							$(".geo-promo").fadeOut(function() {$(".geo-promo").remove()})
+						});
+					}
+				);
+			}
+		});
+	</script>
+
+<script src="/www.idgcsmb/js/thm_post.js?v=20200805114218"></script>
+
+<script src="/www.idgcsmb/js/jquery/plug-ins/jquery.md5.js"></script>
+
+
+<!-- <script src="/www.idgcsmb/js/autocomplete.js"></script>
+ -->
+
+
+
+	<script src="/www/js/jquery/jquery.timeago.js"></script>
+	
+	<script>
+	$(document).ready(function(){
+		$(".timeago").timeago();
+	});
+	</script>
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+
+	
+	$(document).ready(function(){
+
+		$('#extra-nav-toggle a').click(function(){
+			if($(this).hasClass('open')){
+				$('#extra-nav').hide();
+				$(this).removeClass('open');
+				$('#extra-nav-toggle a').removeClass('ss-delete');
+				$('#extra-nav-toggle a').addClass('ss-dropdown');		
+			} else {
+				$('#extra-nav').show();
+				$(this).addClass('open');
+				$('#extra-nav-toggle a').removeClass('ss-dropdown');
+				$('#extra-nav-toggle a').addClass('ss-delete');					
+			}
+			return false;
+		});
+		
+		var isMobile = window.matchMedia("only screen and (min-width: 60.625em)");
+			
+			if (!isMobile.matches) {
+				$("#dealsNav span").removeClass("ss-dropdown").addClass("ss-directright");
+				$("a.couponCodeMob span.rightArrow").remove();
+				$("a.couponCodeMob").append('<span class="mobCoupons ss-directright"></span>');
+				$('#dealsNav').click(function() {
+					if ($("#dealsNav span").hasClass("ss-directright")) {
+						$("#dealsNav span").removeClass("ss-directright").addClass("ss-dropdown");
+						$(".dealsList").css({ 'display':'block'});
+					}
+					else {
+						$("#dealsNav span").removeClass("ss-dropdown").addClass("ss-directright");
+			    		$(".dealsList").css({ 'display':'none'});
+					}
+				});
+				$("a.couponCodeMob").click(function() {
+					if ($(".couponCodeMob .mobCoupons").hasClass("ss-directright")) {
+						$(".couponCodeMob .mobCoupons").removeClass("ss-directright").addClass("ss-dropdown");
+						$(".couponChildLinks").css({ 'display':'table'});
+					}else {
+						$(".couponCodeMob .mobCoupons").removeClass("ss-dropdown").addClass("ss-directright");
+						$(".couponChildLinks").css({ 'display':'none'});
+					}
+				
+				});   
+			}
+			else {
+				$('li.dealsNav').mouseenter(function() {
+			    	$(".dealsList").css({ 'display':'block'});
+				});           
+		
+				$('ul.dealsList').mouseleave(function() {  
+				    $(".dealsList,.couponChildLinks").css({ 'display':'none'});	    
+				});
+				
+				$('li.couponCodes').mouseenter(function() {
+				    $(".couponChildLinks").css({ 'display':'block'});
+				});           
+			
+				$('ul.couponChildLinks').mouseleave(function() {  
+				    $(".couponChildLinks").css({ 'display':'none'});	    
+				});
+			}
+
+    	<!-- if (isMobile.matches) {	 -->
+    		
+			
+		
+		<!-- } -->
+		  				  
+	});//-- end document Ready
+		
+	
+
+
+if ($(window).width() < 581){
+$("html.touch .home-hero-inner").append( "<div class='dots'><div class='ss-record dotone'></div><div class='ss-record dottwo'></div></div>" );
+
+$("html.touch .home-hero-one").on("touchstart", function(e) {
+ var touchStart = touchEnd = e.originalEvent.touches[0].pageX;
+ var touchExceeded = false;
+
+ $(this).on("touchmove", function(e) {
+  touchEnd = e.originalEvent.touches[0].pageX;
+
+  if(touchExceeded || touchStart - touchEnd > 50 || touchEnd - touchStart > 50) {
+   e.preventDefault();
+   touchExceeded = true;
+	$(".home-hero-two").css({ 'display':'block'});	    
+	$(".home-hero-one").css({ 'display':'none'});
+	$(".dottwo").css({ 'color':'#ffffff'});  
+	$(".dotone").css({ 'color':'#333333'});  
+  }
+ });
+
+ $(this).on("touchend", function(e) {
+  $(this).off("touchmove touchend");
+ });
+});
+
+
+$("html.touch .home-hero-two").on("touchstart", function(e) {
+ var touchStart = touchEnd = e.originalEvent.touches[0].pageX;
+ var touchExceeded = false;
+ $(this).on("touchmove", function(e) {
+  touchEnd = e.originalEvent.touches[0].pageX;
+
+  if(touchExceeded || touchStart - touchEnd > 50 || touchEnd - touchStart > 50) {
+   e.preventDefault();
+
+   touchExceeded = true;
+
+	$(".home-hero-one").css({ 'display':'block'});	    
+	$(".home-hero-two").css({ 'display':'none'});
+	$(".dotone").css({ 'color':'#ffffff'});  
+	$(".dottwo").css({ 'color':'#333333'});  
+
+  }
+ });
+
+ $(this).on("touchend", function(e) {
+  $(this).off("touchmove touchend");
+ });
+});
+
+}
+
+
+$(window).load(function(){
+	IS_IPAD = navigator.userAgent.match(/iPad/i) != null;
+	if (IS_IPAD) {
+		$('.iPadOverlay').fadeIn('fast').delay(4200).fadeOut('fast');
+	}
+
+	/*$("#gpt-showcase div").each(
+	function() {
+			var h = ($(this).parent().innerHeight() - $(this).outerHeight()) / 2;
+			$(this).css("margin-top", h);
+		});
+	});*/
+});
+
+
+	// check to see if the slick function already exists on the page
+	if (typeof($.fn.slick) != 'function') {
+		// if not, call in the slick plugin, then call the carousel initialization as the callback function after the plugin loads
+		$.getScript("/www/js/utils/slick/slick.min.js", slickCarouselInit)
+	} else {
+		// otherwise, just initialize the carousel
+		slickCarouselInit();
+	}
+	
+	function slickCarouselInit() {
+		$('.home-features-carousel').slick({
+			infinite: true,
+			slidesToShow: 2,
+			slidesToScroll: 2,
+			
+			responsive: [
+				{
+					breakpoint: 969,
+					settings: {
+						arrows: false,
+						dots: true
+					}
+				}
+			]
+		});
+	}
+
+
+      $(document).ready(function() {
+        $(".learn-more, #learn-more-close").click(function() {
+          $("#learn-more-popup").toggle();
+          return false;
+        });
+      });
+
+
+	g_bRequireHttps = true;
+	 	var localeId = getLocale();
+		$.ajax('/ads/tso?localeId=' + localeId,{
+			dataType: 'json',
+			success: function(data){
+				renderTSO(data.tsoLinks, g_bRequireHttps);
+			},
+			error: function(jqXHR,error,thrown){
+				$thm.debug("TSO AJAX Status: "+error+": "+thrown,true);
+			}
+		});
+	
+</script>
+
+		
+	<script type="text/javascript">
+		var subscribersSiteId = "fad3adbe-1461-402a-a80d-b32e46abd3fb"; 
+	</script>
+	<script type="text/javascript" src="https://cdn.subscribers.com/assets/subscribers.js"></script>
+
+
+		
+		<script type="text/javascript">
+			a=top;f=self;
+			var acceptedDomains = ["lookbookhq.com"];
+			var cleanedHost = a.location.hostname.split(".").slice(-2).join(".");
+			if(a!=f && acceptedDomains.indexOf(cleanedHost) < 0) {
+				a.location=f.location;
+			}
+		</script>	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	    
+	    
+    	
+    	
+	    
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+ 		
+		
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+consent.digitalelement.queue.push(function(){
+	$thm.logPlEvent({"b":"pcw","e":"view","t":"article","id":""});
+});
+</script>
+
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push(
+{ c1: "2", c2: "6035308", c3: "" });
+(function()
+{
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+	s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6035308&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+	
+		<div id="loginModal"></div>
+		<div id="logoffModal"></div>
+		<div id="abuseModal"></div>
+
+		
+			<!-- rev: 20200805114218  -->
+		
+		
+		
+		
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			<div id="gpt-skin" class=" ad-container"></div>
+    			<script type="text/javascript">
+    			consent.ads.queue.push(function(){
+    				try {
+	    				IDG.GPT.addDisplayedAd("gpt-skin", "true");
+	    				IDG.GPT.displayGoogleTagSlot('gpt-skin');
+	    			}
+	    			catch (exception) {
+	    				console.log("Error with IDG.GPT: " + exception);
+	    			}
+    			});
+    			</script>
+		
+		
+		
+		
+	
+ 
+ 
+			
+		
+		
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+			<div id="gpt_custom_promo_2" class=" ad-container"></div>
+    		<script type="text/javascript">
+    		consent.ads.queue.push(function(){	
+    			try {
+	    			IDG.GPT.addDisplayedAd("gpt_custom_promo_2", "true");
+	    			$('#gpt_custom_promo_2').responsiveAd({screenSize:'971 1115', scriptTags: []});
+	    			IDG.GPT.log("Creating ad: gpt_custom_promo_2 [971 1115]");
+	    		}
+				catch (exception) {
+					console.log("Error with IDG.GPT: " + exception);
+				}
+    		});
+    		</script>
+    	
+	
+ 
+ 
+	
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</body>
+</html>

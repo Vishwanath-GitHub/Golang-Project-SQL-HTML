@@ -1,0 +1,280 @@
+<!doctype html>
+<html class="no-js">
+  
+        <head>
+        <script>window.CLOUD_UI_BASE_URL = "https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/";</script>
+    <meta charset="utf-8">
+    <title>MyMatterport</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="referrer" content="origin">
+    <base href="/">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/apple-touch-icon-512x512.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/favicon-96x96.png">
+    <link rel="manifest" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/manifest.json">
+    <link rel="mask-icon" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/images/favicons/safari-pinned-tab.svg" color="#ff3158">
+    <meta name="msapplication-TileColor" content="#ff3158">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+      var is_dev = false;
+
+
+      // Safari, in Private Browsing Mode, looks like it supports localStorage but all calls to setItem
+      // throw QuotaExceededError. We're going to detect this and just silently drop any calls to setItem
+      // to avoid the entire page breaking, without having to do a check at each usage of Storage.
+      if (typeof localStorage === 'object') {
+          try {
+              localStorage.setItem('localStorage', 1);
+              localStorage.removeItem('localStorage');
+          } catch (e) {
+              Storage.prototype._setItem = Storage.prototype.setItem;
+              Storage.prototype.setItem = function () {
+              };
+              alert('Your web browser does not support storing settings locally. In Safari, the most common cause of this is using "Private Browsing Mode". Some settings may not save or some features may not work properly for you.');
+          }
+      }
+    </script>
+
+    <!--<script type="text/javascript" src="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf//use.typekit.net/kkb4qlf.js"></script>-->
+    <!--<script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+    <link rel="stylesheet" type="text/css" href="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/styles/my_matterport.ddb8a846.css" />
+
+
+    <!-- create Segment analytics object-->
+    <script type="text/javascript">
+      (function () {
+
+        // Create a queue, but don't obliterate an existing one!
+        var analytics = window.analytics = window.analytics || [];
+
+        // If the real analytics.js is already on the page return.
+        if (analytics.initialize) return;
+
+        // If the snippet was invoked already show an error.
+        if (analytics.invoked) {
+          if (window.console && console.error) {
+            console.error('Segment snippet included twice.');
+          }
+          return;
+        }
+
+        // Invoked flag, to make sure the snippet
+        // is never invoked twice.
+        analytics.invoked = true;
+
+        // A list of the methods in Analytics.js to stub.
+        analytics.methods = [
+          'trackSubmit',
+          'trackClick',
+          'trackLink',
+          'trackForm',
+          'pageview',
+          'identify',
+          'timeout',
+          'reset',
+          'group',
+          'track',
+          'ready',
+          'alias',
+          'debug',
+          'page',
+          'once',
+          'off',
+          'on'
+        ];
+
+        // Define a factory to create stubs. These are placeholders
+        // for methods in Analytics.js so that you never have to wait
+        // for it to load to actually record data. The `method` is
+        // stored as the first argument, so we can replay the data.
+        analytics.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            analytics.push(args);
+            return analytics;
+          };
+        };
+
+        // For each of our methods, generate a queueing stub.
+        for (var i = 0; i < analytics.methods.length; i++) {
+          var key = analytics.methods[i];
+          analytics[key] = analytics.factory(key);
+        }
+
+        // Define a method to load Analytics.js from our CDN,
+        // and that will be sure to only ever load it once.
+        analytics.load = function (key) {
+          // Create an async script element based on your key.
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.async = true;
+          script.src = ('https:' === document.location.protocol
+              ? 'https://' : 'http://')
+            + 'cdn.segment.com/analytics.js/v1/'
+            + key + '/analytics.min.js';
+
+          // Insert our script next to the first script element.
+          var first = document.getElementsByTagName('script')[0];
+          first.parentNode.insertBefore(script, first);
+        };
+
+        // Add a version to keep track of what's in the wild.
+        analytics.SNIPPET_VERSION = '4.0.0';
+
+      })();
+    </script>
+    <!-- end Segment -->
+
+    <!-- Zuora -->
+    <script type="text/javascript" src="https://static.zuora.com/Resources/libs/hosted/1.3.0/zuora-min.js"></script>
+    <!-- end Zuora -->
+
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <script>
+      window['_occ_policy'] = 'https://matterport.com/cookie-policy/';
+
+      window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "cookie": { "domain": "matterport.com" },
+          "position": "bottom-left",
+          "content": {
+            "message": "Matterport uses cookies to provide a great user experience. By using our website, you accept our use of cookies.",
+            "dismiss": "Got It",
+            "link": "Details",
+            "href": window['_occ_policy']
+          },
+          "location": false
+        })});
+    </script>
+    <!-- end Cookie Consent -->
+
+    <style>
+      body{
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        /*overscroll-behavior-y: none;*/ //TODO: maybe we should try this a little more is a new property
+      }
+
+      .body,
+      .wrapper {
+        /* Break the flow */
+        position: absolute;
+        top: 0px;
+
+        /* Give them all the available space */
+        width: 100%;
+        height: 100%;
+
+        /* Remove the margins if any */
+        margin: 0;
+
+        /* Allow them to scroll down the document */
+        overflow-y: hidden;
+      }
+
+      .body {
+        /* Sending body at the bottom of the stack */
+        z-index: 1;
+      }
+
+      .wrapper {
+        /* Making the wrapper stack above the body */
+        z-index: 2;
+      }
+
+      #mainContainer {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body ng-attr-id="{{ viewName || 'matterport' }}"
+        class="body"
+        ng-app="mpwebApp"
+        ng-controller="MasterCtrl"
+        ng-class="{menuopen:headerMenuToggle}" ng-cloak>
+    <div class="wrapper">
+
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <div id="mainContainer">
+        <div id="dialogContainer" class="dialogContainer"></div>
+        <div id="blockerDialogContainer" class="dialogContainer blocker"></div>
+
+        <!-- Add your site or application content here -->
+        <mp-header></mp-header>
+        <mp-subheader></mp-subheader>
+
+        <div    class="mp-menu-overlay"
+                ng-click="headerMenuToggle=!headerMenuToggle"
+                ng-show="headerMenuToggle">
+        </div>
+        <mp-notification-hub></mp-notification-hub>
+
+        <div class="loading" ng-show="loading.status">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+        </div>
+
+        <main ng-hide="errorState" ng-view="" ng-class="{noclick:headerMenuToggle}" class="container-fluid"></main>
+
+        <div class="container-fluid hideError" ng-class="{'showError': errorState}">
+          <div class="row whiteBg errorCont">
+            <div class="col-md-12">
+              <section class="models">
+                <h1 class="mp-section-title" ng-if="!is404">Sorry, there was an error. ({{error_info.status || "Unknown Error"}})</h1>
+
+                <h1 class="mp-section-title" ng-if="is404">Page not found!</h1>
+
+                <p ng-if="!is404">{{error_info.detail || "An unknown error has occurred."}}</p>
+
+                <p ng-if="is404">Sorry, we either could not find the page, or you did not have access to it.</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+        <ng-container ng-if="!loadingservice.status">
+          <ng-switch on="viewName">
+            <mp-footer ng-switch-when="login" mp-layout="extended"></mp-footer>
+            <mp-footer ng-switch-when="models|folder|model|statistics|profilesettings|accountmanagesettings|billingsettings|shopsubscriptions|usagesettings|rolessettings" ng-switch-when-separator="|" mp-layout="collapsed" right-aligned></mp-footer>
+            <mp-footer ng-switch-default mp-layout="collapsed"></mp-footer>
+          </ng-switch>
+        </ng-container>
+      </div>
+
+      <!--[if lt IE 9]>
+      <script src="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/scripts/oldieshim.82755dfc.js"></script>
+      <![endif]-->
+
+      <script src="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/scripts/vendor.930b4236.js"></script>
+
+      <script src="https://static.matterport.com/cloud_ui/20.7.2-52-gfa3d3aaf/scripts/scripts.a8924a97.js"></script>
+
+      <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBAdtEnNryymNTzu6SVL7TAUrxUEIk66YY&libraries=places"></script>
+
+
+    </div>
+  </body>
+</html>

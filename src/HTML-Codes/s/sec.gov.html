@@ -1,0 +1,1642 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"32edb8f179",applicationID:"436723953"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<link rel="shortlink" href="https://www.sec.gov/" />
+<link rel="canonical" href="https://www.sec.gov/" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="id" content="2431" />
+<meta name="date" content="2017-02-05T05:36:00" />
+<link rel="shortcut icon" href="/themes/custom/secgov/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.sec.gov/page/homepage" />
+<script src="/files/google_tag/primary/google_tag.script.js?qeuk01" defer></script>
+
+    <meta name="origin" content="Drupal" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta http-equiv="Expires" CONTENT="-1">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=3.0" />
+    <title>SEC.gov | HOME</title>
+    <script>window.env = "production";</script>
+    <link rel="stylesheet" media="all" href="/files/css/css_s1SgyArYLjmB7Tduj0i3NipKqFyqWrl0427eJww_PKM.css" />
+<link rel="stylesheet" media="all" href="/files/css/css_SjML6SPNHc8nFaxRm6ftiJSuAtlx9NiVaz5SjYyscUY.css" />
+
+    
+<!--[if lte IE 8]>
+<script src="/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/files/js/js_DbYoSBMaZ8BDiPMbmAksuUp5SeGURr2NgwYRzYSMyj4.js"></script>
+
+  </head>
+  <body class="default-view path-frontpage node--type-landing-page">
+
+    <a href="#main-content" class="visually-hidden focusable" tabindex="1">
+      Skip to main content
+    </a>
+    <noscript aria-hidden="true"><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TD3BKV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <container>
+<div id="page-wrapper">
+  <div id="page" class="homepage">
+    <section role="header">
+      <div class="header-content">
+        <div id="global-header">
+    
+<div id="block-digitalgovsearch" class="block global-header-digitalgov-search">
+  
+    
+        <div class="body"><!--<div class="hide-for-small" id="global-search">
+<form accept-charset="UTF-8" action="//secsearch.sec.gov/search" class="clearfix" id="global-search-form" method="get" name="form_iQueryForm">
+<fieldset><legend></legend> <label class="overlabel" for="global-search-box" style="visibility: visible;">Search SEC.gov</label> <input name="utf8" type="hidden" value="?" /> <input class="affiliate" name="affiliate" type="hidden" value="secsearch" /> <input aria-autocomplete="list" aria-haspopup="true" autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input" id="global-search-box" name="query" role="textbox" tabindex="4" title="Search for" type="text" /> <span aria-hidden="true" class="button-label fa fa-search"> </span><input class="global-search-button" tabindex="5" title="Go" type="submit" value="" /></fieldset>
+</form>
+
+<p class="options"><a class="option-link" href="http://www.sec.gov/edgar/searchedgar/companysearch.html" tabindex="6">Company Filings</a> | <a class="option-link" href="http://www.sec.gov/search/search.htm" tabindex="7">More Search Options</a></p>
+</div>-->
+
+
+
+<div class="block block--search block--search-form" id="global-search" role="search">
+<form accept-charset="UTF-8" action="//secsearch.sec.gov/search" class="clearfix" id="global-search-form" method="get" name="form_iQueryForm">
+<fieldset><legend></legend>
+<div class="search-box-container"><label class="overlabel" for="global-search-box" style="visibility: visible;">Search SEC.gov</label> <input name="utf8" type="hidden" value="?" /> <input class="affiliate" name="affiliate" type="hidden" value="secsearch" /> <input aria-autocomplete="list" aria-haspopup="true" autocomplete="off" class="usagov-search-autocomplete ui-autocomplete-input" id="global-search-box" name="query" role="textbox" title="Search for" type="text" /> <span aria-hidden="true" class="button-label fa fa-search"> </span> <input class="global-search-button" title="Go" type="submit" value="" /></div>
+</fieldset>
+</form>
+
+<div class="menu-name-menu-utility-menu">
+<p class="options"><span><a class="option-link" href="http://www.sec.gov/edgar/searchedgar/companysearch.html">Company Filings</a></span><span><a class="option-link" href="http://www.sec.gov/search/search.htm">More Search Options</a></span></p>
+</div>
+</div></div>
+  </div>
+<div id="block-secgov-branding" class="site-branding block region__inner system_branding_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+      
+    <div class="banner-seal">
+    <a href="/" title="SEC Emblem" rel="home" tabindex="2">
+      <img src="/files/sec-logo.png" alt="SEC Emblem" />
+    </a>
+  </div>
+  
+    <div class="banner-org-name">
+      <a href="/" title="U.S. Securities and Exchange Commission" rel="home" tabindex="3">U.S. Securities and Exchange Commission</a>
+  </div>
+   
+
+    <div id="mobile-menu-toggle" class="is-closed">
+    <span class="svg-icon svg-icon-sm" aria-label="Menu Toggle">q</span>
+  </div>
+
+    </div>
+  </div>
+</div>
+  </div>
+
+      </div>
+      <div class="global-navigation" id="global-navigation">
+          <div class="navigation-wrapper">
+    <div id="block-secgov-main-menu" class="block region__inner main">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+          
+    
+              <ul id="home-menu" class="menu">
+                          <li class="menu__item is-expanded expanded" >
+                <a href="/about.shtml" title="About" class="menu__link">About</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/Article/whatwedo.html" title="What We Do" class="menu__link">What We Do</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/Article/about-commissioners.html" title="Commissioners" class="menu__link">Commissioners</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/answers/about-lawsshtml.html" title="Securities Laws" class="menu__link">Securities Laws</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/reports" title="Reports and Publications" class="menu__link">Reports and Publications</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/careers" title="Careers" class="menu__link">Careers</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/contact-information/sec-directory" title="Contact" class="menu__link">Contact</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="/divisions.shtml" title="Divisions &amp; Offices" class="menu__link">Divisions &amp; Offices</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/corpfin.shtml" title="Corporation Finance" class="menu__link">Corporation Finance</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/enforce.shtml" title="Enforcement" class="menu__link">Enforcement</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/investment" title="Investment Management" class="menu__link">Investment Management</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/riskfin.shtml" title="Economic and Risk Analysis" class="menu__link">Economic and Risk Analysis</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/marketreg.shtml" title="Trading and Markets" class="menu__link">Trading and Markets</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/alj" title="Office of Administrative Law Judges" class="menu__link">Office of Administrative Law Judges</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/about/offices/ocie.shtml" title="Office of Compliance Inspections and Examinations" class="menu__link">Office of Compliance Inspections and Examinations</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/page/sec-regional-offices" title="Regional Offices" class="menu__link">Regional Offices</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions.shtml" title="All Divisions and Offices" class="menu__link">All Divisions and Offices</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="https://www.sec.gov/litigation.shtml" title="Enforcement" class="menu__link">Enforcement</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/litigation/litreleases.shtml" title="Litigation Releases" class="menu__link">Litigation Releases</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/litigation/admin.shtml" title="Administrative Proceedings" class="menu__link">Administrative Proceedings</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/litigation/opinions.shtml" title="Opinions and Adjudicatory Orders" class="menu__link">Opinions and Adjudicatory Orders</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/enforce/friactions.shtml" title="Accounting and Auditing" class="menu__link">Accounting and Auditing</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/litigation/suspensions.shtml" title="Trading Suspensions" class="menu__link">Trading Suspensions</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/newsroom/howinvestigationswork.html" title="How Investigations Work" class="menu__link">How Investigations Work</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/divisions/enforce/receiverships.htm" title="Receiverships" class="menu__link">Receiverships</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.sec.gov/divisions/enforce/claims.htm" title="Information for Harmed Investors" class="menu__link">Information for Harmed Investors</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="/rules.shtml" title="Regulation" class="menu__link">Regulation</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/rulemaking-index.shtml" title="Rulemaking Index" class="menu__link">Rulemaking Index</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/proposed.shtml" title="Proposed Rules" class="menu__link">Proposed Rules</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/final.shtml" title="Final Rules" class="menu__link">Final Rules</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/interim-final-temp.shtml" title="Interim Final Temporary Rules" class="menu__link">Interim Final Temporary Rules</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/other.shtml" title="Other Orders and Notices" class="menu__link">Other Orders and Notices</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/rules/sro.shtml" title="Self-Regulatory Organizations" class="menu__link">Self-Regulatory Organizations</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/interps.shtml" title="Staff Interpretations" class="menu__link">Staff Interpretations</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="/education" title="Education" class="menu__link">Education</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/" title="Investor.gov" class="menu__link">Investor.gov</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/research-before-you-invest/research/five-questions-ask-before-you-invest" title="Five Questions to Ask Before You Invest" class="menu__link">Five Questions to Ask Before You Invest</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/investment-professionals" title="About Investment Professionals" class="menu__link">About Investment Professionals</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/check-your-investment-professional" title="Check Your Investment Professional" class="menu__link">Check Your Investment Professional</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/additional-resources/free-financial-planning-tools" title="Investing Tools and Calculators" class="menu__link">Investing Tools and Calculators</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/introduction-investing/basics/investment-products" title="Investment Products" class="menu__link">Investment Products</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/research-before-you-invest/research/understanding-fees" title="Understanding Fees" class="menu__link">Understanding Fees</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/additional-resources/news-alerts/alerts-bulletins" title="Investor Alerts and Bulletins" class="menu__link">Investor Alerts and Bulletins</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.investor.gov/additional-resources/general-resources/glossary" title="Glossary" class="menu__link">Glossary</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="/edgar.shtml" title="Filings" class="menu__link">Filings</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/edgar/search-and-access" title="EDGAR – Search &amp; Access" class="menu__link">EDGAR – Search &amp; Access</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/edgar/filer-information" title="EDGAR – Information for Filers" class="menu__link">EDGAR – Information for Filers</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/edgar/searchedgar/companysearch.html" title="Company Filing Search" class="menu__link">Company Filing Search</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/oiea/Article/edgarguide.html" title="How to Search EDGAR" class="menu__link">How to Search EDGAR</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/fast-answers/answerspublicdocshtm.html" title="Requesting Public Documents" class="menu__link">Requesting Public Documents</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/forms" title="Forms List" class="menu__link">Forms List</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/edgar/about" title="About EDGAR" class="menu__link">About EDGAR</a>
+              </li>
+        </ul>
+  
+              </li>
+                    <li class="menu__item is-expanded expanded" >
+                <a href="/news" title="News" class="menu__link">News</a>
+                                <ul class="menu">
+                          <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/pressreleases" title="Press Releases" class="menu__link">Press Releases</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/statements" title="Public Statements" class="menu__link">Public Statements</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/speeches" title="Speeches" class="menu__link">Speeches</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/testimony" title="Testimony" class="menu__link">Testimony</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/spotlight" title="Spotlight Topics" class="menu__link">Spotlight Topics</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/whatsnew/wn-today.shtml" title="What&#039;s New" class="menu__link">What&#039;s New</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/upcoming-events" title="Upcoming Events" class="menu__link">Upcoming Events</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="https://www.sec.gov/news/webcasts.htm" title="Webcasts" class="menu__link">Webcasts</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/sec-in-the-news" title="SEC in the News" class="menu__link">SEC in the News</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/sec-videos" title="SEC Videos" class="menu__link">SEC Videos</a>
+              </li>
+                    <li class="menu__item is-active is-leaf leaf ">
+                <a href="/news/media-gallery" title="Media Gallery" class="menu__link">Media Gallery</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+  
+    </div>
+  </div>
+</div><nav role="navigation" aria-labelledby="block-secgov-account-menu-menu" id="block-secgov-account-menu">
+            
+  <h2 class="visually-hidden">User account menu</h2>
+  
+
+        
+              <ul id="user-menu" role="menubar" aria-hidden="false">
+        
+            <li class="login" role="menuitem">
+              <a href="/user/login" data-drupal-link-system-path="user/login">Log in</a>
+              </li>
+
+
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+      </div>
+    </section>
+
+          <div class="highlighted">
+        <aside class="message section clearfix" role="complementary">
+            <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+        </aside>
+      </div>
+    
+    <section role="content">
+      <a id="main-content" tabindex="-1"></a>
+
+              
+      
+            <div id="home">
+          <div class="main-content">
+    <div id="block-secgov-content">
+  
+    
+      
+<article data-history-node-id="2431" class="node node--type-landing_page node--view-mode-full clearfix">
+  
+    
+
+  <div>
+    <div class="panel-display panel-1col clearfix" >
+
+                                  <section id="alert" class="hp-section">
+                      <div class="block-region-alert"><div class="views-element-container block region__inner site_alerts-view_alerts_block_homepage">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="view view-site-alerts view-id-site_alerts view-display-id-view_alerts_block_homepage js-view-dom-id-site-alerts-1">
+    
+    
+    
+
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="homepage-alert Info promote view-row-count-1 view-row-first">
+      <div><div class="alert-title">SEC Response to COVID-19</div></div><div><div class="alert-body"><p>See the<a data-entity-substitution="canonical" data-entity-type="node" data-entity-uuid="5bcb0806-dae4-4fe7-852b-c0cd98ed8eda" href="/sec-coronavirus-covid-19-response" title="SEC Coronavirus (COVID-19) Response"> overview</a> of selected SEC response efforts to COVID-19.</p>
+</div></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div>
+                  </section>
+                            
+  	<section id="hero" class="hero">
+	<div class="block-region-hero"><div class="views-element-container block region__inner homepage_hero-block_1">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="hp-hero view view-homepage-hero view-id-homepage_hero view-display-id-block_1 js-view-dom-id-homepage-hero-1">
+    
+    
+    
+
+    
+        
+    
+    
+<div>
+    
+<div id="flexslider-1" class="flexslider optionset-homepage-hero">
+ 
+<ul class="slides">
+    
+<li>
+    <div class="views-field views-field-body"><div class="field-content"><style type="text/css">
+<!--/*--><![CDATA[/* ><!--*/
+.slide-content-box {margin: 0;} @media only screen and (min-width: 768px) and (max-width: 1440px) { .slide-content-box {margin: 3rem 0 0 3rem;} } @media only screen and (min-width: 1440px) { .slide-content-box {margin:10% 0 0 15%;} }
+
+/*--><!]]>*/
+</style><div id="slide-2"><img alt="Building Communities" data-entity-type="file" src="/files/Bike_Family_Final-Hero_11-03-17.jpg" /><div class="slide-content-box">
+<div class="slide-headline"><a href="#" target="_blank" title=""><!--<span class="headline-1">WE ARE THE</span>--><span class="headline-2">BUILDING COMMUNITIES</span></a></div>
+
+<div class="slide-description">
+<div class="slide-description-text">
+<p>The SEC protects investors in the $3.8 trillion municipal securities markets that cities and towns rely on to provide neighborhood schools, local libraries and hospitals, public parks, safe drinking water and so much more. </p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+    </li>
+</ul>
+</div>
+
+</div>
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="block sec_mission_block">
+  <div id="sec-mission">
+      <div class="hp-content">
+          <div class="hp-content-item odd">
+          <a href="#section-2" title="Go to We Inform and Protect Investors">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Inform and Protect Investors" src="/themes/custom/secgov/images/homepage/inform-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Inform and Protect Investors</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item even">
+          <a href="#section-3" title="Go to We Facilitate Capital Formation">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Facilitate Capital Formation" src="/themes/custom/secgov/images/homepage/cap-formation.png" />
+              </div>
+              <div class="hp-content-title">We Facilitate Capital Formation</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item odd">
+          <a href="#section-4" title="Go to We Enforce Federal Securities Laws">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Enforce Federal Securities Laws" src="/themes/custom/secgov/images/homepage/enforce-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Enforce Federal Securities Laws</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item even">
+          <a href="#section-5" title="Go to We Regulate Securities Markets">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Regulate Securities Markets" src="/themes/custom/secgov/images/homepage/regulate-securities.png" />
+              </div>
+              <div class="hp-content-title">We Regulate Securities Markets</div>
+          </a>
+          </div>
+
+          <div class="hp-content-item odd">
+          <a href="#section-6" title="Go to We Provide Data">
+              <div class="hp-content-icon">
+                  <img alt="Icon: We Provide Data" src="/themes/custom/secgov/images/homepage/data-icon-2x.png" />
+              </div>
+              <div class="hp-content-title">We Provide Data</div>
+          </a>
+          </div>
+      </div>
+
+      <div class="hp-content">
+        <div class="sec-mission-footer">
+            <p class="sec-mission-description">                
+                <span class="emphasis-1" style="font-size: 18px"><a href="/edgar/searchedgar/webusers.htm" style="color: inherit;">EDGAR</a> </span>
+                <span class="emphasis-2" style="font-size: 14px;">Search company and individual filings.</span>
+            </p>
+            <div id="edgar">
+              <form id="edgar-search" action="/cgi-bin/browse-edgar" method="get" name="companysearch">
+                  <div class="row">
+                      <div class="large-12 columns">
+                          <div class="row collapse">
+                            <label for="company-name" class="show-for-sr"><em>Company Name</em></label>
+                            <div class="small-11 medium-11 large-11 columns">
+                              <span class="twitter-typeahead" style="position: relative; display: inline-block;">
+                                <input id="company-name" name="company" title="Search For" type="text" value="Name or Ticker" class="tt-input" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;">
+                                <pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Helvetica, sans-serif; font-size: 14.000040054321289px; font-style: normal; font-variant-ligatures: no-common-ligatures; font-variant-numeric: normal; font-variant-caps: normal; font-variant-alternates: normal; font-variant-position: normal; font-variant-east-asian: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre>
+                                <div class="tt-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; width: 292px;">
+                                  <div class="tt-dataset tt-dataset-companies"></div>
+                                </div>
+                              </span>
+                            </div>
+
+                            <div class="small-1 medium-1 large-1 columns">
+                              <button id="edgar-search-button" type="submit" class="button postfix table-block">
+                                <span class="show-for-sr">Search</span>
+                                <i class="svg-icon svg-icon-sm svg-icon-box-md icon-search cell-block vcenter text-center">c</i>
+                              </button>
+                            </div>
+
+                            <div class="edgar-search-hidden">
+                              <input value="contains" name="match" type="hidden">
+                              <input value="getcompany" name="action" type="hidden">
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+              <form class="companySearchForm" id="fast-search" method="get" action="https://www.sec.gov/cgi-bin/browse-edgar">
+                  <div class="row">
+                      <div class="large-12 columns">
+                          <div class="row collapse">
+                            <label for="cik" class="show-for-sr"><em>Ticker or CIK</em></label>
+                            <div class="small-11 medium-11 large-11 columns">
+                              <input id="cik" name="CIK" title="Ticker or CIK" type="text" value="Ticker or CIK">
+                            </div>
+
+                            <div class="small-1 medium-1 large-1 columns">
+                              <button id="cik_find" type="submit" class="button postfix table-block">
+                                <span class="show-for-sr">Search</span>
+                                <i class="svg-icon svg-icon-sm svg-icon-box-md icon-search cell-block vcenter text-center">c</i>
+                              </button>
+                            </div>
+
+                            <div class="edgar-search-hidden">
+                              <input type="hidden" name="action" value="getcompany">
+                              <input type="hidden" name="owner" value="exclude">
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+	</section>
+  
+  <section id="section-1" class="hp-section odd-row">
+  	<div class="panel-panel panel-col">
+    	<h2></h2>
+    	<div class="column colspan-8"><div class="block-region-section-1-left"><div class="views-element-container block region__inner homepage_featured_stories-sec_stories">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-stories view-id-homepage_featured_stories view-display-id-sec_stories js-view-dom-id-homepage-featured-stories-1">
+    
+    
+    
+
+          <header>
+        <h3>SEC Stories</h3>
+      </header>
+    
+        
+    
+        <div class="views-view-grid horizontal cols-2 clearfix">
+            <div class="sec-stories-rows views-row clearfix row-1">
+                  <div class="sec-stories-col views-col col-1"><div class="views-field views-field-field-featured-graphic"><div class="field-content">  <a href="/check-out-atlanta-regional-office-virtual-event" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2020-07/aro-covid-call-july2020.jpg?itok=CAWKUuFs" width="320" height="213" alt="Avoiding Financial Scams - COVID-19 and Beyond: A Teletown Hall, July 22, 2020" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/check-out-atlanta-regional-office-virtual-event" hreflang="en">Check Out This Atlanta Regional Office Virtual Event</a>
+</div></div><div class="views-field views-field-field-alternate-title-secarticle"><div class="field-content"></div></div><div class="views-field views-field-field-teaser-text"><div class="field-content"></div></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Learn about potential scams during the COVID-19 pandemic and the most common tricks fraudsters use. This virtual event on July 22 is free and open to the public. </span></div></div>
+                  <div class="sec-stories-col views-col col-2"><div class="views-field views-field-field-featured-graphic"><div class="field-content">  <a href="/oiea/understanding-new-relationship-summary-your-financial-professional" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2020-06/crs-more-info2.jpg?itok=_Sun3nuP" width="320" height="217" alt="How To Understand the New Form CRS: picture of a couple examining information on a computer screen" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/oiea/understanding-new-relationship-summary-your-financial-professional" hreflang="en">Understanding the New Relationship Summary With Your Financial Professional</a>
+</div></div><div class="views-field views-field-field-alternate-title-secarticle"><div class="field-content"></div></div><div class="views-field views-field-field-teaser-text"><div class="field-content"></div></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Investors have a new tool when choosing a financial professional. This relationship summary document, known as Form CRS, provides important information about services, fees, and much more in one convenient place.</span></div></div>
+              </div>
+      </div>
+
+    
+        
+    <div class="more-link"><a href="/page/sec-stories">More SEC Stories</a></div>
+
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="views-element-container block region__inner featured_video-block_2">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="hp-featured-video view view-featured-video view-id-featured_video view-display-id-block_2 js-view-dom-id-featured-video-1">
+    
+    
+    
+
+          <header>
+        <h3>Featured Video</h3>
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <span class="views-field views-field-field-video"><span class="field-content"><span class="field-content-video"><a href="/news/sec-videos/protecting-deaf-hard-hearing-and-hearing-loss-communities-investment-scams" hreflang="en">  <img class="image-style-featured-video" src="/files/styles/featured_video_image/public/video_thumbnails/0_i69jtQ9hQ.jpg?itok=iuQIKuaH" width="320" height="207" alt="" typeof="Image" />
+
+</a></span>
+<span class="field-content-runtime"></span>
+</span></span><div class="views-field views-field-field-display-title"><h3 class="field-content">    <a href="/news/sec-videos/protecting-deaf-hard-hearing-and-hearing-loss-communities-investment-scams" hreflang="en">Protecting Deaf, Hard-of-Hearing and Hearing Loss Communities from Investment Scams</a>
+</h3></div><div class="views-field views-field-body"><div class="field-content"><p>This video shows how a fraud takes place from the point of view of a man from the deaf and hard or hearing community who was defrauded by someone they thought they could trust.</div></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="views-element-container block region__inner homepage_featured_spotlight-spotlight_topics">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-spotlight view-id-homepage_featured_spotlight view-display-id-spotlight_topics js-view-dom-id-homepage-featured-spotlight-1">
+    
+    
+    
+
+          <header>
+        <h3>Spotlight On</h3>
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/teachers" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2020-07/spotlight-on-teachers.jpg?itok=N2CZiwy6" width="320" height="213" alt="SEC’s Teacher Initiative" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-title"><h3 class="field-content"><a href="/teachers" hreflang="en">Attention Teachers</a></h3></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">As teachers prepare to go back to school, the SEC wants to make sure they’re also prepared to make informed investment decisions. Check out our page dedicated exclusively to educators and their financial success.</span></div>
+    </div>
+
+  
+
+    
+        
+    <div class="more-link"><a href="/spotlight">More Spotlight Topics</a></div>
+
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+    	<div class="column colspan-4 last"><div class="block-region-section-1-right">
+<div class="block enhancing-shareholder-engagement">
+  
+    
+        <div class="body"><style type="text/css">.button-box a > .fa {
+  background-color: transparent; color:#273a56; font-size: 400%;
+}
+
+.button-box a:hover > .fa, 
+.button-box a:focus > .fa {
+  color: #FFC057;
+}
+</style>
+<!--<div class="button-box"><a href="/page/expanding-investor-opportunities"><span class="fa fa-user-plus">&nbsp;</span> <span class="description" style="font-size: 16px; word-spacing: -0.1em;"><strong>Expanding Investor Opportunities</strong></span></a></div>-->
+</div>
+  </div>
+<div class="views-element-container block region__inner homepage_latest_news-homepage">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="view view-homepage-latest-news view-id-homepage_latest_news view-display-id-homepage js-view-dom-id-homepage-latest-news-1">
+    
+    
+    
+
+          <header>
+        <h3>Latest News</h3>
+      </header>
+    
+        
+    
+    <div class="item-list">
+  
+  <ul>
+
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/news/press-release/2020-178" hreflang="en">SEC Charges Interactive Brokers With Repeatedly Failing to File Suspicious Activity Reports</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-08-10T12:55:00Z" class="datetime">Aug. 10, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/news/press-release/2020-177" hreflang="en">SEC Charges Consumer Loan Company With FCPA Violations</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-08-06T12:50:00Z" class="datetime">Aug. 6, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/news/press-release/2020-175" hreflang="en">SEC Charges Affiliated Advisers for Misrepresentations About Payment for Order Flow Arrangements</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-08-05T18:55:00Z" class="datetime">Aug. 5, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/news/press-release/2020-173" hreflang="en"> SEC Provides Transparency to the Process of Nominating Candidates to the Investor Advisory Committee</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-08-05T16:30:00Z" class="datetime">Aug. 5, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/news/press-release/2020-172" hreflang="en">SEC Proposes to Improve the Retail Investor Experience through Modernized Fund Shareholder Reports and Disclosures</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-08-05T15:28:17Z" class="datetime">Aug. 5, 2020</time>
+
+</div></div></li>
+    
+  </ul>
+
+</div>
+
+    
+        
+    <div class="more-link"><a href="/page/news">More News</a></div>
+
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="block region__inner submit_a_tip_button_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div class="button-box"><a href="/complaint/select.shtml"><span class="svg-icon svg-icon-lg">b</span> <span class="description">Submit a Tip or<br />
+File a Complaint</span></a></div>
+          </div>
+  </div>
+</div>
+<div id="subscribe">
+  <div class="panel">
+    <h2>E-mail Updates</h2>
+    <p>Sign up for emails that will deliver SEC News direct to your inbox.</p>
+    <form accept-charset="UTF-8" action="https://public.govdelivery.com/accounts/USSEC/subscribers/qualify" id="GD-snippet-form" method="post" name="GD-snippet-form">
+      <input name="utf8" type="hidden" value="?"><input name="authenticity_token" type="hidden" value="rNLpZE6ui1SUXb98DT0ck6yojFmsiphJS29lz62OQ/k=">
+      <div class="row">
+        <div class="row collapse">
+          <label class="show-for-sr" for="email">E-mail Updates</label> <input id="email" name="email" onblur="if (this.value == '') {this.value = 'Email address'; this.style.color='#b1b1b1';} else if (this.value != '') {this.style.color='#000';}" onfocus="if(this.value == 'Email address') {this.value = ''; this.style.color='#000';}" title="Enter email address" type="text" value="Email address">
+        </div>
+      </div>
+      <div class="row">
+        <input class="form_button small button" name="commit" type="submit" value="Subscribe">
+      </div>
+    </form>
+    <script type="text/javascript">
+      //<![CDATA[
+        var GOVDSNIPPET = function() {
+          var form  = document.getElementById('GD-snippet-form');
+          var typeSelect = form.getElementsByTagName('select')[0];
+          var getStyleType = function(type) {
+            return typeSelect.value === type ? 'block' : 'none';
+          };
+          var toggleType = function() {
+            form.getElementsByTagName('li')[2].style.display = getStyleType('email');
+            form.getElementsByTagName('li')[1].style.display = getStyleType('phone');
+          };
+          if (typeof typeSelect != "undefined" && typeSelect.addEventListener) {
+            typeSelect.addEventListener('change', toggleType);
+          } else if (typeof typeSelect != "undefined" && typeSelect.attachEvent)  {
+            typeSelect.attachEvent('onchange', toggleType);
+          }
+        }();
+      //]]>
+    </script>
+  </div>
+</div>
+</div></div>
+  	</div>
+  </section>
+
+  <section id="section-2" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+    	<h2><div class="block-region-section-2-title">
+<div class="block homepage-section-2-title">
+  
+    
+        <div class="body"><script type="text/javascript">
+jQuery(function($) {
+  $(document).ready(function() {
+    $(".homepage_featured_content-we_inform_and_protect_investors a").each(function(i) {
+      if ($(this).attr("href") == '/spotlight/affinity-fraud.shtml') {
+        $(this).attr("href", "https://www.fbi.gov/news/stories/beware-of-affinity-fraud");
+      }
+    });
+  });
+});
+</script>
+<h2><a name="section2"></a>We Inform and Protect Investors</h2></div>
+  </div>
+</div></h2>
+      <div class="column colspan-4"><div class="block-region-section-2-left">
+<div class="block homepage-protect-your-money">
+  
+    
+        <div class="body"><h3>Protect Your Money!</h3>
+
+<p>Check out an investment professional's registration status and background at <a href="https://www.investor.gov">Investor.gov</a>.</p>
+
+<p class="section-3-button"><a href="check-your-investment-professional">Check Your<br />
+Investment<br />
+Professional</a></p></div>
+  </div>
+<div class="views-element-container block region__inner fast_answers_view-block_2">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="fast-answers-day homepage-block view view-fast-answers-view view-id-fast_answers_view view-display-id-block_2 js-view-dom-id-fast-answers-view-1">
+    
+    
+    
+
+          <header>
+        <h3>Learn more</h3>
+      </header>
+    
+        
+    
+    <div class="item-list">
+  
+  <ul>
+
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/fast-answers/answersadvancefeefraudhtm.html" hreflang="en">Advance Fee Fraud</a>
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/fast-answers/answersetfhtm.html" hreflang="en">Exchange-Traded Funds (ETFs)</a>
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/fast-answers/answers-form10khtm.html" hreflang="en">Form 10-K</a>
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/fast-answers/answersvarannhtm.html" hreflang="en">Variable Annuities</a>
+</div></div></li>
+    
+  </ul>
+
+</div>
+
+    
+        
+    
+          <footer>
+        <div class="more-link">
+<a href="https://www.investor.gov">Before you invest, Investor.gov</a>
+</div>
+      </footer>
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+      <div class="column colspan-8 last"><div class="block-region-section-2-right"><div class="views-element-container block region__inner investor_alerts_bulletins_list_page-block_2">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="investor-alerts-block dynamic-block view view-investor-alerts-bulletins-list-page view-id-investor_alerts_bulletins_list_page view-display-id-block_2 js-view-dom-id-investor-alerts-bulletins-list-page-1">
+    
+    
+    
+
+          <header>
+        <h3>Investor Alerts & Bulletins</h3>
+<p>The SEC's Office of Investor Education and Advocacy issues Investor Alerts & Bulletins as a service to investors. Investor Alerts typically warn investors about the latest investment frauds and scams. Investor Bulletins tend to educate investors about investment-related topics including the functions of the SEC.</p>
+      </header>
+    
+        
+    
+    <div class="item-list">
+  
+  <ul>
+
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/oiea/investor-alerts-and-bulletins/ib_indexedannuities" hreflang="en">Updated Investor Bulletin: Indexed Annuities</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-07-31T14:50:45Z" class="datetime">July 31, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/oiea/investor-alerts-and-bulletins/tips-teachers-investing-retirement-investor-bulletin" hreflang="en">Tips for Teachers: Investing for Retirement -- Investor Bulletin</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-07-28T13:33:20Z" class="datetime">July 28, 2020</time>
+
+</div></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">  <a href="/oiea/investor-alerts-and-bulletins/broadly-advertised-investments-investor-alert" hreflang="en">Broadly Advertised Investments – Investor Alert</a>
+</div></div><div class="views-field views-field-field-publish-date"><div class="field-content">    <time datetime="2020-07-14T15:34:45Z" class="datetime">July 14, 2020</time>
+
+</div></div></li>
+    
+  </ul>
+
+</div>
+
+    
+        
+    <div class="more-link"><a href="/investor/alerts">More Investor Alerts &amp; Bulletins</a></div>
+
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="views-element-container block region__inner homepage_featured_content-we_inform_and_protect_investors">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-content view-id-homepage_featured_content view-display-id-we_inform_and_protect_investors js-view-dom-id-homepage-featured-content-1">
+    
+    
+    
+
+          <header>
+        
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/ombudsman" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2018-08/Ombudsman-graphic.jpg?itok=yGAnAidD" width="240" height="163" alt="Ombudsman thumbnail" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-view-node"><h4 class="field-content featured-content-title"><a href="/ombudsman" hreflang="en">Ombudsman</a></h4></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">The Ombudsman will listen to your inquiries, complaints, and issues, review the information you provide, and help identify procedures, options, and resources. The Ombudsman is also available to clarify certain SEC decisions, policies, and practices, and serve as an alternate channel of communication between retail investors and the SEC.</span></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+    </div>
+  </section>
+
+  <section id="section-3" class="hp-section odd-row">
+    <div class="panel-panel panel-col">
+      <h2><div class="block-region-section-3-title">
+<div class="block homepage-section-3-title">
+  
+    
+        <div class="body"><h2>We Facilitate Capital Formation</h2>
+</div>
+  </div>
+</div></h2>
+      <div class="column colspan-8"><div class="block-region-section-3-left"><div class="views-element-container block region__inner homepage_featured_content_we_facilitate_capital_formation-we_facilitate_capital_formation">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-content-we-facilitate-capital-formation view-id-homepage_featured_content_we_facilitate_capital_formation view-display-id-we_facilitate_capital_formation js-view-dom-id-homepage-featured-content-we-facilitate-capital-formation-1">
+    
+    
+    
+
+    
+        
+    
+        <div class="views-view-grid vertical cols-1 clearfix">
+            <div class="views-col clearfix col-1" style="width: 100%;">
+                  <div class="views-row row-1"><div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/finhub" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2019-04/finhub-featured3.jpg?itok=SgaZis6-" width="320" height="217" alt="FinHub featured graphic" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><h4><a href="/finhub" hreflang="en">FinHub</a></h4></span></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">The SEC’s FinHub facilitates our active engagement with innovators, developers, and entrepreneurs of financial technology.</span></div></div>
+                  <div class="views-row row-2"><div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/smallbusiness" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2017-11/SMB-thumbnail.jpg.jpeg?itok=E-7yfxK6" width="320" height="178" alt="Small Business featured graphic" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-title"><span class="field-content"><h4><a href="/smallbusiness" hreflang="en">Small Business</a></h4></span></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Check out our new Small Biz site, with info to help companies that want to raise capital.</span></div></div>
+              </div>
+      </div>
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+      <div class="column colspan-4 last"><div class="block-region-section-3-right"><div class="views-element-container block region__inner homepage_recent_news_we_facilitate_capital_formation-recent_capital_formation_news">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-recent-news-we-facilitate-capital-formation view-id-homepage_recent_news_we_facilitate_capital_formation view-display-id-recent_capital_formation_news js-view-dom-id-homepage-recent-news-we-facilitate-capital-formation-1">
+    
+    
+    
+
+    
+        
+    
+    <div class="item-list">
+  
+  <ul class="cap-formation">
+
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/public-and-private-sector-experts-collaborate-annual-forum" hreflang="en">Public and Private Sector Experts Collaborate at Annual Forum</a>
+</div></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Check out the event highlights as well as keynote addresses from well-known leaders in the entrepreneurial community.</span></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/dera/data/crowdfunding-offerings-data-sets" hreflang="en">Crowdfunding Offerings Data Sets</a>
+</div></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">The SEC’s Crowdfunding Offerings Data Sets provide a quarterly look at offerings that rely on the Regulation Crowdfunding</span></div></li>
+    
+  </ul>
+
+</div>
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+    </div>
+  </section>
+
+  <section id="section-4" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+      <h2><div class="block-region-section-4-title">
+<div class="block homepage-section-6-title">
+  
+    
+        <div class="body"><h2>We Enforce Federal Securities Laws</h2></div>
+  </div>
+</div></h2>
+      <div class="column colspan-4"><div class="block-region-section-4-left"><div class="block region__inner cyber_enforcement_actions_button_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div class="button-box"><a href="/spotlight/cybersecurity-enforcement-actions"><span class="svg-icon svg-icon-lg">a</span> <span class="description">Cyber<br />
+Enforcement Actions</span></a></div>
+          </div>
+  </div>
+</div><div class="block region__inner administrative_proceedings_button_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div class="button-box"><a href="/litigation/apdocuments.shtml"><span class="svg-icon svg-icon-lg">o</span> <span class="description">Administrative<br />
+Proceeding<br />Documents</span></a></div>
+          </div>
+  </div>
+</div><div class="views-element-container block region__inner homepage_featured_content-we_enforce_federal_securities_laws">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-content view-id-homepage_featured_content view-display-id-we_enforce_federal_securities_laws js-view-dom-id-homepage-featured-content-2">
+    
+    
+    
+
+          <header>
+        
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/whistleblower" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2017-08/whistleblower-spotlight.png?itok=Wb-zmVw1" width="303" height="151" alt="Whistleblower graphic" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-view-node"><h4 class="field-content featured-content-title"><a href="/whistleblower" hreflang="en">Office of the Whistleblower</a></h4></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Submit a tip, learn about the program, or claim an award.</span></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+      <div class="column colspan-8 last"><div class="block-region-section-4-right"><div class="block region__inner litigation_releases_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <h2>Latest Federal Court Actions</h2><h3>Litigation Releases</h3><ul><li><a href="https://www.sec.gov/litigation/litreleases/2020/lr24863.htm">Jack Brewer</a><span>Aug 6, 2020</span></li><li><a href="https://www.sec.gov/litigation/litreleases/2020/lr24862.htm">Niel Martin Nielson</a><span>Aug 5, 2020</span></li><li><a href="https://www.sec.gov/litigation/litreleases/2020/lr24861.htm">Victor Lee Farias and Integrity Aviation &amp; Leasing, LLC</a><span>Aug 4, 2020</span></li><li><a href="https://www.sec.gov/litigation/litreleases/2020/lr24860.htm">Complete Business Solutions Group Inc. dba Par Funding et al.</a><span>Jul 31, 2020</span></li><li><a href="https://www.sec.gov/litigation/litreleases/2020/lr24859.htm">Kevin R. Kuhnash and Jason P. Jimerson</a><span>Jul 29, 2020</span></li></ul><div class="more-link"><a href="//www.sec.gov/litigation/litreleases.shtml">More Litigation Releases</a></div>
+          </div>
+  </div>
+</div><div class="block region__inner administrative_proceedings_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <h2>Latest Administrative Proceedings</h2><h3>Administrative Releases</h3><ul><li><a href="https://www.sec.gov/litigation/admin/2020/34-89510.pdf">Interactive Brokers LLC</a><span>Aug 10, 2020</span></li><li><a href="https://www.sec.gov/litigation/admin/2020/ia-5558.pdf">Rialto Capital Management, LLC</a><span>Aug 7, 2020</span></li><li><a href="https://www.sec.gov/litigation/admin/2020/34-89501.pdf">Wells Fargo &amp; Company</a><span>Aug 6, 2020</span></li><li><a href="https://www.sec.gov/litigation/admin/2020/34-89489.pdf">World Acceptance Corporation</a><span>Aug 6, 2020</span></li><li><a href="https://www.sec.gov/litigation/admin/2020/33-10816.pdf">Scott M. Dittman, CPA</a><span>Aug 5, 2020</span></li></ul><div class="more-link"><a href="//www.sec.gov/litigation/admin.shtml">More Administrative Releases</a></div>
+          </div>
+  </div>
+</div></div></div>
+    </div>
+  </section>
+
+  <section id="section-5" class="hp-section odd-row">
+    <div class="panel-panel panel-col">
+      <h2><div class="block-region-section-5-title">
+<div class="block homepage-section-5-title">
+  
+    
+        <div class="body"><h2>We Regulate Securities Markets</h2></div>
+  </div>
+</div></h2>
+      <div class="column colspan-8"><div class="block-region-section-5-left"><div class="views-element-container block region__inner homepage_featured_content-we_regulate_securities_markets">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-content view-id-homepage_featured_content view-display-id-we_regulate_securities_markets js-view-dom-id-homepage-featured-content-3">
+    
+    
+    
+
+          <header>
+        
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/tell-us" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2018-05/homepage-thumbnailv2.jpg?itok=fdf78H5T" width="320" height="217" alt="Tell us about your investor experience graphic " typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-view-node"><h4 class="field-content featured-content-title"><a href="/tell-us" hreflang="en">Tell us about your experience</a></h4></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">Making Wall Street work for Main Street means getting your input. The U.S. Securities and Exchange Commission wants to hear from you! We want your input on proposed rules and want to know what information is important to you, the investor. </span></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+      <div class="column colspan-4 last"><div class="block-region-section-5-right">
+<div class="block proposed-and-final-rules-and-credit-rating-agencies-buttons-block">
+  
+    
+        <div class="body"><div class="button-box margin-bottom-10"><a href="/files/nrsro-summary-report-2019.pdf"><span class="fa fa-file-text">&nbsp;</span><span class="description">Credit Rating Agencies</span></a></div>
+
+<div class="button-box"><a href="/rules/proposed.shtml"><span class="svg-icon svg-icon-lg">=</span> <span class="description">SEC Proposed Rules</span></a></div>
+
+<div class="button-box"><a href="/rules/final.shtml"><span class="svg-icon svg-icon-lg">h</span> <span class="description">View Final Rules</span></a></div>
+</div>
+  </div>
+</div></div>
+    </div>
+  </section>
+
+  <section id="section-6" class="hp-section even-row">
+    <div class="panel-panel panel-col">
+      <h2><div class="block-region-section-6-title">
+<div class="block homepage-section-4-title">
+  
+    
+        <div class="body"><h2>We Provide Data</h2>
+</div>
+  </div>
+</div></h2>
+      <div class="column colspan-4"><div class="block-region-section-6-left"><div class="block region__inner developer_resources_block">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div class="developer">
+          <h3>Developer Resources</h3>
+          <p>Check out updates on the SEC open data program, including best practices that
+          make it more efficient to download data.</p>
+          <p class="xbrl-link-box"><a href="/developer">View Developer Resources</a></p>
+        </div>
+          </div>
+  </div>
+</div>
+<div class="block homepage-money-market-fund-statistics-block">
+  
+    
+        <div class="body"><div><a href="/divisions/investment/mmf-statistics.shtml"><img src="/files/moneymarket_0.jpg" style="margin-bottom:1rem;" /></a>
+<h4><a href="/divisions/investment/mmf-statistics.shtml">Money Market Fund Statistics</a></h4>
+
+<p>Our Investment Management Analytics Office released an updated Money Market Fund Statistics report. The report reflects staff’s compilation and analysis of data reported to the Commission on Form N-MFP.</p>
+</div>
+</div>
+  </div>
+</div></div>
+      <div class="column colspan-8 last"><div class="block-region-section-6-right"><div class="views-element-container block region__inner data_list_page-block_1">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="data-list article-list view view-data-list-page view-id-data_list_page view-display-id-block_1 js-view-dom-id-data-list-page-1">
+    
+    
+    
+
+          <header>
+        <h3>Latest Data Sets</h3>
+      </header>
+    
+        
+    
+    <div class="item-list">
+  
+  <ul>
+
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/help/foiadocsbdfoiahtm.html" hreflang="en">Company Information About Active Broker-Dealers</a>
+</div></div><div class="views-field views-field-field-description-abstract"><div class="field-content">This text file contains the Central Index Key (CIK) numbers, company names, SEC reporting file numbers, and addresses (business addresses are provided when mailing addresses are not available) of active broker-dealers who are registered with the SEC.</div></div><div class="views-field views-field-field-date"><span class="views-label views-label-field-date">Updated</span><span class="field-content">    <time datetime="2020-08-01T13:00:00Z" class="datetime">Aug. 2020</time>
+
+</span></div></li>
+          <li><div class="views-field views-field-field-display-title"><div class="field-content">    <a href="/help/foiadocsinvafoiahtm.html" hreflang="en">Information About Registered Investment Advisers and Exempt Reporting Advisers</a>
+</div></div><div class="views-field views-field-field-description-abstract"><div class="field-content">The Investment Adviser Information Reports&#039; data is collected from electronic submissions of Form ADV by investment adviser firms to the Investment Adviser Registration Depository (IARD) system. </div></div><div class="views-field views-field-field-date"><span class="views-label views-label-field-date">Updated</span><span class="field-content">    <time datetime="2020-08-01T12:35:00Z" class="datetime">Aug. 2020</time>
+
+</span></div></li>
+    
+  </ul>
+
+</div>
+
+    
+        
+    <div class="more-link"><a href="/data">More Data Sets</a></div>
+
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div><div class="views-element-container block region__inner homepage_featured_content-we_provide_data">
+  <div class="block--menu-block" role="navigation">
+    <div class="menu-block-wrapper menu-name-main-menu">
+      
+            
+              <div>
+
+  <div class="featured-content view view-homepage-featured-content view-id-homepage_featured_content view-display-id-we_provide_data js-view-dom-id-homepage-featured-content-4">
+    
+    
+    
+
+          <header>
+        
+      </header>
+    
+        
+    
+    
+
+
+        
+        
+  
+  
+  
+    <div class="views-row promote view-row-count-1 view-row-first">
+      <div class="views-field views-field-field-featured-graphic"><div class="field-content featured-graphic">  <a href="/structureddata" hreflang="en">  <img class="image-style-featured-graphic" src="/files/styles/featured_graphic/public/2017-07/datadisclosure-spotlight.png?itok=z_m392wu" width="319" height="170" alt="Data and Disclosure" typeof="foaf:Image" />
+
+</a>
+</div></div><div class="views-field views-field-view-node"><h4 class="field-content featured-content-title"><a href="/structureddata" hreflang="en">Office of Structured Disclosure</a></h4></div><div class="views-field views-field-views-ifempty"><span class="field-content featured-content-teaser">The SEC&#039;s Office of Structured Disclosure is working to make financial reports more accessible and easy to use.</span></div>
+    </div>
+
+  
+
+    
+        
+    
+        
+
+    
+  </div>
+
+</div>
+
+          </div>
+  </div>
+</div></div></div>
+    </div>
+  </section>
+
+</div>
+
+  </div>
+</article>
+
+  </div>
+
+  </div>
+
+      </div>
+      
+    </section>
+
+    <section role="footer">
+                <div>
+    
+<div id="block-globalfooterstayconnectedfooter" class="block stay-connected-footer">
+  
+    
+        <div class="body"><p class="data-exempt" id="stay-connected-footer"><span>STAY CONNECTED</span><br class="new-line" />
+<a href="/news/socialmedia.shtml"><span class="fa fa-lg fa-twitter"><span class="visually-hidden">1</span></span> <span class="hide-for-small">Twitter</span></a> <a href="/news/socialmedia.shtml"><span class="fa fa-lg fa-facebook"><span class="visually-hidden">2</span></span> <span class="hide-for-small">Facebook</span></a> <a href="/about/secrss.shtml"><span class="fa fa-lg fa-rss"><span class="visually-hidden">3</span></span><span class="hide-for-small">RSS</span></a> <a href="//www.youtube.com/user/SECViews/videos"><span class="fa fa-lg fa-youtube-play"><span class="visually-hidden">4</span></span><span class="hide-for-small">YouTube</span></a><br class="hide-for-medium-up" />
+<a href="//www.flickr.com/photos/us_sec/albums"><span class="fa fa-lg fa-flickr"><span class="visually-hidden">5</span></span> <span class="hide-for-small">Flickr</span></a> <a href="//www.linkedin.com/company/us-securities-and-exchange-commission?trk=mini-profile"> <span class="fa fa-lg fa-linkedin"><span class="visually-hidden">6</span></span><span class="hide-for-small">LinkedIn</span></a> <a href="//www.pinterest.com/secgov"><span class="fa fa-lg fa-pinterest-p"><span class="visually-hidden">7</span></span> <span class="hide-for-small">Pinterest</span></a> <a href="//public.govdelivery.com/accounts/USSEC/subscriber/new"><span class="fa fa-lg fa-envelope"><span class="visually-hidden">8</span></span> <span class="hide-for-small">Email Updates</span> </a></p>
+</div>
+  </div>
+<nav role="navigation" aria-labelledby="block-secgov-footer-menu" id="block-secgov-footer">
+            
+  <h2 class="visually-hidden">Footer menu</h2>
+  
+
+        
+              <ul id="section-menu" class="menu">
+              <li class="menu__item is-active is-leaf leaf item-accessibility">
+        <a href="/disability/sec_access.htm" class="menu__link" data-drupal-link-system-path="node/111766">Accessibility</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-budget-&amp;-performance">
+        <a href="/about/offices/ofm/ofm-documents.htm" class="menu__link" data-drupal-link-system-path="node/111606">Budget &amp; Performance</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-careers">
+        <a href="/careers" class="menu__link" data-drupal-link-system-path="node/41311">Careers</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-contact">
+        <a href="/contact-information/sec-directory" class="menu__link" data-drupal-link-system-path="node/102846">Contact</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-contracts">
+        <a href="/page/oacqsectionlanding" class="menu__link" data-drupal-link-system-path="node/3841">Contracts</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-data">
+        <a href="/sec-data-resources" class="menu__link" data-drupal-link-system-path="node/191566">Data</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-foia">
+        <a href="/page/office-foia-services" class="menu__link" data-drupal-link-system-path="node/41166">FOIA</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-inspector-general">
+        <a href="/oig" class="menu__link" data-drupal-link-system-path="node/41456">Inspector General</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-investor.gov">
+        <a href="https://www.investor.gov/" class="menu__link">Investor.gov</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-no-fear-act-&amp;-eeo-data">
+        <a href="/page/eeosectionlanding" class="menu__link" data-drupal-link-system-path="node/3781">No FEAR Act &amp; EEO Data</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-ombudsman">
+        <a href="https://www.sec.gov/ombudsman" class="menu__link">Ombudsman</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-plain-writing">
+        <a href="/plainwriting.shtml" class="menu__link" data-drupal-link-system-path="node/111701">Plain Writing</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-privacy-&amp;-security">
+        <a href="/privacy.htm" class="menu__link" data-drupal-link-system-path="node/111706">Privacy &amp; Security</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-related-sites">
+        <a href="/links" class="menu__link" data-drupal-link-system-path="node/100276">Related Sites</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-site-map">
+        <a href="/sitemap.shtml" class="menu__link" data-drupal-link-system-path="node/111831">Site Map</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-usa.gov">
+        <a href="https://www.usa.gov/" class="menu__link">USA.gov</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-votes">
+        <a href="/about/commission-votes.shtml" class="menu__link" data-drupal-link-system-path="node/111231">Votes</a>
+              </li>
+
+          <li class="menu__item is-active is-leaf leaf item-whistleblower-protection">
+        <a href="/whistleblower" class="menu__link" data-drupal-link-system-path="node/99851">Whistleblower Protection</a>
+              </li>
+
+        </ul>
+  
+
+
+
+
+
+  </nav>
+
+  </div>
+
+          </section>
+  </div>
+</div>
+</container>
+
+<section role="off-canvas">
+
+</section>
+
+  </div>
+
+    
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i>Return to Top</a>
+
+    <div class="overlap">
+  <!-- Subscribe link, RSS, Email -->
+  <div id="addthis-icons-508" class="visibly-hidden">
+    <div class="addthis-wrapper">
+      <div class="appIconsDetail hide">
+        <div class="addthis_toolbox addthis_default_style hide-for-small">
+          <a class="addthis_button_print at300b" title="Print" href="#">
+            <span class="fa fa-print"></span>
+          </a>
+          <a class="addthis_button_facebook at300b" title="Facebook" href="#">
+            <span class="fa fa-facebook"></span>
+          </a>
+          <a class="addthis_button_twitter at300b" title="Tweet" href="#">
+            <span class="fa fa-twitter"></span>
+          </a>
+          <a class="addthis_button_email at300b" target="_blank" title="Email" href="#">
+            <span class="fa fa-envelope"></span>
+          </a>
+          <a class="addthis_button_compact at300m" href="#" title="Share">
+            <span class="fa fa-plus"></span>
+          </a>
+        <div class="atclear"></div>
+      </div>
+      <div class="addthis_toolbox hide">
+        <a class="addthis_button_facebook at300b" title="Facebook" href="#">
+          <span class="fa fa-facebook"></span>
+        </a>
+        <a class="addthis_button_twitter at300b" title="Tweet" href="#">
+          <span class="fa fa-twitter"></span>
+        </a>
+        <a class="addthis_button_email at300b" target="_blank" title="Email" href="#">
+          <span class="fa fa-envelope"></span>
+        </a>
+      </div>
+      <div class="atclear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/2431","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"0","extLabel":"(link is external)","extImgClass":false,"extSubdomains":true,"extExclude":".*\\.gov|http:\/\/www.xbrl.org\/utr\/2013-05-17\/utr.xml|http:\/\/www.xbrl.org\/dtr\/type\/numeric-2009-12-16.xsd|http:\/\/www.xbrl.org\/dtr\/type\/nonNumeric-2009-12-16.xsd|https:\/\/secir.secure.force.com\/ombudsman\/OMMSForm","extInclude":"","extCssExclude":".data-exempt","extCssExplicit":"","extAlert":true,"extAlertText":"You are now leaving the SEC Website. The link you have selected is located on another server. Please click on the OK button below to proceed to the selected site. The SEC does not endorse this web site, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"flexslider":{"optionsets":{"homepage_hero":{"animation":"fade","animationSpeed":600,"direction":"horizontal","slideshow":true,"easing":"swing","smoothHeight":false,"reverse":false,"slideshowSpeed":30000,"animationLoop":true,"randomize":true,"startAt":0,"itemWidth":0,"itemMargin":0,"minItems":0,"maxItems":0,"move":0,"directionNav":false,"controlNav":false,"thumbCaptions":false,"thumbCaptionsBoth":false,"keyboard":false,"multipleKeyboard":false,"mousewheel":false,"touch":true,"prevText":"Previous","nextText":"Next","namespace":"flex-","selector":".slides \u003E li","sync":"","asNavFor":"","initDelay":0,"useCSS":true,"video":false,"pausePlay":false,"pauseText":"Pause","playText":"Play","pauseOnAction":true,"pauseOnHover":false,"controlsContainer":"","manualControls":""}},"instances":{"flexslider-1":"homepage_hero"}},"user":{"uid":0,"permissionsHash":"34c5530e399151d56adc3e02e8041f71e09c3a4b8e95ff1c5442f13d79d0d783"}}</script>
+<script src="/files/js/js_P41Nw7dyQ1yt7B-LetD7hY8mAoblv5lJvvqZqX7nKNU.js"></script>
+<script src="/themes/custom/secgov/js/third-party/addthis_widget.js?qeuk01" async></script>
+<script src="/files/js/js_MDgzDD5hj94qmmq4I7UEld7i_JawcSiSaAXsYu2QhGQ.js"></script>
+<script src="/modules/custom/sec_custom_libraries/components/scripts/moment.min.js?qeuk01"></script>
+<script src="/files/js/js_T9Uqp-JZe6kYSD-5Wnsh8SGxbCCqXVozvu8E-FRFdoA.js"></script>
+
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"32edb8f179","applicationID":"436723953","transactionName":"ZQZSMBQEXxZZARJeXlxMcQcSDF4LFyYUQkFTD2wKCQFUOXsNCENDXQ9cARQ5fwpcBzBeVEUgXwoSF14JVAcUGg9EClUT","queueTime":0,"applicationTime":1382,"atts":"SUFRRlweTBg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+  </html>

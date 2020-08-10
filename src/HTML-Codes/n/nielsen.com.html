@@ -1,0 +1,1046 @@
+
+<!doctype html>
+<html lang="en-US">
+	
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"a56f57039c",applicationID:"101808123"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>What People Watch, Listen To and Buy | Nielsen India &#8211; Nielsen</title>
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//cloud.typography.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.nielsen.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.4.2"}};
+			/*! This file is auto-generated */
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0' href='https://www.nielsen.com/_static/??-eJydztEKwjAMheEXcgsqTnchPkvXBg2mqTQZure327wQFEXvz5c/cL1UJJ77gApeFQKpQcfJnyumLrs8gNrAWEeSugwWUIRPYigGF+6PJArCKtWEng9oPcuuJw6frUaXrQRHOq6BJODtbdNOGMuvQsiKpeoU5+YUU4juOwrJfIo/s5dWNv4j9VCHuF9u2ma7anbt+g7xJZLl' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='open-sans-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300italic%2C400italic%2C600italic%2C300%2C400%2C600&#038;subset=latin%2Clatin-ext&#038;display=fallback&#038;ver=5.4.2' media='all' />
+<link rel='stylesheet' id='knockout-css'  href='https://cloud.typography.com/7397556/7205172/css/fonts.css' media='all' />
+<link rel='stylesheet' id='nanum-gothic-css'  href='https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800' media='all' />
+<link rel='stylesheet' id='all-css-6' href='https://www.nielsen.com/wp-content/mu-plugins/jetpack/css/jetpack.css?m=1594309682g' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.nielsen.com/_static/??-eJzTLy/QzcxLzilNSS3WzwKiwtLUokoopZdVrKOPT4FubmZ6UWJJql5uZh5QsX2uraGppZGJgbGJkUUWACV5IKw='></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.nielsen.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.nielsen.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.4.2" />
+<!-- Stream WordPress user activity plugin v3.4.3 -->
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://www.nielsen.com/wp-content/uploads/sites/3/2019/06/cropped-Logo-n-Square-Blue-RGB-1024x1024.png?fit=32%2C32" sizes="32x32" />
+<link rel="icon" href="https://www.nielsen.com/wp-content/uploads/sites/3/2019/06/cropped-Logo-n-Square-Blue-RGB-1024x1024.png?fit=192%2C192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.nielsen.com/wp-content/uploads/sites/3/2019/06/cropped-Logo-n-Square-Blue-RGB-1024x1024.png?fit=180%2C180" />
+<meta name="msapplication-TileImage" content="https://www.nielsen.com/wp-content/uploads/sites/3/2019/06/cropped-Logo-n-Square-Blue-RGB-1024x1024.png?fit=270%2C270" />
+
+      <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KN6B5F5');
+    </script>
+
+    <!-- End Google Tag Manager -->
+  
+  <meta property="og:url" content="https://www.nielsen.com/in/en" />
+  <meta property="og:type" content="website" />
+
+      <meta property="og:title" content="What People Watch, Listen To and Buy | Nielsen India" />
+  
+      <meta property="og:description" content="Nielsen, a leading global information &amp; measurement company, provides market research, insights &amp; data about what people watch, listen to &amp; buy." />
+    <meta name="description" content="Nielsen, a leading global information &amp; measurement company, provides market research, insights &amp; data about what people watch, listen to &amp; buy." />
+  
+      <meta property="og:image" content="https://www.nielsen.com/wp-content/themes/nielsen-base/dist/images/open-graph-default.png" />
+  
+      <meta name="twitter:image" content="https://www.nielsen.com/wp-content/themes/nielsen-base/dist/images/open-graph-default.png">
+  	
+		  <link rel="alternate" hreflang="en-in" href="https://www.nielsen.com/in/en/" />
+</head>
+	
+	<body class="wp-embed-responsive en">
+
+		<!--[if IE]>
+			<div class="alert alert-warning">
+				You are using an &lt;strong&gt;outdated&lt;/strong&gt; browser. Please &lt;a href=&quot;http://browsehappy.com/&quot;&gt;upgrade your browser&lt;/a&gt; to improve your experience.			</div>
+		<![endif]-->
+			
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KN6B5F5"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript)-->
+<header class="banner site-header "
+	data-market="in" data-language="en" data-post-id="3280" data-business="" data-products="" >
+	<div class="container">
+		<nav class="nav-primary navbar navbar-toggleable-sm">
+
+			<div class="nav-primary-sticky d-flex hidden-sm-down">
+
+				<div class="primary-sticky-nav">
+											<a class="location-btn desktop-location-btn primary-sticky-font d-block text-black" href=""><img class="location-flag-icon" alt="Location Flag" src="https://www.nielsen.com/wp-content/uploads/sites/3/2019/04/india.gif">India</a>
+					
+				</div>
+
+				
+				
+					<div class="client-login-container primary-sticky-nav">
+						<div class="login-button">
+							<a href="https://www.nielsen.com/in/en/client-login" class="client-login d-block">Client Login</a>
+						</div>
+					</div>
+
+				
+				<div class="location-container desktop-location-container primary-sticky-nav hidden-xs-up">
+
+					
+						<div class="location-nav-header bg-lighter-gray text-center">
+														<span class="primary-sticky-font">Select a Location</span>
+						</div>
+
+						<div class="menu-market-selector-container"><label for="menu-market-selector" class="d-none">Region Market Navigation</label><select id="menu-market-selector" class="bootstrap-select-dropdown" data-live-search="true" data-width="auto">
+<option data-tokens='' data-href=/eu/en class='menu-item menu-item-type-custom menu-item-object-custom'>EUROPE</option>
+</li>
+
+<option data-tokens='' data-href=/cn/zh/ class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'>GREATER CHINA</option>
+
+<ul class="sub-menu">
+
+<option data-tokens='' data-href=/cn/zh class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Chinese mainland</option>
+</li>
+
+<option data-tokens='' data-href=/hk/en class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Hong Kong</option>
+</li>
+
+<option data-tokens='' data-href=/tw/zh class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Taiwan</option>
+</li>
+</ul>
+</li>
+
+<option data-tokens='' data-href=/in/en class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'>INDIA</option>
+</li>
+
+<option data-tokens='' data-href=/latam/es class='menu-item menu-item-type-custom menu-item-object-custom'>LATINOAMÉRICA (LATIN AMERICA)</option>
+</li>
+
+<option data-tokens='' data-href=/mena/en class='menu-item menu-item-type-custom menu-item-object-custom'>MIDDLE EAST, NORTH AFRICA &amp; PAKISTAN</option>
+</li>
+
+<option data-tokens='' data-href=/apac/en class='menu-item menu-item-type-custom menu-item-object-custom'>SOUTHEAST ASIA, NORTH ASIA &amp; PACIFIC</option>
+</li>
+
+<option data-tokens='' data-href=/ssa/en class='separator menu-item menu-item-type-custom menu-item-object-custom'>SUB-SAHARAN AFRICA</option>
+</li>
+
+<option data-tokens='' data-href=/dz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Algeria</option>
+</li>
+
+<option data-tokens='' data-href=/ar/es class='menu-item menu-item-type-custom menu-item-object-custom'>Argentina</option>
+</li>
+
+<option data-tokens='' data-href=/au/en class='menu-item menu-item-type-custom menu-item-object-custom'>Australia</option>
+</li>
+
+<option data-tokens='' data-href=/bd/en class='menu-item menu-item-type-custom menu-item-object-custom'>Bangladesh</option>
+</li>
+
+<option data-tokens='' data-href=/by/en class='menu-item menu-item-type-custom menu-item-object-custom'>Belarus</option>
+</li>
+
+<option data-tokens='' data-href=/be/en class='menu-item menu-item-type-custom menu-item-object-custom'>Belgium</option>
+</li>
+
+<option data-tokens='' data-href=/br/pt class='menu-item menu-item-type-custom menu-item-object-custom'>Brasil (Brazil)</option>
+</li>
+
+<option data-tokens='' data-href=/bg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Bulgaria</option>
+</li>
+
+<option data-tokens='' data-href=/ca/en class='menu-item menu-item-type-custom menu-item-object-custom'>Canada</option>
+</li>
+
+<option data-tokens='' data-href=/centam/es class='menu-item menu-item-type-custom menu-item-object-custom'>Centroamérica (Central America)</option>
+</li>
+
+<option data-tokens='' data-href=/cl/es class='menu-item menu-item-type-custom menu-item-object-custom'>Chile</option>
+</li>
+
+<option data-tokens='' data-href=/co/es class='menu-item menu-item-type-custom menu-item-object-custom'>Colombia</option>
+</li>
+
+<option data-tokens='' data-href=/hr/en class='menu-item menu-item-type-custom menu-item-object-custom'>Croatia</option>
+</li>
+
+<option data-tokens='' data-href=/cy/en class='menu-item menu-item-type-custom menu-item-object-custom'>Cyprus</option>
+</li>
+
+<option data-tokens='' data-href=/cz/cs class='menu-item menu-item-type-custom menu-item-object-custom'>Česká republika (Czech Republic)</option>
+</li>
+
+<option data-tokens='' data-href=/dk/da class='menu-item menu-item-type-custom menu-item-object-custom'>Danmark (Denmark)</option>
+</li>
+
+<option data-tokens='' data-href=/de/de class='menu-item menu-item-type-custom menu-item-object-custom'>Deutschland (Germany)</option>
+</li>
+
+<option data-tokens='' data-href=/do/es class='menu-item menu-item-type-custom menu-item-object-custom'>República Dominicana (Dominican Republic)</option>
+</li>
+
+<option data-tokens='' data-href=/ec/es class='menu-item menu-item-type-custom menu-item-object-custom'>Ecuador</option>
+</li>
+
+<option data-tokens='' data-href=/eg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Egypt</option>
+</li>
+
+<option data-tokens='' data-href=/es/es class='menu-item menu-item-type-custom menu-item-object-custom'>España (Spain)</option>
+</li>
+
+<option data-tokens='' data-href=/ee/en class='menu-item menu-item-type-custom menu-item-object-custom'>Estonia</option>
+</li>
+
+<option data-tokens='' data-href=/fr/fr class='menu-item menu-item-type-custom menu-item-object-custom'>France</option>
+</li>
+
+<option data-tokens='' data-href=/gr/en class='menu-item menu-item-type-custom menu-item-object-custom'>Greece</option>
+</li>
+
+<option data-tokens='' data-href=/in/en class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'>India</option>
+</li>
+
+<option data-tokens='' data-href=/id/en class='menu-item menu-item-type-custom menu-item-object-custom'>Indonesia</option>
+</li>
+
+<option data-tokens='' data-href=/il/he class='menu-item menu-item-type-custom menu-item-object-custom'>ישראל (Israel)</option>
+</li>
+
+<option data-tokens='' data-href=/it/it class='menu-item menu-item-type-custom menu-item-object-custom'>Italia (Italy)</option>
+</li>
+
+<option data-tokens='' data-href=/jp/ja class='menu-item menu-item-type-custom menu-item-object-custom'>日本 (Japan)</option>
+</li>
+
+<option data-tokens='' data-href=/jo/en class='menu-item menu-item-type-custom menu-item-object-custom'>Jordan</option>
+</li>
+
+<option data-tokens='' data-href=/ie/en class='menu-item menu-item-type-custom menu-item-object-custom'>Ireland</option>
+</li>
+
+<option data-tokens='' data-href=/kz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kazakhstan</option>
+</li>
+
+<option data-tokens='' data-href=/ke/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kenya</option>
+</li>
+
+<option data-tokens='' data-href=/kw/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kuwait</option>
+</li>
+
+<option data-tokens='' data-href=/lv/en class='menu-item menu-item-type-custom menu-item-object-custom'>Latvia</option>
+</li>
+
+<option data-tokens='' data-href=/lb/en class='menu-item menu-item-type-custom menu-item-object-custom'>Lebanon</option>
+</li>
+
+<option data-tokens='' data-href=/lt/en class='menu-item menu-item-type-custom menu-item-object-custom'>Lithuania</option>
+</li>
+
+<option data-tokens='' data-href=/hu/hu class='menu-item menu-item-type-custom menu-item-object-custom'>Magyarország (Hungary)</option>
+</li>
+
+<option data-tokens='' data-href=/my/en class='menu-item menu-item-type-custom menu-item-object-custom'>Malaysia</option>
+</li>
+
+<option data-tokens='' data-href=/mx/es class='menu-item menu-item-type-custom menu-item-object-custom'>México</option>
+</li>
+
+<option data-tokens='' data-href=/ma/en class='menu-item menu-item-type-custom menu-item-object-custom'>Morocco</option>
+</li>
+
+<option data-tokens='' data-href=/mm/en class='menu-item menu-item-type-custom menu-item-object-custom'>Myanmar</option>
+</li>
+
+<option data-tokens='' data-href=/nl/nl class='menu-item menu-item-type-custom menu-item-object-custom'>Nederland (Netherlands)</option>
+</li>
+
+<option data-tokens='' data-href=/np/en class='menu-item menu-item-type-custom menu-item-object-custom'>Nepal</option>
+</li>
+
+<option data-tokens='' data-href=/nz/en class='menu-item menu-item-type-custom menu-item-object-custom'>New Zealand</option>
+</li>
+
+<option data-tokens='' data-href=/ng/en class='menu-item menu-item-type-custom menu-item-object-custom'>Nigeria</option>
+</li>
+
+<option data-tokens='' data-href=/no/no class='menu-item menu-item-type-custom menu-item-object-custom'>Norge (Norway)</option>
+</li>
+
+<option data-tokens='' data-href=/mk/en class='menu-item menu-item-type-custom menu-item-object-custom'>(North Macedonia</option>
+</li>
+
+<option data-tokens='' data-href=/om/en class='menu-item menu-item-type-custom menu-item-object-custom'>Oman</option>
+</li>
+
+<option data-tokens='' data-href=/at/de class='menu-item menu-item-type-custom menu-item-object-custom'>Österreich (Austria)</option>
+</li>
+
+<option data-tokens='' data-href=/pk/en class='menu-item menu-item-type-custom menu-item-object-custom'>Pakistan</option>
+</li>
+
+<option data-tokens='' data-href=/pe/es class='menu-item menu-item-type-custom menu-item-object-custom'>Peru</option>
+</li>
+
+<option data-tokens='' data-href=/ph/en class='menu-item menu-item-type-custom menu-item-object-custom'>Philippines</option>
+</li>
+
+<option data-tokens='' data-href=/pl/pl class='menu-item menu-item-type-custom menu-item-object-custom'>Polska (Poland)</option>
+</li>
+
+<option data-tokens='' data-href=/pt/pt class='menu-item menu-item-type-custom menu-item-object-custom'>Portugal</option>
+</li>
+
+<option data-tokens='' data-href=/pr/es class='menu-item menu-item-type-custom menu-item-object-custom'>Puerto Rico</option>
+</li>
+
+<option data-tokens='' data-href=/qa/en class='menu-item menu-item-type-custom menu-item-object-custom'>Qatar</option>
+</li>
+
+<option data-tokens='' data-href=/ro/en class='menu-item menu-item-type-custom menu-item-object-custom'>Romania</option>
+</li>
+
+<option data-tokens='' data-href=/ru/ru class='menu-item menu-item-type-custom menu-item-object-custom'>Россия (Russia)</option>
+</li>
+
+<option data-tokens='' data-href=/sa/en class='menu-item menu-item-type-custom menu-item-object-custom'>Saudi Arabia</option>
+</li>
+
+<option data-tokens='' data-href=/sk/sk class='menu-item menu-item-type-custom menu-item-object-custom'>Slovenská republika (Slovakia)</option>
+</li>
+
+<option data-tokens='' data-href=/si/en class='menu-item menu-item-type-custom menu-item-object-custom'>Slovenia</option>
+</li>
+
+<option data-tokens='' data-href=/rs/en class='menu-item menu-item-type-custom menu-item-object-custom'>Serbia</option>
+</li>
+
+<option data-tokens='' data-href=/lk/en class='menu-item menu-item-type-custom menu-item-object-custom'>Sri Lanka</option>
+</li>
+
+<option data-tokens='' data-href=/fi/fi class='menu-item menu-item-type-custom menu-item-object-custom'>Suomi (Finland)</option>
+</li>
+
+<option data-tokens='' data-href=/sg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Singapore</option>
+</li>
+
+<option data-tokens='' data-href=/za/en/ class='menu-item menu-item-type-custom menu-item-object-custom'>South Africa</option>
+</li>
+
+<option data-tokens='' data-href=/kr/ko class='menu-item menu-item-type-custom menu-item-object-custom'>South Korea</option>
+</li>
+
+<option data-tokens='' data-href=/ch/de class='menu-item menu-item-type-custom menu-item-object-custom'>Schweiz | Switzerland | Svizzera | Suisse</option>
+</li>
+
+<option data-tokens='' data-href=/se/sv class='menu-item menu-item-type-custom menu-item-object-custom'>Sverige (Sweden)</option>
+</li>
+
+<option data-tokens='' data-href=/tz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Tanzania</option>
+</li>
+
+<option data-tokens='' data-href=/th/th class='menu-item menu-item-type-custom menu-item-object-custom'>ประเทศไทย (Thailand)</option>
+</li>
+
+<option data-tokens='' data-href=/tr/tr class='menu-item menu-item-type-custom menu-item-object-custom'>Türkiye (Turkey)</option>
+</li>
+
+<option data-tokens='' data-href=/ug/en class='menu-item menu-item-type-custom menu-item-object-custom'>Uganda</option>
+</li>
+
+<option data-tokens='' data-href=/ua/en class='menu-item menu-item-type-custom menu-item-object-custom'>Ukraine</option>
+</li>
+
+<option data-tokens='' data-href=/ae/en class='menu-item menu-item-type-custom menu-item-object-custom'>United Arab Emirates</option>
+</li>
+
+<option data-tokens='' data-href=/uk/en class='menu-item menu-item-type-custom menu-item-object-custom'>United Kingdom</option>
+</li>
+
+<option data-tokens='' data-href=/uy/es class='menu-item menu-item-type-custom menu-item-object-custom'>Uruguay</option>
+</li>
+
+<option data-tokens='' data-href=/us/en class='menu-item menu-item-type-custom menu-item-object-custom'>United States</option>
+</li>
+
+<option data-tokens='' data-href=/ve/es class='menu-item menu-item-type-custom menu-item-object-custom'>Venezuela</option>
+</li>
+
+<option data-tokens='' data-href=/vn/vi class='separator menu-item menu-item-type-custom menu-item-object-custom'>Việt Nam</option>
+</li>
+
+<option data-tokens='' data-href=# class='menu-item menu-item-type-custom menu-item-object-custom'>Home</option>
+</li>
+</select></div>
+						<div class="location-nav-footer bg-lighter-gray d-flex justify-content-between align-items-center">
+
+							<div class="location-check form-check m-0">
+								<label for="form-check-input-remember" class="form-check-label">
+																		<input id="form-check-input-remember" class="form-check-input" value="location-remember" name="location-remember" type="checkbox" title="Remember Me Input">Remember me</label>
+							</div>
+
+							<a class="location-submit d-flex" href=""><img alt="Submit" class="location-submit-icon" src="https://www.nielsen.com/wp-content/themes/nielsen-dotcom/dist/images/location-menu-submit.png"></a>
+
+						</div>
+
+					
+				</div>
+
+			</div>
+
+			<a class="navbar-brand" href="https://www.nielsen.com/in/en" rel="home">
+									<img alt="The Nielsen Company" class="n-tab site-logo hidden-sm-down" src="https://www.nielsen.com/wp-content/themes/nielsen-base/dist/images/n-tab@2x.png">
+									<img alt="The Nielsen Company" class="n-square site-logo-mobile hidden-md-up" src="https://www.nielsen.com/wp-content/themes/nielsen-base/dist/images/n-square@2x.png">
+				
+			</a>
+		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle Navigation">
+						<span class="sr-only navbar-toggler-icon">MENU</span>
+			<!-- <span>Menu</span> -->
+			<em class="fa fa-angle-down"></em>
+		</button>
+
+		<div id="navbar" class="navbar-collapse collapse align-items-center">
+
+			<div class="menu-english-global-header-shared-1-container"><ul id="menu-english-global-header-shared-1" class="nav navbar-nav mr-auto align-items-center">
+<li class='menu-item'><a href="/in/en/insights" target="" class="">Insights</a><span></span></li>
+</li>
+
+<li class='menu-item'><a href="/in/en/solutions" target="" class="">Solutions</a><span></span></li>
+</li>
+
+<li class='menu-item'><a href="/in/en/about-us" target="" class="">About</a><span></span></li>
+</li>
+</ul></div>
+			<div class="client-login-container-mobile nav hidden-md-up bg-lighter-gray">
+				<li class="login-button w-100">
+					<a href="https://www.nielsen.com/in/en/client-login" class="client-login d-block">Client Login</a>
+				</li>
+			</div>
+
+			
+				<div class="nav-primary-sticky mobile-nav-primary-sticky nav hidden-md-up">
+
+					<li class="primary-sticky-nav w-100 bg-lighter-gray">
+													<a class="location-btn mobile-location-btn d-inline" href=""><img class="location-flag-icon" alt="Location Flag" src="https://www.nielsen.com/wp-content/uploads/sites/3/2019/04/india.gif">India</a>
+						
+						
+					</li>
+
+				</div>
+
+
+				<div class="nav-primary-sticky mobile-nav-primary-sticky nav hidden-md-up">
+
+					<div class="location-container mobile-location-container primary-sticky-nav hidden-xs-up">
+
+						<div class="location-nav-header bg-lighter-gray text-center">
+														<span class="primary-sticky-font">Select a Location</span>
+						</div>
+
+						<div class="menu-market-selector-container"><label for="menu-market-selector-1" class="d-none">Region Market Navigation</label><select id="menu-market-selector-1" class="bootstrap-select-dropdown" data-live-search="true" data-width="auto">
+<option data-tokens='' data-href=/eu/en class='menu-item menu-item-type-custom menu-item-object-custom'>EUROPE</option>
+</li>
+
+<option data-tokens='' data-href=/cn/zh/ class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'>GREATER CHINA</option>
+
+<ul class="sub-menu">
+
+<option data-tokens='' data-href=/cn/zh class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Chinese mainland</option>
+</li>
+
+<option data-tokens='' data-href=/hk/en class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Hong Kong</option>
+</li>
+
+<option data-tokens='' data-href=/tw/zh class='menu-item menu-item-type-custom menu-item-object-custom'>⁠— Taiwan</option>
+</li>
+</ul>
+</li>
+
+<option data-tokens='' data-href=/in/en class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'>INDIA</option>
+</li>
+
+<option data-tokens='' data-href=/latam/es class='menu-item menu-item-type-custom menu-item-object-custom'>LATINOAMÉRICA (LATIN AMERICA)</option>
+</li>
+
+<option data-tokens='' data-href=/mena/en class='menu-item menu-item-type-custom menu-item-object-custom'>MIDDLE EAST, NORTH AFRICA &amp; PAKISTAN</option>
+</li>
+
+<option data-tokens='' data-href=/apac/en class='menu-item menu-item-type-custom menu-item-object-custom'>SOUTHEAST ASIA, NORTH ASIA &amp; PACIFIC</option>
+</li>
+
+<option data-tokens='' data-href=/ssa/en class='separator menu-item menu-item-type-custom menu-item-object-custom'>SUB-SAHARAN AFRICA</option>
+</li>
+
+<option data-tokens='' data-href=/dz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Algeria</option>
+</li>
+
+<option data-tokens='' data-href=/ar/es class='menu-item menu-item-type-custom menu-item-object-custom'>Argentina</option>
+</li>
+
+<option data-tokens='' data-href=/au/en class='menu-item menu-item-type-custom menu-item-object-custom'>Australia</option>
+</li>
+
+<option data-tokens='' data-href=/bd/en class='menu-item menu-item-type-custom menu-item-object-custom'>Bangladesh</option>
+</li>
+
+<option data-tokens='' data-href=/by/en class='menu-item menu-item-type-custom menu-item-object-custom'>Belarus</option>
+</li>
+
+<option data-tokens='' data-href=/be/en class='menu-item menu-item-type-custom menu-item-object-custom'>Belgium</option>
+</li>
+
+<option data-tokens='' data-href=/br/pt class='menu-item menu-item-type-custom menu-item-object-custom'>Brasil (Brazil)</option>
+</li>
+
+<option data-tokens='' data-href=/bg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Bulgaria</option>
+</li>
+
+<option data-tokens='' data-href=/ca/en class='menu-item menu-item-type-custom menu-item-object-custom'>Canada</option>
+</li>
+
+<option data-tokens='' data-href=/centam/es class='menu-item menu-item-type-custom menu-item-object-custom'>Centroamérica (Central America)</option>
+</li>
+
+<option data-tokens='' data-href=/cl/es class='menu-item menu-item-type-custom menu-item-object-custom'>Chile</option>
+</li>
+
+<option data-tokens='' data-href=/co/es class='menu-item menu-item-type-custom menu-item-object-custom'>Colombia</option>
+</li>
+
+<option data-tokens='' data-href=/hr/en class='menu-item menu-item-type-custom menu-item-object-custom'>Croatia</option>
+</li>
+
+<option data-tokens='' data-href=/cy/en class='menu-item menu-item-type-custom menu-item-object-custom'>Cyprus</option>
+</li>
+
+<option data-tokens='' data-href=/cz/cs class='menu-item menu-item-type-custom menu-item-object-custom'>Česká republika (Czech Republic)</option>
+</li>
+
+<option data-tokens='' data-href=/dk/da class='menu-item menu-item-type-custom menu-item-object-custom'>Danmark (Denmark)</option>
+</li>
+
+<option data-tokens='' data-href=/de/de class='menu-item menu-item-type-custom menu-item-object-custom'>Deutschland (Germany)</option>
+</li>
+
+<option data-tokens='' data-href=/do/es class='menu-item menu-item-type-custom menu-item-object-custom'>República Dominicana (Dominican Republic)</option>
+</li>
+
+<option data-tokens='' data-href=/ec/es class='menu-item menu-item-type-custom menu-item-object-custom'>Ecuador</option>
+</li>
+
+<option data-tokens='' data-href=/eg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Egypt</option>
+</li>
+
+<option data-tokens='' data-href=/es/es class='menu-item menu-item-type-custom menu-item-object-custom'>España (Spain)</option>
+</li>
+
+<option data-tokens='' data-href=/ee/en class='menu-item menu-item-type-custom menu-item-object-custom'>Estonia</option>
+</li>
+
+<option data-tokens='' data-href=/fr/fr class='menu-item menu-item-type-custom menu-item-object-custom'>France</option>
+</li>
+
+<option data-tokens='' data-href=/gr/en class='menu-item menu-item-type-custom menu-item-object-custom'>Greece</option>
+</li>
+
+<option data-tokens='' data-href=/in/en class='menu-item menu-item-type-custom menu-item-object-custom current-menu-item'>India</option>
+</li>
+
+<option data-tokens='' data-href=/id/en class='menu-item menu-item-type-custom menu-item-object-custom'>Indonesia</option>
+</li>
+
+<option data-tokens='' data-href=/il/he class='menu-item menu-item-type-custom menu-item-object-custom'>ישראל (Israel)</option>
+</li>
+
+<option data-tokens='' data-href=/it/it class='menu-item menu-item-type-custom menu-item-object-custom'>Italia (Italy)</option>
+</li>
+
+<option data-tokens='' data-href=/jp/ja class='menu-item menu-item-type-custom menu-item-object-custom'>日本 (Japan)</option>
+</li>
+
+<option data-tokens='' data-href=/jo/en class='menu-item menu-item-type-custom menu-item-object-custom'>Jordan</option>
+</li>
+
+<option data-tokens='' data-href=/ie/en class='menu-item menu-item-type-custom menu-item-object-custom'>Ireland</option>
+</li>
+
+<option data-tokens='' data-href=/kz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kazakhstan</option>
+</li>
+
+<option data-tokens='' data-href=/ke/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kenya</option>
+</li>
+
+<option data-tokens='' data-href=/kw/en class='menu-item menu-item-type-custom menu-item-object-custom'>Kuwait</option>
+</li>
+
+<option data-tokens='' data-href=/lv/en class='menu-item menu-item-type-custom menu-item-object-custom'>Latvia</option>
+</li>
+
+<option data-tokens='' data-href=/lb/en class='menu-item menu-item-type-custom menu-item-object-custom'>Lebanon</option>
+</li>
+
+<option data-tokens='' data-href=/lt/en class='menu-item menu-item-type-custom menu-item-object-custom'>Lithuania</option>
+</li>
+
+<option data-tokens='' data-href=/hu/hu class='menu-item menu-item-type-custom menu-item-object-custom'>Magyarország (Hungary)</option>
+</li>
+
+<option data-tokens='' data-href=/my/en class='menu-item menu-item-type-custom menu-item-object-custom'>Malaysia</option>
+</li>
+
+<option data-tokens='' data-href=/mx/es class='menu-item menu-item-type-custom menu-item-object-custom'>México</option>
+</li>
+
+<option data-tokens='' data-href=/ma/en class='menu-item menu-item-type-custom menu-item-object-custom'>Morocco</option>
+</li>
+
+<option data-tokens='' data-href=/mm/en class='menu-item menu-item-type-custom menu-item-object-custom'>Myanmar</option>
+</li>
+
+<option data-tokens='' data-href=/nl/nl class='menu-item menu-item-type-custom menu-item-object-custom'>Nederland (Netherlands)</option>
+</li>
+
+<option data-tokens='' data-href=/np/en class='menu-item menu-item-type-custom menu-item-object-custom'>Nepal</option>
+</li>
+
+<option data-tokens='' data-href=/nz/en class='menu-item menu-item-type-custom menu-item-object-custom'>New Zealand</option>
+</li>
+
+<option data-tokens='' data-href=/ng/en class='menu-item menu-item-type-custom menu-item-object-custom'>Nigeria</option>
+</li>
+
+<option data-tokens='' data-href=/no/no class='menu-item menu-item-type-custom menu-item-object-custom'>Norge (Norway)</option>
+</li>
+
+<option data-tokens='' data-href=/mk/en class='menu-item menu-item-type-custom menu-item-object-custom'>(North Macedonia</option>
+</li>
+
+<option data-tokens='' data-href=/om/en class='menu-item menu-item-type-custom menu-item-object-custom'>Oman</option>
+</li>
+
+<option data-tokens='' data-href=/at/de class='menu-item menu-item-type-custom menu-item-object-custom'>Österreich (Austria)</option>
+</li>
+
+<option data-tokens='' data-href=/pk/en class='menu-item menu-item-type-custom menu-item-object-custom'>Pakistan</option>
+</li>
+
+<option data-tokens='' data-href=/pe/es class='menu-item menu-item-type-custom menu-item-object-custom'>Peru</option>
+</li>
+
+<option data-tokens='' data-href=/ph/en class='menu-item menu-item-type-custom menu-item-object-custom'>Philippines</option>
+</li>
+
+<option data-tokens='' data-href=/pl/pl class='menu-item menu-item-type-custom menu-item-object-custom'>Polska (Poland)</option>
+</li>
+
+<option data-tokens='' data-href=/pt/pt class='menu-item menu-item-type-custom menu-item-object-custom'>Portugal</option>
+</li>
+
+<option data-tokens='' data-href=/pr/es class='menu-item menu-item-type-custom menu-item-object-custom'>Puerto Rico</option>
+</li>
+
+<option data-tokens='' data-href=/qa/en class='menu-item menu-item-type-custom menu-item-object-custom'>Qatar</option>
+</li>
+
+<option data-tokens='' data-href=/ro/en class='menu-item menu-item-type-custom menu-item-object-custom'>Romania</option>
+</li>
+
+<option data-tokens='' data-href=/ru/ru class='menu-item menu-item-type-custom menu-item-object-custom'>Россия (Russia)</option>
+</li>
+
+<option data-tokens='' data-href=/sa/en class='menu-item menu-item-type-custom menu-item-object-custom'>Saudi Arabia</option>
+</li>
+
+<option data-tokens='' data-href=/sk/sk class='menu-item menu-item-type-custom menu-item-object-custom'>Slovenská republika (Slovakia)</option>
+</li>
+
+<option data-tokens='' data-href=/si/en class='menu-item menu-item-type-custom menu-item-object-custom'>Slovenia</option>
+</li>
+
+<option data-tokens='' data-href=/rs/en class='menu-item menu-item-type-custom menu-item-object-custom'>Serbia</option>
+</li>
+
+<option data-tokens='' data-href=/lk/en class='menu-item menu-item-type-custom menu-item-object-custom'>Sri Lanka</option>
+</li>
+
+<option data-tokens='' data-href=/fi/fi class='menu-item menu-item-type-custom menu-item-object-custom'>Suomi (Finland)</option>
+</li>
+
+<option data-tokens='' data-href=/sg/en class='menu-item menu-item-type-custom menu-item-object-custom'>Singapore</option>
+</li>
+
+<option data-tokens='' data-href=/za/en/ class='menu-item menu-item-type-custom menu-item-object-custom'>South Africa</option>
+</li>
+
+<option data-tokens='' data-href=/kr/ko class='menu-item menu-item-type-custom menu-item-object-custom'>South Korea</option>
+</li>
+
+<option data-tokens='' data-href=/ch/de class='menu-item menu-item-type-custom menu-item-object-custom'>Schweiz | Switzerland | Svizzera | Suisse</option>
+</li>
+
+<option data-tokens='' data-href=/se/sv class='menu-item menu-item-type-custom menu-item-object-custom'>Sverige (Sweden)</option>
+</li>
+
+<option data-tokens='' data-href=/tz/en class='menu-item menu-item-type-custom menu-item-object-custom'>Tanzania</option>
+</li>
+
+<option data-tokens='' data-href=/th/th class='menu-item menu-item-type-custom menu-item-object-custom'>ประเทศไทย (Thailand)</option>
+</li>
+
+<option data-tokens='' data-href=/tr/tr class='menu-item menu-item-type-custom menu-item-object-custom'>Türkiye (Turkey)</option>
+</li>
+
+<option data-tokens='' data-href=/ug/en class='menu-item menu-item-type-custom menu-item-object-custom'>Uganda</option>
+</li>
+
+<option data-tokens='' data-href=/ua/en class='menu-item menu-item-type-custom menu-item-object-custom'>Ukraine</option>
+</li>
+
+<option data-tokens='' data-href=/ae/en class='menu-item menu-item-type-custom menu-item-object-custom'>United Arab Emirates</option>
+</li>
+
+<option data-tokens='' data-href=/uk/en class='menu-item menu-item-type-custom menu-item-object-custom'>United Kingdom</option>
+</li>
+
+<option data-tokens='' data-href=/uy/es class='menu-item menu-item-type-custom menu-item-object-custom'>Uruguay</option>
+</li>
+
+<option data-tokens='' data-href=/us/en class='menu-item menu-item-type-custom menu-item-object-custom'>United States</option>
+</li>
+
+<option data-tokens='' data-href=/ve/es class='menu-item menu-item-type-custom menu-item-object-custom'>Venezuela</option>
+</li>
+
+<option data-tokens='' data-href=/vn/vi class='separator menu-item menu-item-type-custom menu-item-object-custom'>Việt Nam</option>
+</li>
+
+<option data-tokens='' data-href=# class='menu-item menu-item-type-custom menu-item-object-custom'>Home</option>
+</li>
+</select></div>
+						<div class="location-nav-footer bg-lighter-gray d-flex justify-content-between align-items-center">
+
+							<div class="location-check form-check m-0">
+								<label for="form-location-remember" class="form-check-label">
+																		<input id="form-location-remember" class="form-check-input" value="location-remember" name="location-remember" type="checkbox">Remember me</label>
+							</div>
+
+							<a class="location-submit d-flex" href="" ><img alt="Submit" class="location-submit-icon" src="https://www.nielsen.com/wp-content/themes/nielsen-dotcom/dist/images/location-menu-submit.png"></a>
+
+						</div>
+
+					</div>
+				</div>
+
+							<div class="menu-search-container ml-auto">
+					
+
+<form class="searchform" action="https://www.nielsen.com/" method="get" role="search">
+	<div class="input-group">
+	    <label for="search" class="d-none">search</label>
+		<input class="form-control search" type="text" name="s" id="search" value="" placeholder="Search" />
+		<input type="hidden" value="in" name="market" id="post_market" />
+		<input type="hidden" value="en" name="language" id="post_language" />
+		<button type="submit" value="Search" class="submit"><em class="fa fa-search" aria-hidden="true"></em></button>
+	</div>
+</form>
+				</div>
+			
+		</div>
+
+		</nav>
+	</div>
+	<div class="banner-border">
+
+	</div>
+	<!-- Desktop Dropdown Menu -->
+	<div id="menu-dropdown"></div>
+</header>
+
+
+
+			<div class="wrap container" role="document">
+				<div class="content row">
+					<main class="main">
+						
+						<div class="page-content">
+								
+	
+<div class="wp-block-nlsn-blocks-nlsn-hero-slider"><div id="" class="module alignfull module-no-padding align-items-start"><div class="container"><div class="row justify-content-center"><div class="col-md-12"><div id="nlsn-hero-slider-id-0" class="hero-slider smart-slider post-carousel carousel slide container-negative-margin" data-ride="carousel" data-wrap="true" data-pause="hover" data-interval="5000" data-min-height="500"><div class="carousel-inner alignfull">
+<div class="wp-block-nlsn-blocks-nlsn-hero-slide carousel-item hero-slide"><div class="image-background slide-image-background" style="background-image:url(https://www.nielsen.com/wp-content/uploads/sites/3/2019/03/data-texture-slider-background-1920x600-blue.png);background-position:center"></div><div class="slide-content d-flex align-items-center text-contrast"><div class="container"><h1 class="slide-title">TRENDS THAT ARE TRANSFORMING IN-STORE STRATEGY</h1><div class="slide-editor"><p>How shelf optimisation and analysis of trade spends are helping brands win in-store. </p></div><a class="more-link btn btn-purple" href="https://www.nielsen.com/in/en/insights/report/2019/trends-that-are-transforming-in-store-strategy/">Discover here</a></div></div></div>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-hero-slide carousel-item hero-slide"><div class="image-background slide-image-background" style="background-image:url(https://www.nielsen.com/wp-content/uploads/sites/3/2019/03/data-texture-slider-background-1920x600-purple.png);background-position:center"></div><div class="slide-content d-flex align-items-center text-contrast"><div class="container"><h1 class="slide-title">CHANGING CONSUMER PROSPERITY </h1><div class="slide-editor"><p>Explore the impact of wealth fragmentation on the consumer environment. </p></div><a class="more-link btn btn-blue" href="https://www.nielsen.com/in/en/insights/report/2019/changing-consumer-prosperity/">DOWNLOAD REPORT </a></div></div></div>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-hero-slide carousel-item hero-slide"><div class="image-background slide-image-background" style="background-image:url(https://www.nielsen.com/wp-content/uploads/sites/3/2019/03/data-texture-slider-background-1920x600-blue.png);background-position:center"></div><div class="slide-content d-flex align-items-center text-contrast"><div class="container"><h1 class="slide-title">REFORMATTING RETAIL IN INDIA</h1><div class="slide-editor"><p>The Rise of Modern Trade and Trends that will define the future.</p></div><a class="more-link btn btn-purple" href="https://www.nielsen.com/in/en/insights/report/2019/reformatting-retail-in-india/">Discover here</a></div></div></div>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-hero-slide carousel-item hero-slide"><div class="image-background slide-image-background" style="background-image:url(https://www.nielsen.com/wp-content/uploads/sites/3/2019/03/data-texture-slider-background-1920x600-purple.png);background-position:center"></div><div class="slide-content d-flex align-items-center text-contrast"><div class="container"><h1 class="slide-title">THE BEAUTY MARKET IS LETTING ITS HAIR DOWN </h1><div class="slide-editor"><p>Trends in the Indian Hair Care industry. </p></div><a class="more-link btn btn-" href="https://www.nielsen.com/in/en/insights/report/2019/the-beauty-market-is-letting-its-hair-down/">Download Report </a></div></div></div>
+</div></div></div></div></div></div></div>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-columns"><div id="" class="module alignfull module-no-padding align-items-start"><div class="container"><div class="row justify-content-center"><div class="col-md-12"><div class="column-layout has-33-33-33-layout row">
+<div class="wp-block-column">
+<div class="wp-block-nlsn-blocks-nlsn-container"><div id="" class="border-top-blue module alignfull module-slim align-items-start" style="min-height:0"><div class="container"><div class="row justify-content-center"><div class="col-md-12">
+<div class="wp-block-nlsn-blocks-nlsn-heading"><div class="module alignfull module-no-padding" id=""><div class="container"><div class="row no-gutters justify-content-center"><div class="col-md-12 text-left text-blue"><h3><a href="http://sites.nielsen.com/newscenter" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)"> News Center </a></h3></div></div></div></div></div>
+
+
+
+<p><strong>Welcome to News Center</strong></p>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-columns"><div id="" class="module alignfull module-no-padding align-items-start"><div class="container"><div class="row justify-content-center"><div class="col-md-12"><div class="column-layout has-25-75-layout row">
+<div class="wp-block-column">
+<figure class="wp-block-image"><img src="https://www.nielsen.com/wp-content/uploads/sites/3/2019/03/icon-black-blue-65x65-News-Print.png?w=1110" alt="" class="wp-image-2106" data-recalc-dims="1"/></figure>
+</div>
+
+
+
+<div class="wp-block-column">
+<p>News Center is our digital hub for news, perspectives from our thought leaders and updates about the company. There’s a lot to learn about Nielsen directly from Nielsen.<br></p>
+
+
+
+<p><a rel="noreferrer noopener" href="http://sites.nielsen.com/newscenter" target="_blank">Visit News Center &gt;</a> </p>
+</div>
+</div></div></div></div></div></div>
+</div></div></div></div></div>
+</div>
+
+
+
+<div class="wp-block-column">
+<div class="wp-block-nlsn-blocks-nlsn-container"><div id="" class="border-top-blue module alignfull module-slim align-items-start" style="min-height:0"><div class="container"><div class="row justify-content-center"><div class="col-md-12">
+<div class="wp-block-nlsn-blocks-nlsn-heading"><div class="module alignfull module-no-padding" id=""><div class="container"><div class="row no-gutters justify-content-center"><div class="col-md-12 text-left text-blue"><h3><a href="/in/en/insights/report/2018/connected-commerce-connectivity-is-enabling-lifestyle-evolution/"> Featured Report </a></h3></div></div></div></div></div>
+
+
+
+<p><strong>Connected Commerce </strong></p>
+
+
+
+<div class="wp-block-nlsn-blocks-nlsn-columns"><div id="" class="module alignfull module-no-padding align-items-start"><div class="container"><div class="row justify-content-center"><div class="col-md-12"><div class="column-layout has-25-75-layout row">
+<div class="wp-block-column">
+<figure class="wp-block-image"><img src="https://www.nielsen.com/wp-content/uploads/sites/3/2019/04/icon-black-purple-65x65-360-View-of-Consumer.png?w=1110" alt="" class="wp-image-112117" data-recalc-dims="1"/></figure>
+</div>
+
+
+
+<div class="wp-block-column">
+<p>Every day, 85% of users (3.4 billion people) connect to the internet and spend, on average, six-and-a-half hours online.Learn how Connectivity is enabling lifestyle evolution.</p>
+
+
+
+<p><a href="/in/en/insights/report/2018/connected-commerce-connectivity-is-enabling-lifestyle-evolution/">Download Report &gt;</a> </p>
+</div>
+</div></div></div></div></div></div>
+
+
+
+<p></p>
+</div></div></div></div></div>
+</div>
+
+
+
+<div class="wp-block-column">
+<div class="wp-block-nlsn-blocks-nlsn-container"><div id="" class="border-top-blue module alignfull module-slim align-items-start" style="min-height:0"><div class="container"><div class="row justify-content-center"><div class="col-md-12">
+<div class="wp-block-nlsn-blocks-nlsn-heading"><div class="module alignfull module-no-padding" id=""><div class="container"><div class="row no-gutters justify-content-center"><div class="col-md-12 text-left text-blue"><h3> <a href="/in/en/solutions">Solutions </a></h3></div></div></div></div></div>
+
+
+
+<p><strong>The Science Behind What&#8217;s Next™</strong></p>
+
+
+
+<p>The right data can mean the difference between guessing and knowing. Nielsen&#8217;s data is backed by real science, so you won&#8217;t have to wonder what&#8217;s next – you’ll know.</p>
+
+
+
+<p> <br><a href="/in/en/solutions">Explore Now &gt;</a> <br></p>
+</div></div></div></div></div>
+
+
+
+<p></p>
+</div>
+</div></div></div></div></div></div>
+
+
+
+
+						</div><!-- /.page-content -->
+					</main><!-- /.main -->
+				</div><!-- /.content -->
+			</div><!-- /.wrap -->
+			
+<footer class="content-info">
+			<div class="footer-widgets">
+			<div class="container">
+				<div class="row footer-nav-row hidden-xs-up">
+					<div class="footer-column-menu">
+					<div class="menu-english-footer-india-container"><ul id="menu-container-footer" class="menu">
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'   href=/in/en#>Company Info</a></li>
+
+<ul class="sub-menu">
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/about-us>About Nielsen</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'  target="_blank"  href=http://ir.nielsen.com>Investor Relations</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'  target="_blank"  href=https://www.nielsen.com/us/en/about-us/global-responsibility-and-sustainability/>Responsibility &amp; Sustainability</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/press-releases>Press Room</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'  target="_blank"  href=https://careers.nielsen.com>Careers</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/contact-us>Contact Us</a></li>
+</li>
+</ul>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'   href=/in/en#>Insights</a></li>
+
+<ul class="sub-menu">
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/insights>News &amp; Reports</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/news-center/>News Center</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/solutions/measurement>How We Measure</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/events>Webinars &amp; Events</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/newsletter>Newsletter Sign-up</a></li>
+</li>
+</ul>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children'   href=/in/en#>Solutions</a></li>
+
+<ul class="sub-menu">
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=https://www.nielsen.com/in/en/solutions/capabilities/ad-intel-international-india-english/>Ad Intel</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/solutions/advertising-effectiveness>Advertising Effectiveness</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/solutions/product-development>Product Development</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'   href=/in/en/solutions/segmentation>Segmentation</a></li>
+</li>
+
+<li><a class='menu-item menu-item-type-custom menu-item-object-custom'  target="_blank"  href=/in/en/solutions/shopper>Shopper</a></li>
+</li>
+</ul>
+</li>
+</ul></div><section class="footer-nav-section widget col-sm-3 widget_nav_menu footer-social-icons">
+
+<!-- Dynamically generate social sharing icons to the footer menu -->
+<!-- check for WeChat initially, otherwise implement other social networks -->
+<div class="social-button-container">
+
+	
+			<a href="https://twitter.com/nielsen" style="cursor:pointer;" class="social-icon twitter d-inline-flex align-items-center justify-content-center" target="_blank">
+				<img alt="Footer Social Icons" src="/wp-content/themes/nielsen-base/dist/images/twitter-footer@2x.png">
+			</a>
+
+			
+			<a href="https://www.facebook.com/nielsen" style="cursor:pointer;" class="social-icon facebook d-inline-flex align-items-center justify-content-center" target="_blank">
+				<img alt="Footer Social Icons" src="/wp-content/themes/nielsen-base/dist/images/fb-footer@2x.png">
+			</a>
+
+			
+			<a href="https://www.linkedin.com/company/1714" style="cursor:pointer;" class="social-icon linkedin d-inline-flex align-items-center justify-content-center" target="_blank">
+				<img alt="Footer Social Icons" src="/wp-content/themes/nielsen-base/dist/images/in-footer@2x.png">
+			</a>
+
+			
+			<a href="https://www.youtube.com/user/TheNielsenCompany" style="cursor:pointer;" class="social-icon youtube d-inline-flex align-items-center justify-content-center" target="_blank">
+				<img alt="Footer Social Icons" src="/wp-content/themes/nielsen-base/dist/images/youtube-footer@2x.png">
+			</a>
+
+			
+			<a href="/in/en/newsletter/" style="cursor:pointer;" class="social-icon email d-inline-flex align-items-center justify-content-center" target="_self">
+				<img alt="Footer Social Icons" src="/wp-content/themes/nielsen-base/dist/images/newsletter-icon@2x.png">
+			</a>
+
+			
+  </div>
+</section>
+
+				 </div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row copyright text-center">
+				<div class="col-sm-12">
+					<div class="menu-english-copyright-shared-container"><ul id="menu-footer-menu" class="nav justify-content-center">
+<li><a  href=/in/en/legal/privacy-policy/>Privacy Statement</a></li>
+</li>
+
+<li><a  target="_blank" href=https://sites.nielsen.com/legal/privacy-statement/exelate-privacy-policy/opt-in-opt-out/#>Do Not Sell My Personal Information</a></li>
+</li>
+
+<li><a  href=/in/en/legal/terms-of-use>Terms of Use</a></li>
+</li>
+
+<li><a  href=/in/en/site-map>Site Map</a></li>
+</li>
+</ul></div>
+				</div>
+				<div class="col-sm-12">
+										<span>Copyright © 2020 The Nielsen Company (US), LLC. All Rights Reserved.</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<script type='text/javascript' src='https://www.nielsen.com/_static/??-eJydzTEOwjAMQNELkbpQGDogjoLS1AWHxA61I9Tbw8CAxIDK9KenD4/igrAhG+TqSqoXYoWIVny4wZk4wFApjVCuYsLvNJm4ibqBD25XzKjAhEmR3eAVYSQ10DBTMYXsf6JRLEhezb5f8V5xXlyl1XISMT8k/HPZmASalpc+5eP20O+7tt+1XXwCruKHOQ=='></script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC2YRabDUGpOAQDbrZ5e0fDG4Yb7zWE294'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202033.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.7.1',blog:'162481662',post:'0',tz:'0',srv:'www.nielsen.com'} ]);
+	_stq.push([ 'clickTrackerInit', '162481662', '0' ]);
+</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"a56f57039c","applicationID":"101808123","transactionName":"NVBQMEpQXEdYB0JdVgwaZxZRHltaXQFOGkkKRQ==","queueTime":0,"applicationTime":666,"atts":"GRdHRgJKTxgbBRQOQh9I","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

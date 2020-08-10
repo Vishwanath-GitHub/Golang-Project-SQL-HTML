@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://home.blog/xmlrpc.php">
+
+<title>Home.blog &#8211; Appalachia + AGI + Automattic</title>
+<script type="text/javascript">
+  WebFontConfig = {"google":{"families":["Karla:r:latin,latin-ext"]}};
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://s0.wp.com/wp-content/plugins/custom-fonts/js/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+	})();
+</script><style id="jetpack-custom-fonts-css">.wf-active .site-title, .wf-active h1, .wf-active h2:not([class^="gr_custom_header"]), .wf-active h3:not(.sd-title), .wf-active h4, .wf-active h5, .wf-active h6{font-family:"Karla",sans-serif;font-weight:400;font-style:normal}.wf-active .entry-title, .wf-active .page-title, .wf-active h1{font-style:normal;font-weight:400}.wf-active h2:not([class^="gr_custom_header"]){font-style:normal;font-weight:400}.wf-active .site-title, .wf-active h3:not(.sd-title){font-style:normal;font-weight:400}.wf-active .comment-reply-title, .wf-active .comments-title, .wf-active .no-comments, .wf-active .widget-title, .wf-active .widgettitle, .wf-active h4{font-style:normal;font-weight:400}.wf-active .comment-reply-title small, .wf-active h5{font-style:normal;font-weight:400}.wf-active h6{font-style:normal;font-weight:400}.wf-active .page-header span{font-style:normal;font-weight:400}.wf-active .no-comments{font-weight:400;font-style:normal}.wf-active .comment-reply-title small{font-weight:400;font-style:normal}.wf-active .project-info .entry-title{font-style:normal;font-weight:400}.wf-active .hentry div#jp-relatedposts h3.jp-relatedposts-headline{font-weight:400;font-style:normal}.wf-active .widget_jetpack_display_posts_widget .jetpack-display-remote-posts h4{font-style:normal;font-weight:400}.wf-active .widget_jetpack_display_posts_widget .jetpack-display-remote-posts h4 a{font-weight:400;font-style:normal}</style>
+<meta name='robots' content='noindex,nofollow' />
+
+<!-- Async WordPress.com Remote Login -->
+<script id="wpcom_remote_login_js">
+var wpcom_remote_login_extra_auth = '';
+function wpcom_remote_login_remove_dom_node_id( element_id ) {
+	var dom_node = document.getElementById( element_id );
+	if ( dom_node ) { dom_node.remove(); }
+}
+function wpcom_remote_login_remove_dom_node_classes( class_name ) {
+	var dom_nodes = document.querySelectorAll( '.' + class_name );
+	for ( var i = 0; i < dom_nodes.length; i++ ) {
+		dom_nodes[i].remove();
+	}
+}
+function wpcom_remote_login_final_cleanup() {
+	wpcom_remote_login_remove_dom_node_classes( "wpcom_remote_login_msg" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_validate" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_js" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_iframe" );
+	wpcom_remote_login_remove_dom_node_id( "wpcom_request_access_styles" );
+}
+
+// Watch for messages back from the remote login
+window.addEventListener( "message", function( e ) {
+	if ( e.origin === "https://r-login.wordpress.com" ) {
+		var data = {};
+		try {
+			data = JSON.parse( e.data );
+		} catch( e ) {
+			wpcom_remote_login_final_cleanup();
+			return;
+		}
+
+		if ( data.msg === 'LOGIN' ) {
+			// Clean up the login check iframe
+			wpcom_remote_login_remove_dom_node_id( "wpcom_remote_login_key" );
+
+			var id_regex = new RegExp( /^[0-9]+$/ );
+			var token_regex = new RegExp( /^.*|.*|.*$/ );
+			if (
+				token_regex.test( data.token )
+				&& id_regex.test( data.wpcomid )
+			) {
+				// We have everything we need to ask for a login
+				var script = document.createElement( "script" );
+				script.setAttribute( "id", "wpcom_remote_login_validate" );
+				script.src = '/remote-login.php?wpcom_remote_login=validate'
+					+ '&wpcomid=' + data.wpcomid
+					+ '&token=' + encodeURIComponent( data.token )
+					+ '&host=' + window.location.protocol
+						+ '//' + window.location.hostname;
+				document.body.appendChild( script );
+			}
+
+			return;
+		}
+
+		// Safari ITP, not logged in, so redirect
+		if ( data.msg === 'LOGIN-REDIRECT' ) {
+			window.location = 'https://wordpress.com/log-in?redirect_to=' + window.location.href;
+			return;
+		}
+
+		// Safari ITP, storage access failed, remove the request
+		if ( data.msg === 'LOGIN-REMOVE' ) {
+			var css_zap = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } @media screen and ( max-width: 782px ) { html { margin-top: 0 !important; } * html body { margin-top: 0 !important; } }';
+			var style_zap = document.createElement( 'style' );
+			style_zap.type = 'text/css';
+			style_zap.appendChild( document.createTextNode( css_zap ) );
+			document.body.appendChild( style_zap );
+
+			var e = document.getElementById( 'wpcom_request_access_iframe' );
+			e.parentNode.removeChild( e );
+
+			document.cookie = 'wordpress_com_login_access=denied; path=/; max-age=31536000';
+
+			return;
+		}
+
+		// Safari ITP
+		if ( data.msg === 'REQUEST_ACCESS' ) {
+			console.log( 'request access: safari' );
+
+			// Check ITP iframe enable/disable knob
+			if ( wpcom_remote_login_extra_auth !== 'safari_itp_iframe' ) {
+				return;
+			}
+
+			// If we are in a "private window" there is no ITP.
+			var private_window = false;
+			try {
+				var opendb = window.openDatabase( null, null, null, null );
+			} catch( e ) {
+				private_window = true;
+			}
+
+			if ( private_window ) {
+				console.log( 'private window' );
+				return;
+			}
+
+			var iframe = document.createElement( 'iframe' );
+			iframe.id = 'wpcom_request_access_iframe';
+			iframe.setAttribute( 'scrolling', 'no' );
+			iframe.setAttribute( 'sandbox', 'allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-top-navigation-by-user-activation' );
+			iframe.src = 'https://r-login.wordpress.com/remote-login.php?wpcom_remote_login=request_access&origin=' + encodeURIComponent( data.origin ) + '&wpcomid=' + encodeURIComponent( data.wpcomid );
+
+			var css = 'html { -webkit-transition: margin-top 1s; transition: margin-top 1s; } /* 9001 */ html { margin-top: 46px !important; } * html body { margin-top: 46px !important; } @media screen and ( max-width: 660px ) { html { margin-top: 71px !important; } * html body { margin-top: 71px !important; } #wpcom_request_access_iframe { display: block; height: 71px !important; } } #wpcom_request_access_iframe { border: 0px; height: 46px; position: fixed; top: 0; left: 0; width: 100%; min-width: 100%; z-index: 99999; background: #23282d; } ';
+
+			var style = document.createElement( 'style' );
+			style.type = 'text/css';
+			style.id = 'wpcom_request_access_styles';
+			style.appendChild( document.createTextNode( css ) );
+			document.body.appendChild( style );
+
+			document.body.appendChild( iframe );
+		}
+
+		if ( data.msg === 'DONE' ) {
+			wpcom_remote_login_final_cleanup();
+		}
+	}
+}, false );
+
+// Inject the remote login iframe after the page has had a chance to load
+// more critical resources
+window.addEventListener( "DOMContentLoaded", function( e ) {
+	var iframe = document.createElement( "iframe" );
+	iframe.style.display = "none";
+	iframe.setAttribute( "scrolling", "no" );
+	iframe.setAttribute( "id", "wpcom_remote_login_key" );
+	iframe.src = "https://r-login.wordpress.com/remote-login.php"
+		+ "?wpcom_remote_login=key"
+		+ "&origin=aHR0cHM6Ly9ob21lLmJsb2c%3D"
+		+ "&wpcomid=119053789"
+		+ "&time=1597081616";
+	document.body.appendChild( iframe );
+}, false );
+</script>
+<link rel='dns-prefetch' href='//s2.wp.com' />
+<link rel='dns-prefetch' href='//s1.wp.com' />
+<link rel='dns-prefetch' href='//a8chomedotblog.wordpress.com' />
+<link rel='dns-prefetch' href='//s0.wp.com' />
+<link rel='dns-prefetch' href='//wordpress.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Home.blog &raquo; Feed" href="https://home.blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Home.blog &raquo; Comments Feed" href="https://home.blog/comments/feed/" />
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1596548281h&ver=5.5-wpcom-484369"}};
+			!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='all-css-0-1' href='https://s2.wp.com/_static/??-eJydketuwjAMhV9oqdsiLv0x7VmS1ASzpIliR6hvv5QBQgjBNP/z5Ts68oFTUjZOgpNAKCr54mhiOCUbg+JAHueHrrHMH3CHXRlXamswu7rJCLtmC6aQH8H4aL+VJ5N1noFl9vgHkTPFcERJesH1HIsol2n8r0TWQpPjN/i+eK+YBBWOtACXp0A3rIda7QpSxkAl3NDXgjZefHRNv2paGInlNlTP2bsolmfWeUhalotQXWn0GOrZK+w3M2OqV2Z1dSyHCp4j/Aqf3XrYbPq+3bXHH+H2wV4=?cssminify=yes' type='text/css' media='all' />
+<style id='wp-block-library-inline-css'>
+.has-text-align-justify {
+	text-align:justify;
+}
+</style>
+<style id='global-styles-inline-css'>
+:root {
+	--wp--preset--color--black: #000000;
+	--wp--preset--color--cyan-bluish-gray: #abb8c3;
+	--wp--preset--color--light-green-cyan: #7bdcb5;
+	--wp--preset--color--luminous-vivid-amber: #fcb900;
+	--wp--preset--color--luminous-vivid-orange: #ff6900;
+	--wp--preset--color--pale-cyan-blue: #8ed1fc;
+	--wp--preset--color--pale-pink: #f78da7;
+	--wp--preset--color--vivid-cyan-blue: #0693e3;
+	--wp--preset--color--vivid-green-cyan: #00d084;
+	--wp--preset--color--vivid-purple: #9b51e0;
+	--wp--preset--color--vivid-red: #cf2e2e;
+	--wp--preset--color--white: #ffffff;
+	--wp--preset--font-size--small: 13;
+	--wp--preset--font-size--normal: 16;
+	--wp--preset--font-size--medium: 20;
+	--wp--preset--font-size--large: 36;
+	--wp--preset--font-size--huge: 48;
+	--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);
+	--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);
+	--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);
+	--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);
+	--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);
+	--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);
+	--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);
+	--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);
+	--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);
+	--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);
+	--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);
+	--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);
+}
+
+</style>
+<link rel='stylesheet' id='all-css-2-1' href='https://s1.wp.com/_static/??/wp-content/mu-plugins/comment-likes/css/comment-likes.css,/i/noticons/noticons.css?m=1436783281j&cssminify=yes' type='text/css' media='all' />
+<link crossorigin="anonymous" rel='stylesheet' id='orvis-fonts-css'  href='https://fonts.googleapis.com/css?family=Karla%3A400%2C700%2C400italic%2C700italic&#038;subset=latin%2Clatin-ext' media='all' />
+<link rel='stylesheet' id='all-css-4-1' href='https://s2.wp.com/_static/??-eJx9i9EKwjAMAH/IGousb+K3bCV2kbQpTerY3zvxxSHs7Q7uYKkuSjEsBjZjRoXaJ5D2IgW1lfEcVU9wlFGJ39QtNUr+G3J3lXuiopBQHEscjaTsxD14pHa0NpxY0oYJtupHP9M93/xwvYTBh+Cfb7HhTvU=?cssminify=yes' type='text/css' media='all' />
+<link rel='stylesheet' id='print-css-5-1' href='https://s2.wp.com/wp-content/mu-plugins/global-print/global-print.css?m=1465851035h&cssminify=yes' type='text/css' media='print' />
+<link rel='stylesheet' id='all-css-6-1' href='https://s0.wp.com/wp-content/mu-plugins/actionbar/actionbar.css?m=1560469195h&cssminify=yes' type='text/css' media='all' />
+<style id='jetpack-global-styles-frontend-style-inline-css'>
+:root { --font-headings: unset; --font-base: unset; --font-headings-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; --font-base-default: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;}
+</style>
+<link rel='stylesheet' id='all-css-8-1' href='https://s1.wp.com/_static/??-eJxti0EKgCAQAD+ULUUlHaK3mJgaqyuu0vejQ4eo0zAwA2cSmmIxsUCoImG1PjIk4iJ2VD4DO5V9tA9bzdzA/8WkvUKBZOktn6k4EwyDG8AibQrvYA1LN85jLycpu+MCZVw32Q==?cssminify=yes' type='text/css' media='all' />
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJx9zdsOgjAMBuAXcgwwELkwPgtCWUrWbq6dxLd3xsOFMTZNevF/be0WDfLk8wxi19KXDOn2GtUqO/sPGEKXRoWKkN94CqzA+rAxiBKIjA5+pBTO6MFkgVQAa3mzhG8XfXbIYpfsvRFUMDCjIjvzTGwzdEOpem9jAsJMn9UrwlbOnejYdEPft219qNc7cSVXkA=='></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://a8chomedotblog.wordpress.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress.com" />
+<link rel="canonical" href="https://home.blog/" />
+<link rel='shortlink' href='https://wp.me/P83xkp-h' />
+
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Home.blog" />
+<meta property="og:description" content="Appalachia + AGI + Automattic" />
+<meta property="og:url" content="https://home.blog/" />
+<meta property="og:site_name" content="Home.blog" />
+<meta property="og:image" content="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=849" />
+<meta property="og:image:width" content="849" />
+<meta property="og:image:height" content="1200" />
+<meta property="og:image:alt" content="&quot;Home&quot; by Michael Bierut" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:site" content="@wordpressdotcom" />
+<meta name="twitter:text:title" content="Home" />
+<meta name="twitter:image" content="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=640" />
+<meta name="twitter:image:alt" content="&quot;Home&quot; by Michael Bierut" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom" />
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="search" type="application/opensearchdescription+xml" href="https://home.blog/osd.xml" title="Home.blog" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com" />
+<meta name="theme-color" content="#000000" />
+<meta name="application-name" content="Home.blog" /><meta name="msapplication-window" content="width=device-width;height=device-height" /><meta name="msapplication-tooltip" content="Appalachia + AGI + Automattic" /><meta name="msapplication-task" content="name=Subscribe;action-uri=https://home.blog/feed/;icon-uri=https://a8chomedotblog.files.wordpress.com/2017/12/home-icon.jpg?w=16" /><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico" /><meta name="description" content="Artwork by Michael BierutSite by Kjell Reigstad" />
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #000000; }
+</style>
+	<style type="text/css" id="custom-colors-css">.portfolio-wrapper .project-info .entry-title a,.portfolio-wrapper .project-info .entry-title a:focus,.portfolio-wrapper .project-info .entry-title a:hover{color:#fff}.portfolio-wrapper .project-info .entry-meta,.portfolio-wrapper .project-info .entry-meta a,.portfolio-wrapper .project-info .entry-meta a:focus,.portfolio-wrapper .project-info .entry-meta a:hover{color:#a0a0a0}#comments #respond .form-submit input#comment-submit:focus,#comments #respond .form-submit input#comment-submit:hover{color:inherit !important;opacity:.75}#infinite-footer,.main-navigation ul ul,.site .tiled-gallery-caption,body{background-color:#000}.dropdown-toggle:focus,.dropdown-toggle:hover,.menu-toggle:active,.menu-toggle:focus,input[type=email],input[type=password],input[type=search],input[type=text],input[type=url],ins,mark,textarea{color:#000}.dropdown-toggle:focus,.dropdown-toggle:hover,.menu-toggle:active,.menu-toggle:focus,hr,input[type=email],input[type=password],input[type=search],input[type=text],input[type=url],textarea,#comments .comment #comment-form-share-text-padder,#comments .comment #respond #comment-form-comment,#comments .comment #respond .comment-form-fields div.comment-form-input{background-color:#fff}.dropdown-toggle:focus,.dropdown-toggle:hover,.menu-toggle:active,.menu-toggle:focus,input[type=email],input[type=password],input[type=search],input[type=text],input[type=url],textarea,.jetpack-portfolio .image-link,.widget.top_rated ul{border-color:#fff}#infinite-footer .container,.entry-title a:focus,.entry-title a:hover,.infinite-loader .spinner div,.jetpack-portfolio .image-link,.page-links>span,.page-links a,.page-links a:focus,.page-links a:hover,.portfolio-entry-title a:focus,.portfolio-entry-title a:hover,.site .jetpack-social-navigation a:focus,.site .jetpack-social-navigation a:hover,.site-title a:focus,.site-title a:hover,.widget_calendar tbody a:focus,.widget_calendar tbody a:hover,a,blockquote cite,blockquote small,body,button,input,input[type=button],input[type=email]:focus,input[type=password]:focus,input[type=reset],input[type=search]:focus,input[type=submit],input[type=text]:focus,input[type=url]:focus,select,textarea,textarea:focus,#comments #comment-form-share-text-padder,#comments #comment-form-share-text-padder textarea,#comments #respond #comment-form-comment,#comments #respond #comment-form-comment textarea,#comments #respond #comment-form-identity #comment-form-nascar p,#comments #respond #comment-form-load-service p,#comments #respond .comment-form-fields div.comment-form-input,#comments #respond .comment-form-fields div.comment-form-input input,#comments #respond .comment-form-fields p.comment-form-log-out,#comments #respond .comment-form-fields p.comment-form-posting-as,#comments #respond .form-submit,.widget_akismet_widget .a-stats a,.widget_flickr #flickr_badge_uber_wrapper td a:last-child{color:#fff}code,kbd,pre,tt,var{color:#fff}ins,mark,.menu-toggle:active:hover,.menu-toggle:focus:hover{background-color:#eee}button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover,.jetpack-portfolio.hover:not(.has-post-thumbnail) .project-info,.menu-toggle:active:hover,.menu-toggle:focus:hover{border-color:#eee}#infinite-footer .blog-credits,#infinite-footer .blog-credits a,#infinite-footer .blog-credits a:hover,#infinite-footer .blog-info a,#infinite-footer .blog-info a:hover,#infinite-handle span button:focus,#infinite-handle span button:hover,.comment-metadata,.comment-metadata a,.comments-area .comment-likes .comment-like-feedback,.entry-footer,.entry-footer a,.entry-meta,.entry-meta a,.hentry div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post-context,.hentry div.sd-rating h3.sd-title,.hentry div.sharedaddy h3.sd-title,.jetpack-portfolio:not(.has-post-thumbnail) .project-info .entry-meta,.jetpack-portfolio:not(.has-post-thumbnail) .project-info .entry-meta a,.page-links>.page-links-title,.page-links a,.pd-rating,.portfolio-entry-meta,.portfolio-entry-meta a,.post-navigation .meta-nav,.site .tiled-gallery-caption,.site-content .contact-form label span,.site-content .jetpack-recipe .jetpack-recipe-meta,.site-description,.site-footer,.site-footer a,.taxonomy-description,.widget_goodreads div[class^=gr_custom_author],.widget_goodreads div[class^=gr_custom_title] a:focus,.widget_goodreads div[class^=gr_custom_title] a:hover,.widget_jetpack_display_posts_widget .jetpack-display-remote-posts p,.widget_recent_entries .post-date,.widget_rss .rss-date,.widget_rss .rssSummary,.widget_rss cite,.wp-caption-text,a:active,a:focus,a:hover,blockquote,button:focus,button:hover,input[type=button]:focus,input[type=button]:hover,input[type=reset]:focus,input[type=reset]:hover,input[type=submit]:focus,input[type=submit]:hover,#comments #comment-form-share-text-padder textarea,#comments #respond #comment-form-comment textarea,#comments #respond .comment-form-service a:focus,#comments #respond .comment-form-service a:hover,#comments #respond form *,#comments #respond p.comment-subscription-form label,.widget.top_rated #top_posts,.widget_akismet_widget .a-stats a:focus,.widget_akismet_widget .a-stats a:hover,.widget_flickr #flickr_badge_uber_wrapper td a:last-child:focus,.widget_flickr #flickr_badge_uber_wrapper td a:last-child:hover,.widget_upcoming_events_widget .event-when{color:#eee}#comments #respond .comment-form-fields label,#comments #respond .comment-form-fields label span.nopublish,#comments #respond .comment-form-fields label span.required{color:#6d6d6d}:-moz-placeholder{color:#6d6d6d}::-moz-placeholder{color:#6d6d6d}:-ms-input-placeholder{color:#6d6d6d}::-webkit-input-placeholder{color:#6d6d6d}::input-placeholder{color:#6d6d6d}.site .jetpack-social-navigation a{color:#eee}#infinite-handle:before,.archive:not([class*=jetpack-portfolio]) .hentry+.hentry:before,.blog .hentry+.hentry:before,.comment-respond:before,.comments-title:before,.infinite-loader:before,.infinite-wrap .hentry:before,.no-comments:before,.page-content .widget:before,.page-header:after,.page-links>span,.page-links a,.search .hentry+.hentry:before,.site .jetpack-social-navigation a,.site-footer:before,.site-main .post-navigation:before,.site-main .posts-navigation:before,.widget-area:before,.widget:not(:first-of-type):before,.widget_calendar tbody a,.widget_wpcom_social_media_icons_widget a,code,div#jp-relatedposts:before,kbd,pre,tt,var{background-color:#000}blockquote,body .hentry .wpcom-reblog-snapshot .reblogger-note-content blockquote{border-left-color:#000}.rtl blockquote,.rtl .hentry .wpcom-reblog-snapshot .reblogger-note-content blockquote{border-right-color:#000}</style>
+<link rel="icon" href="https://a8chomedotblog.files.wordpress.com/2017/12/home-icon.jpg?w=32" sizes="32x32" />
+<link rel="icon" href="https://a8chomedotblog.files.wordpress.com/2017/12/home-icon.jpg?w=192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://a8chomedotblog.files.wordpress.com/2017/12/home-icon.jpg?w=180" />
+<meta name="msapplication-TileImage" content="https://a8chomedotblog.files.wordpress.com/2017/12/home-icon.jpg?w=270" />
+		<link rel="stylesheet" id="custom-css-css" type="text/css" href="https://s2.wp.com/?custom-css=1&#038;csblog=83xkp&#038;cscache=6&#038;csrev=90" />
+		</head>
+
+<body class="home page-template-default page page-id-17 custom-background customizer-styles-applied highlander-enabled highlander-dark custom-colors">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-header-wrapper">
+			<div class="site-branding">
+				
+									<p class="site-title"><a href="https://home.blog/" rel="home">Home.blog</a></p>
+								<p class="site-description">Appalachia + AGI + Automattic</p>
+			</div><!-- .site-branding -->
+
+							<button id="menu-toggle" class="menu-toggle">Menu</button>
+				<div id="site-menu" class="site-menu">
+					<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
+						<div class="menu-primary-container"><ul id="menu-primary" class="primary-menu"><li id="menu-item-8" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-8"><a href="/" aria-current="page">Home.blog</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://home.blog/about/">About A3</a></li>
+<li id="menu-item-24" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-24"><a href="https://www.pentagram.com/about/michael-bierut">Michael Bierut</a></li>
+<li id="menu-item-302" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-302"><a href="https://home.blog/blog/">Blog</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25"><a href="http://a-g-i.org/">AGI</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26"><a href="http://www.paintsville.kyschools.us/">Paintsville High</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-27"><a href="https://automattic.com">Automattic</a></li>
+</ul></div>					</nav><!-- .main-navigation -->
+				</div><!-- .site-menu -->
+					</div><!-- .site-header-wrapper -->
+
+			</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+			
+				
+<article id="post-17" class="post-17 page type-page status-publish has-post-thumbnail hentry">
+	<header class="entry-header">
+		
+	<div class="post-thumbnail">
+		<img width="924" src="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=924&amp;h=0&amp;crop=1" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="&quot;Home&quot; by Michael Bierut" loading="lazy" srcset="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=924&amp;h=1&amp;crop=1 924w, https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=150&amp;h=1&amp;crop=1 150w, https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=300&amp;h=1&amp;crop=1 300w, https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=768&amp;h=1&amp;crop=1 768w, https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=1024&amp;h=1&amp;crop=1 1024w" sizes="(max-width: 924px) 100vw, 924px" data-attachment-id="205" data-permalink="https://home.blog/home/agi_appalachia_bierut_171120_02-3/" data-orig-file="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg" data-orig-size="1690,2390" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="&#8220;Home&#8221; by Michael Bierut" data-image-description="&lt;p&gt;&#8220;Home&#8221; by Michael Bierut&lt;/p&gt;
+" data-medium-file="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=212" data-large-file="https://a8chomedotblog.files.wordpress.com/2017/11/agi_appalachia_bierut_171120_021.jpg?w=724" />	</div><!-- .post-thumbnail -->
+
+	
+		<h1 class="entry-title">Home</h1>	</header><!-- .entry-header -->
+
+	<div class="entry-content">
+		<div class="poster-container">
+<div class="image-1h"></div>
+<div class="image-2globe"></div>
+<div class="image-3m"></div>
+<div class="image-4e"></div>
+</div>
+<p class="entry-content--home">Artwork by <a href="https://www.pentagram.com/about/michael-bierut">Michael Bierut</a><br />Site by <a href="https://kjellr.com">Kjell Reigstad</a></p>
+			</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+			</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+				
+			
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="custom_html-3" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><a class="wpcom-link" href="https://wordpress.com/start?site_type=blog&amp;vertical=home&amp;ref=dotblog-landing" title="Create your own blog">Create Your . Home . Blog</a></div></aside></div><!-- #secondary -->
+	</div><!-- #content -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-footer-wrapper">
+			
+			<div class="site-info">
+				<a href="https://wordpress.com/?ref=footer_blog" rel="nofollow">Blog at WordPress.com.</a>
+				
+							</div><!-- .site-info -->
+		</div><!-- .site-footer-wrapper -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!--  -->
+<script src='//0.gravatar.com/js/gprofiles.js?ver=202033y'></script>
+<script>
+var WPGroHo = {"my_hash":""};
+</script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1380573781h'></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	</div>
+<script>
+var comment_like_text = {"loading":"Loading..."};
+</script>
+<script>
+var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
+</script>
+<script>
+var actionbardata = {"siteID":"119053789","siteName":"Home.blog","siteURL":"https:\/\/home.blog","icon":"<img alt='' src='https:\/\/a8chomedotblog.files.wordpress.com\/2017\/12\/home-icon.jpg?w=50' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/orvis","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fhome.blog%2F&signup_flow=account&domain=home.blog","themeURL":"https:\/\/wordpress.com\/theme\/orvis\/","xhrURL":"https:\/\/home.blog\/wp-admin\/admin-ajax.php","nonce":"1ac36177c5","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"ee8182254a\" \/>","referer":"https:\/\/home.blog\/","canFollow":"","feedID":"85824436","statusMessage":"","customizeLink":"https:\/\/a8chomedotblog.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fa8chomedotblog.wordpress.com%2F","postID":"17","shortlink":"https:\/\/wp.me\/P83xkp-h","canEditPost":"","editLink":"https:\/\/wordpress.com\/page\/home.blog\/17","statsLink":"https:\/\/wordpress.com\/stats\/post\/17\/home.blog","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Orvis","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/read\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"Join 18,766 other followers","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/wordpress.com\/log-in?redirect_to=https%3A%2F%2Fhome.blog%2F&signup_flow=account&domain=home.blog\">Log in now.<\/a>","stats":"Stats"}};
+</script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyVjs0OgjAQhF/IujGRIAfjs5Sy6FL6k24LPL6FA0ExJtw2s/PNDIxeKGcj2ggdQ4MDKfTTueMTbF4mCd+nJ1kG5YzJkuhJI89MTzXwSB6PQB/CNxhfaLLNpxpcGGgBWJPPbqtF61Ri0dJu5C+sTVZFcnbXsRknG0NW1DKAkRwx5Eu4AUOgJset2sGEGKTSf2uXYTO0Xtn9MPdLUV6r8lYUVfcGANSbAg=='></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="//stats.wp.com/w.js?61" type="text/javascript" async defer></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'119053789','blog_tz':'0','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'119053789','v':'wpcom','tz':'0','user_id':'0','post':'17','subd':'a8chomedotblog'}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1oV0pFNEwueXFaVXlyMGwvVG9bYmZXaDJ1Nmx+eHpMWkZmck1NUTd0Z1lEWDU4Yk9ic0hXfktLZ1FKd3hCVVpfSDFDSVB0V0xKX0h6cGwlUnRNbUhRdURYMjZDZlNiN0VfdEV2L1hfaUFmayw9NXNzWHJscXI2ejErLnh2dlFkWTVxZ2dyTEthU1t3JVg2VlRpZjVra0hUdm1peCV0NWFQTURsUCxEK1JbR0FJSGJtUyVoYXw1dHVtYmVlWWRPUj9Gb0Y3Vkk9YmZnMFpOWnpudFFYZD1YVkZ8dG1palRDVnxDd2lRLi5XZXZ0bEJFanZOakg4NU9QZUNoUlNERzB4bVpBUzclcXNLSzdK'}]);
+_stq.push([ 'clickTrackerInit', '119053789', '17' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body>
+</html>
+<!--
+	generated 170 seconds ago
+	generated in 0.077 seconds
+	served from batcache in 0.001 seconds
+	expires in 130 seconds
+-->

@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-67e8b5519821728e13e",applicationID:"465817224"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1173.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/sites/default/files/google_analytics/analytics.js?qepn18","ga");ga("create", "UA-1706522-1", {"cookieDomain":"auto"});ga("require", "linkid", "linkid.js");ga("set", "anonymizeIp", true);ga("set", "dimension2", "2");ga("set", "dimension3", "landing_page");ga("send", "pageview");ga('require', 'maxScrollTracker', {
+  maxScrollMetricIndex: 1,
+});</script>
+<meta property="og:site_name" content="Princeton University" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://www.princeton.edu/" />
+<link rel="shortlink" href="https://www.princeton.edu/" />
+<meta property="fb:app_id" content="238312316239555" />
+<meta property="og:type" content="website" />
+<meta name="description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world." />
+<meta name="twitter:title" content="Princeton University" />
+<meta name="twitter:site" content="@Princeton" />
+<meta name="twitter:description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world." />
+<meta property="og:url" content="https://www.princeton.edu/node/141" />
+<meta property="og:title" content="Princeton University" />
+<meta property="og:description" content="Through teaching and research, we educate people who will contribute to society and develop knowledge that will make a difference in the world." />
+<meta name="twitter:image:alt" content="Nassau Hall" />
+<meta name="twitter:image" content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg" />
+<meta property="og:image" content="https://www.princeton.edu//sites/default/files/images/2017/06/20060425_NassauHall_JJ_IMG_5973.jpg" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="apple-touch-icon" href="/themes/custom/tony/icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="/themes/custom/tony/icons/favicon-32x32.png" sizes="32x32" />
+<link rel="manifest" href="/themes/custom/tony/icons/manifest.json" />
+<link rel="mask-icon" href="/themes/custom/tony/icons/safari-pinned-tab.svg" color="#e77500" />
+<meta name="msapplication-config" content="/themes/custom/tony/icons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="revision" href="https://www.princeton.edu/node/141" />
+
+    <title>Princeton University</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_Y-CBClkz8jke08nngnzwoA3lT4dOqKHchFLt2DxUUIo.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_74zhdDZI9ALdOff1azp_feVkOe9nGK2VCNEAnTyU1Tg.css" />
+
+<!--[if lte IE 8]>
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU.css" />
+<![endif]-->
+
+    
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_jInlvb8hBZajf_Kaz5DRwm8M1JG3-wyNKD3ZV0L6Sg8.js"></script>
+
+    <meta name="google-site-verification" content="HCFMWeXbGYFnJTWfcWQmuHWebYmZPzueLOKf8RM09I4" />
+      <link rel="alternate" type="application/rss+xml" title="Princeton University News" href="/feed/" />
+      <link rel="alternate" type="application/rss+xml" title="Princeton Research News" href="/feed/research/" />
+      <link rel="alternate" type="application/rss+xml" title="Princeton Public Events" href="/feed/events/" />
+  </head>
+  <body class="node-141 path-frontpage page-node-type-landing-page nojs" data-scroll='body' data-resize='body'>
+    <a href="#main-content" id="skip-link" class="visually-hidden focusable button skip-link">
+      Skip to main content
+    </a>
+    
+      <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div data-sticky-container class="header-sticky-container">
+  <header data-sticky data-options="marginTop:0;" data-sticky-on="small" class="clearfix page-header" style="width:100%" data-top-anchor="main:top" data-btm-anchor="main:bottom" role="banner">
+    <div class="contents">
+      <div class="block-tony-branding">
+                      <h1 id="site-name"><a href="/" rel="home" class="site-logo"><img src="/themes/custom/tony/logo.svg" alt="" /><span class="show-for-sr">Princeton University</span></a></h1>
+                  </div>
+                <button aria-label="Toggle Menu" class="toggle-main-menu">
+          <!-- Screen readers will see "close" -->
+          <span class="show-for-sr">Toggle subitems</span>
+          <!-- Visual users will see the X, but not the "Close" text -->
+          <span aria-hidden="true" class="menu-icon"></span>
+          <span aria-hidden="true" class="close-icon"></span>
+        </button>
+        <nav id="main-menu" class="menu-container" role="navigation">
+                          <div>
+    <nav role="navigation" aria-labelledby="block-tony-main-menu-menu" id="block-tony-main-menu" data-block-plugin-id="system_menu_block:main" class="menu--main block--main-navigation">
+            
+  <h2 class="visually-hidden" id="block-tony-main-menu-menu" aria-hidden="true">Main navigation</h2>
+  
+
+        
+
+                          <ul class="menu main-menu vertical xmedium-horizontal" role="menubar">
+                      
+                              <li class="menu-item level-0 menu-item--expanded" role="menuitem">
+              <a href="/meet-princeton" role="menuitem" data-drupal-link-system-path="node/126">Meet Princeton</a>
+
+                  <button class="toggleparent" type="button">
+                  <!-- Screen readers will see "close" -->
+                  <span class="show-for-sr">Toggle sub-items</span>
+                  <!-- Visual users will see the X, but not the "Close" text -->
+                  <span aria-hidden="true" class="plusminus"></span>
+                </button>
+                <ul class="menu vertical first-sub" role="menu">
+
+                                                      
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/service-humanity" role="menuitem" data-drupal-link-system-path="node/20346">In Service of Humanity</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/facts-figures" role="menuitem" data-drupal-link-system-path="node/54486">Facts &amp; Figures</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/history" role="menuitem" data-drupal-link-system-path="node/20176">History</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/honors-awards" role="menuitem" data-drupal-link-system-path="node/93986">Honors &amp; Awards</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Visit Us</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/our-faculty" role="menuitem" data-drupal-link-system-path="node/20351">Our Faculty</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/our-students" role="menuitem" data-drupal-link-system-path="node/20356">Our Students</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/our-alumni" role="menuitem" data-drupal-link-system-path="node/20361">Our Alumni</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/our-staff" role="menuitem" data-drupal-link-system-path="node/20256">Our Staff</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/meet-princeton/our-leadership" role="menuitem" data-drupal-link-system-path="node/172146">Our Leadership</a>
+                          </li>
+          
+
+
+
+            </ul>
+      
+            </li>
+          
+
+
+
+              
+                              <li class="menu-item level-0 menu-item--expanded" role="menuitem">
+              <a href="/academics" role="menuitem" data-drupal-link-system-path="node/46">Academics</a>
+
+                  <button class="toggleparent" type="button">
+                  <!-- Screen readers will see "close" -->
+                  <span class="show-for-sr">Toggle sub-items</span>
+                  <!-- Visual users will see the X, but not the "Close" text -->
+                  <span aria-hidden="true" class="plusminus"></span>
+                </button>
+                <ul class="menu vertical first-sub" role="menu">
+
+                                                      
+                    <li class="menu-item level-1">
+                              <a href="/academics/studying-princeton" role="menuitem" data-drupal-link-system-path="node/76">Studying at Princeton</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/library" role="menuitem" data-drupal-link-system-path="node/20166">Library</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/areas-of-study" role="menuitem" data-drupal-link-system-path="academics/areas-of-study">Areas of Study</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/areas-of-study/humanities" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/humanities">Humanities</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/areas-of-study/social-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/social-sciences">Social Sciences</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/areas-of-study/engineering" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/engineering">Engineering</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/areas-of-study/natural-sciences" role="menuitem" data-drupal-link-system-path="academics/areas-of-study/natural-sciences">Natural Sciences</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/advising" role="menuitem" data-drupal-link-system-path="node/20381">Advising</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar<span class="arrow"></span></a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/course-tools" role="menuitem" data-drupal-link-system-path="node/54066">Course Tools</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/learning-abroad" role="menuitem" data-drupal-link-system-path="node/20161">Learning Abroad</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/career-development" role="menuitem" data-drupal-link-system-path="node/20391">Career Development</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/continuing-education" role="menuitem" data-drupal-link-system-path="node/20376">Continuing Education</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/academics/innovative-learning" role="menuitem" data-drupal-link-system-path="node/20366">Innovative Learning</a>
+                          </li>
+          
+
+
+
+            </ul>
+      
+            </li>
+          
+
+
+
+              
+                              <li class="menu-item level-0 menu-item--expanded" role="menuitem">
+              <a href="/research" role="menuitem" data-drupal-link-system-path="node/51">Research</a>
+
+                  <button class="toggleparent" type="button">
+                  <!-- Screen readers will see "close" -->
+                  <span class="show-for-sr">Toggle sub-items</span>
+                  <!-- Visual users will see the X, but not the "Close" text -->
+                  <span aria-hidden="true" class="plusminus"></span>
+                </button>
+                <ul class="menu vertical first-sub" role="menu">
+
+                                                      
+                    <li class="menu-item level-1">
+                              <a href="/research/engineering-and-applied-science" role="menuitem" data-drupal-link-system-path="node/20396">Engineering &amp; Applied Science</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/humanities" role="menuitem" data-drupal-link-system-path="node/20401">Humanities</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/natural-sciences" role="menuitem" data-drupal-link-system-path="node/20406">Natural Sciences</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/social-sciences" role="menuitem" data-drupal-link-system-path="node/20411">Social Sciences</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/interdisciplinary-approach" role="menuitem" data-drupal-link-system-path="node/20421">Interdisciplinary Approach</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/office-dean-research" role="menuitem" data-drupal-link-system-path="node/94976">Dean for Research Office</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/external-partnerships" role="menuitem" data-drupal-link-system-path="node/20416">External Partnerships</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/research/facilities-labs" role="menuitem" data-drupal-link-system-path="node/21111">Facilities &amp; Labs</a>
+                          </li>
+          
+
+
+
+            </ul>
+      
+            </li>
+          
+
+
+
+              
+                              <li class="menu-item level-0 menu-item--expanded" role="menuitem">
+              <a href="/one-community" role="menuitem" data-drupal-link-system-path="node/56">One Community</a>
+
+                  <button class="toggleparent" type="button">
+                  <!-- Screen readers will see "close" -->
+                  <span class="show-for-sr">Toggle sub-items</span>
+                  <!-- Visual users will see the X, but not the "Close" text -->
+                  <span aria-hidden="true" class="plusminus"></span>
+                </button>
+                <ul class="menu vertical first-sub" role="menu">
+
+                                                      
+                    <li class="menu-item level-1">
+                              <a href="/one-community/lifelong-connections" role="menuitem" data-drupal-link-system-path="node/20436">Lifelong Connections</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/student-life" role="menuitem" data-drupal-link-system-path="node/20441">Student Life</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/arts-culture" role="menuitem" data-drupal-link-system-path="node/20446">Arts &amp; Culture</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/athletics" role="menuitem" data-drupal-link-system-path="node/20451">Athletics</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/living-princeton-nj" role="menuitem" data-drupal-link-system-path="node/20456">Living in Princeton, N.J.</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/housing-dining" role="menuitem" data-drupal-link-system-path="node/20461">Housing &amp; Dining</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/activities-organizations" role="menuitem" data-drupal-link-system-path="node/20466">Activities &amp; Organizations</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/cultural-affinity-groups" role="menuitem" data-drupal-link-system-path="node/20471">Cultural &amp; Affinity Groups</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/health-wellness" role="menuitem" data-drupal-link-system-path="node/20476">Health &amp; Wellness</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/religious-life" role="menuitem" data-drupal-link-system-path="node/20481">Religious Life</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/serving-public-good" role="menuitem" data-drupal-link-system-path="node/20486">Serving the Public Good</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/one-community/families" role="menuitem" data-drupal-link-system-path="node/20491">Families</a>
+                          </li>
+          
+
+
+
+            </ul>
+      
+            </li>
+          
+
+
+
+              
+                              <li class="menu-item level-0 menu-item--expanded" role="menuitem">
+              <a href="/admission-aid" role="menuitem" data-drupal-link-system-path="node/61">Admission &amp; Aid</a>
+
+                  <button class="toggleparent" type="button">
+                  <!-- Screen readers will see "close" -->
+                  <span class="show-for-sr">Toggle sub-items</span>
+                  <!-- Visual users will see the X, but not the "Close" text -->
+                  <span aria-hidden="true" class="plusminus"></span>
+                </button>
+                <ul class="menu vertical first-sub" role="menu">
+
+                                                      
+                    <li class="menu-item level-1">
+                              <a href="/admission-aid/affordable-all" role="menuitem" data-drupal-link-system-path="node/20496">Affordable for All</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="https://admission.princeton.edu/cost-aid" role="menuitem">About Financial Aid<span class="arrow"></span></a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="https://finaid.princeton.edu" role="menuitem">Current Undergraduate Financial Aid<span class="arrow"></span></a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="https://admission.princeton.edu" role="menuitem">Undergraduate Admission<span class="arrow"></span></a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/admission-aid/graduate-admission" role="menuitem" data-drupal-link-system-path="node/20501">Graduate Admission</a>
+                          </li>
+          
+
+
+
+              
+                    <li class="menu-item level-1">
+                              <a href="/admission-aid/international-students" role="menuitem" data-drupal-link-system-path="node/20506">For International Students</a>
+                          </li>
+          
+
+
+
+            </ul>
+      
+            </li>
+          
+
+
+
+            </ul>
+      
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-utilitymenu-menu" id="block-utilitymenu" data-block-plugin-id="system_menu_block:menu-toolbar" class="menu--menu-toolbar">
+            
+  <h2 class="visually-hidden" id="block-utilitymenu-menu">Utility menu</h2>
+  
+
+        
+
+
+
+
+                          <ul class="menu utility-menu vertical xmedium-horizontal clearfix" role="menubar">
+                                        <li class="menu-item">
+                          <a href="/news" role="menuitem" data-drupal-link-system-path="news">News</a>
+                      </li>
+        
+
+                                <li class="menu-item">
+                          <a href="/events" role="menuitem" data-drupal-link-system-path="node/20286">Events</a>
+                      </li>
+        
+
+                                <li class="menu-item menu-item--expanded">
+                          <a href="/meet-princeton/work-princeton" role="menuitem" data-drupal-link-system-path="node/21131">Work at Princeton</a><span class="dropcarat" aria-hidden="true"></span>
+              <ul class="menu vertical is-dropdown-submenu" role="menu">
+                                                            <li class="menu-item">
+                          <a href="/work/benefits-services" role="menuitem" data-drupal-link-system-path="node/20736">Services &amp; Resources</a>
+                      </li>
+        
+
+                                <li class="menu-item">
+                          <a href="/work/work-life-balance" role="menuitem" data-drupal-link-system-path="node/20191">Work-Life Balance</a>
+                      </li>
+        
+
+            </ul>
+      
+          </li>
+        
+
+                                <li class="menu-item menu-item--expanded">
+                          <a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Links for</a><span class="dropcarat" aria-hidden="true"></span>
+              <ul class="menu vertical is-dropdown-submenu" role="menu">
+                                                            <li class="menu-item">
+                          <a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Students</a>
+                      </li>
+        
+
+                                <li class="menu-item">
+                          <a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff</a>
+                      </li>
+        
+
+            </ul>
+      
+          </li>
+        
+
+                                <li class="menu-item">
+                          <a href="http://alumni.princeton.edu" role="menuitem">Alumni<span class="arrow"></span></a>
+                      </li>
+        
+
+                                <li class="menu-item">
+                          <a href="http://giving.princeton.edu" role="menuitem">Giving<span class="arrow"></span></a>
+                      </li>
+        
+
+            </ul>
+      
+
+  </nav>
+
+  </div>
+
+                  </nav>
+                        <form action="/search" method="GET" id="pu-header-search" accept-charset="UTF-8">
+    <div class="js-form-item form-item js-form-type-search form-item-search js-form-item-search form-no-label">
+        <input data-drupal-selector="edit-search" autocomplete="off" aria-label="Search Sites &amp; People" type="search" id="header-search" name="search" value="" size="15" maxlength="128" class="form-search">
+                <label for="header-search">Search Sites &amp; People</label>
+        <button class="close-button" aria-label="Close search" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="header-edit-actions">
+        <input data-drupal-selector="header-edit-submit" type="submit" id="header-edit-submit" value="Submit search" class="button js-form-submit form-submit">
+    </div>
+</form>
+
+
+
+              </div>
+  </header>
+</div>
+
+
+  
+
+
+
+      
+      
+
+      <main id="main" class="main node-home" role="main">
+        <a name="main-content" id="main-content"></a>
+                <section class="clearfix">
+            <div>
+    <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-tony-content" data-block-plugin-id="system_main_block" class="block__wrapper">
+  
+    
+      <article role="article" about="/node/141">
+
+  
+    
+
+  
+  <div>
+    
+      <div>
+                <div class="paragraph paragraph--type--tile paragraph--view-mode--default">
+          
+    
+<div class="content-tile content-tile-subhead clearfix has-body content-tile-subhead content-tile-subhead-tall invert">
+  <h2>
+            <div class="field field--name-name field--type-string field--label-hidden field__item">Fall 2020 Update</div>
+      </h2>
+      
+            <div class="field field--name-field-tiles-body field--type-text-long field--label-hidden field__item"><p>In a message to the University community, President Eisgruber has announced that the undergraduate program will be fully remote in the fall 2020 semester. Learn more about Princeton’s plans for the 2020-21 academic year at our <a href="https://fall2020.princeton.edu/"><strong>Fall 2020 website</strong></a>. </p></div>
+      
+  </div>
+
+  
+
+      </div>
+
+              <div class="paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div data-block-plugin-id="pu_story_run" class="block__wrapper">
+  
+    
+      <article role="article" about="/news/2020/08/07/fall-2020-update-undergraduate-education-be-fully-remote" class="image-cover-container crop-middle">
+  
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-cover-image media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=1Mv565Hk 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=t-LLZ_HD 960w, /sites/default/files/styles/half_16_9_1440/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=ULHEUINZ 1440w, /sites/default/files/styles/1x_full_2x_half_crop/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=VAyKFBIN 1920w, /sites/default/files/styles/crop_2048_ipad/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=Wb7-K658 2048w, /sites/default/files/styles/full_2x_crop/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=dda9Egr1 2880w" sizes="100vw" src="/sites/default/files/styles/1x_full_2x_half_crop/public/images/2020/07/20191024_CL_DJA_178.jpg?itok=VAyKFBIN" alt="Nassau Hall in autumn" typeof="foaf:Image" /></div></article></div>
+      
+  <div class="image-caption-overlay">
+    <div class="contents">
+    <h2>
+      <a href="/news/2020/08/07/fall-2020-update-undergraduate-education-be-fully-remote"><span class="balance-text"><span>Fall 2020 update: Undergraduate education to be fully remote</span>
+</span></a>
+    </h2>
+    
+            <p class="balance-text">
+            In a message to the University community, President Eisgruber writes that the pandemic’s impact prevents a genuinely meaningful on-campus experience for undergraduates
+
+ 
+      </p>
+          <div class="readmore"><a href="/news/2020/08/07/fall-2020-update-undergraduate-education-be-fully-remote" aria-hidden="true">Read more</a></div>
+  </div>
+</article>
+
+  </div>
+</div>
+          </div>
+  
+</div>
+
+              <div class="news-run news-run-subhero xxxl-half-width paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div data-block-plugin-id="pu_story_run" class="block__wrapper">
+  
+    
+      <article role="article" about="/news/2020/08/06/water-drought-and-flooding" class="card news-teaser news-teaser-medium"><div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-subhero media-video ambient- media"><div class="video-cover-container"><div class="field field--name-field-media-video-cover-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/08/landsat_art_lena_lrg_16by9_blank_B_tint.jpg?itok=aVbt36xn 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/08/landsat_art_lena_lrg_16by9_blank_B_tint.jpg?itok=8u3_24hx 960w" sizes="(min-width:120em) 26vw, (min-width:40em) 45vw, 90vw" src="/sites/default/files/styles/half_1x_crop/public/images/2020/08/landsat_art_lena_lrg_16by9_blank_B_tint.jpg?itok=8u3_24hx" alt="NASA satellite imagery of the Lena River delta" typeof="foaf:Image" /></div><div class="field field--name-field-media-video-embed-field field--type-video-embed-field field--label-hidden field__item"><div class="video-embed-field-provider-vimeo video-embed-field-responsive-video"><div class="vimeo-async video-async" id="httpsplayervimeocomvideo444398698" data-vimeo-url="https://player.vimeo.com/video/444398698" data-vimeo-color="ed6d0b" data-vimeo-byline="0" data-vimeo-portrait="0"></div><a class="if-no-js" href="https://player.vimeo.com/video/444398698">Play video: </a></div></div></div></article></div><div class="card-section" data-equalizer-watch><a href="/news/2020/08/06/water-drought-and-flooding"><h2><span>Water, drought and flooding</span><span class="show-for-sr">.</span></h2><p>
+            
+            A half-century at the environmental forefront
+      
+        </p><div class="readmore" aria-hidden="true">Read more</div></a><div class="news-category"><a href="/news?category=971#filters"><span class="show-for-sr">More </span>Research <span class="show-for-sr"> Stories</span></a></div></div></article>
+  </div>
+</div>
+              <div class="field__item"><div data-block-plugin-id="pu_story_run" class="block__wrapper">
+  
+    
+      <article role="article" about="/news/2020/07/29/climate-modeling-princeton" class="card news-teaser news-teaser-medium"><div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-subhero media-video ambient- media"><div class="video-cover-container"><div class="field field--name-field-media-video-cover-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/Climate_still_B.jpg?itok=3Ba7Wl51 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/Climate_still_B.jpg?itok=PmAhkMaN 960w" sizes="(min-width:120em) 26vw, (min-width:40em) 45vw, 90vw" src="/sites/default/files/styles/half_1x_crop/public/images/2020/07/Climate_still_B.jpg?itok=PmAhkMaN" alt="Earth from space" typeof="foaf:Image" /></div><div class="field field--name-field-media-video-embed-field field--type-video-embed-field field--label-hidden field__item"><div class="video-embed-field-provider-vimeo video-embed-field-responsive-video"><div class="vimeo-async video-async" id="httpsplayervimeocomvideo440782725" data-vimeo-url="https://player.vimeo.com/video/440782725" data-vimeo-color="ed6d0b" data-vimeo-byline="0" data-vimeo-portrait="0"></div><a class="if-no-js" href="https://player.vimeo.com/video/440782725">Play video: </a></div></div></div></article></div><div class="card-section" data-equalizer-watch><a href="/news/2020/07/29/climate-modeling-princeton"><h2><span>Climate modeling at Princeton</span><span class="show-for-sr">.</span></h2><p>
+            
+            A half-century at the environmental forefront
+      
+        </p><div class="readmore" aria-hidden="true">Read more</div></a><div class="news-category"><a href="/news?category=971#filters"><span class="show-for-sr">More </span>Research <span class="show-for-sr"> Stories</span></a></div></div></article>
+  </div>
+</div>
+          </div>
+  
+</div>
+
+              <div class="xxxl-half-width paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div class="news-run block">
+  
+      <h2><a href="/news">University News</a></h2>
+    
+      
+
+    <label for="category-selector" class="show-for-sr">Select a news category</label>
+    <select name="category-selector" id="category-selector" class='homepage-news-selector show-for-js'>
+                    <option value="all">All News</option>
+                    <option value="1876">Academics</option>
+                    <option value="1886">Campus Life</option>
+                    <option value="971">Research</option>
+                    <option value="1896">University News</option>
+            </select>
+    <div class="show-for-sr float-right" aria-live="polite" id="home-news-announce"></div>
+    
+
+    <div class="homepage-news homepage-news-all content-tile-grid columns-3" data-equalizer data-equalize-on-stack="true" data-equalize-on="small" data-equalize-by-row="true">
+        <article role="article" about="/news/2020/08/05/staff-recognition-program-honoring-princeton-employees-dedication-and-service" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/08/05/staff-recognition-program-honoring-princeton-employees-dedication-and-service"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2020/08/PAAGroupCLE2020_0004.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/08/PAAGroupCLE2020_0004.jpg?itok=-1M8k0fm 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/08/PAAGroupCLE2020_0004.jpg?itok=dJjtE777 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 3000 2000&#039;%2F%3E" alt="President Eisgruber poses with outstanding staff members honored for their service" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Service Recognition Program: Honoring Princeton employees for dedication and service </span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+<article role="article" about="/news/2020/08/03/princeton-implements-new-title-ixsexual-misconduct-policies-following-new-federal" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/08/03/princeton-implements-new-title-ixsexual-misconduct-policies-following-new-federal"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2020/05/20190125_campus_life_NAB_005.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/05/20190125_campus_life_NAB_005.jpg?itok=r_kezZve 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/05/20190125_campus_life_NAB_005.jpg?itok=l16Dph3M 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 3000 2000&#039;%2F%3E" alt="Clock tower in sunshine" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Princeton implements new Title IX/sexual misconduct policies following new federal regulations for colleges and universities</span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+<article role="article" about="/news/2020/07/31/princetons-prudhomme-and-yang-partner-genentech-decode-key-process-vaccines-and" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/07/31/princetons-prudhomme-and-yang-partner-genentech-decode-key-process-vaccines-and"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2020/07/chemistry_building.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/chemistry_building.jpg?itok=4DNLa4La 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/chemistry_building.jpg?itok=tXahUgfK 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 2800 1575&#039;%2F%3E" alt="Frick Chemistry Building at twilight" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Princeton&#039;s Prud&#039;homme and Yang partner with Genentech to decode a key process in vaccines and cancer treatments</span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+<article role="article" about="/news/2020/07/31/student-qa-alicia-magann" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/07/31/student-qa-alicia-magann"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2020/07/Alicia-Magann-Edit_H.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/Alicia-Magann-Edit_H.jpg?itok=HLmzWm64 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/Alicia-Magann-Edit_H.jpg?itok=6SwYcl5O 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 3000 1687&#039;%2F%3E" alt="Alicia Magann" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Graduate student Q&amp;A: Alicia Magann</span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+<article role="article" about="/news/2020/07/31/trenton-students-sample-stem-fields-princeton-university-materials-academy" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/07/31/trenton-students-sample-stem-fields-princeton-university-materials-academy"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2020/07/iStock-124023405_rubberbands.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/iStock-124023405_rubberbands.jpg?itok=5ifkKAR1 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/iStock-124023405_rubberbands.jpg?itok=Xn9RV5O0 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 2057 1262&#039;%2F%3E" alt="Pile of colorful rubbber bands" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Trenton students sample STEM fields at Princeton University Materials Academy</span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+<article role="article" about="/news/2020/07/28/center-materials-future-awarded-18m-six-year-funding" class="card news-teaser content-tile-flashcard content-tile-set-item" data-equalizer-watch>
+  <a href="/news/2020/07/28/center-materials-future-awarded-18m-six-year-funding"><div aria-hidden="true">
+            <div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-tile-small media media-image"><div data-blazy="" class="blazy blazy--field blazy--image blazy--image--tile-small field field--name-image field--type-image field--label-hidden field__item"><div class="media media--bundle--image media--blazy media--loading media--responsive media--image"><img class="media__image media__element b-lazy b-responsive" data-src="/sites/default/files/images/2019/08/1D4V0029_crophigh_0.jpg" srcset="" sizes="(min-width:22.5em) 33.333vw, (min-width:120em) 25vw, 100vw" data-srcset="/sites/default/files/styles/third_1x_crop/public/images/2019/08/1D4V0029_crophigh_0.jpg?itok=o5ldJLAM 640w, /sites/default/files/styles/half_1x_crop/public/images/2019/08/1D4V0029_crophigh_0.jpg?itok=2KOG8mLK 960w" src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns%3D&#039;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#039; viewBox%3D&#039;0 0 3822 2739&#039;%2F%3E" alt="Students gathering around sample container" typeof="foaf:Image" /></div></div></article></div>
+      </div>
+  <div class="card-section">
+    <h3>
+      <span>Center for materials of the future awarded $18M six-year funding</span>
+
+    </h3>
+    
+    <div class="readmore" aria-hidden="true">Read more</div>
+  </div></a>
+</article>
+
+    </div>
+    <div class="homepage-news homepage-news-1876 content-tile-grid columns-3" data-equalizer data-equalize-on-stack="true" data-equalize-on="small" data-equalize-by-row="true">
+        
+    </div>
+    <div class="homepage-news homepage-news-1886 content-tile-grid columns-3" data-equalizer data-equalize-on-stack="true" data-equalize-on="small" data-equalize-by-row="true">
+        
+    </div>
+    <div class="homepage-news homepage-news-971 content-tile-grid columns-3" data-equalizer data-equalize-on-stack="true" data-equalize-on="small" data-equalize-by-row="true">
+        
+    </div>
+    <div class="homepage-news homepage-news-1896 content-tile-grid columns-3" data-equalizer data-equalize-on-stack="true" data-equalize-on="small" data-equalize-by-row="true">
+        
+    </div>
+
+
+  </div>
+</div>
+          </div>
+  
+</div>
+
+              <div class="news-run news-run-subhero xxxl-half-width paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div data-block-plugin-id="pu_story_run" class="block__wrapper">
+  
+    
+      <article role="article" about="/news/2020/05/19/america-historian-jill-lepore-selected-princeton-pre-read" class="card news-teaser news-teaser-medium"><a aria-hidden="true" href="/news/2020/05/19/america-historian-jill-lepore-selected-princeton-pre-read"><div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-subhero media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/05/This-America_wBKG_H2.jpg?itok=TI52g7C3 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/05/This-America_wBKG_H2.jpg?itok=Wo6RiQlC 960w" sizes="(min-width:120em) 26vw, (min-width:40em) 45vw, 90vw" src="/sites/default/files/styles/half_1x_crop/public/images/2020/05/This-America_wBKG_H2.jpg?itok=Wo6RiQlC" alt="Cover of &quot;This America: The Case for the Nation&quot; by Jill Lepore" typeof="foaf:Image" /></div></article></div></a><div class="card-section" data-equalizer-watch><a href="/news/2020/05/19/america-historian-jill-lepore-selected-princeton-pre-read"><h2><span>&#039;This America&#039; by historian Jill Lepore selected for Princeton Pre-read</span><span class="show-for-sr">.</span></h2><p>
+            
+            President Christopher L. Eisgruber is asking Princeton’s incoming class to explore the concept of the nation, American civil ideals, and historical truth-seeking in his selection for this year’s Pre-read, “This America: The Case for the Nation,” by historian Jill Lepore.
+      
+        </p><div class="readmore" aria-hidden="true">Read more</div></a><div class="news-category"><a href="/news?category=1896#filters"><span class="show-for-sr">More </span>University News <span class="show-for-sr"> Stories</span></a></div></div></article>
+  </div>
+</div>
+              <div class="field__item"><div data-block-plugin-id="pu_story_run" class="block__wrapper">
+  
+    
+      <article role="article" about="/news/2020/07/15/summer-reads-2020-what-are-princeton-professors-reading-summer" class="card news-teaser news-teaser-medium"><a aria-hidden="true" href="/news/2020/07/15/summer-reads-2020-what-are-princeton-professors-reading-summer"><div class="field field--name-field-news-cover-image field--type-entity-reference field--label-hidden field__item"><article class="view-mode-subhero media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x_crop/public/images/2020/07/Ralph_deJesus.jpg?itok=2rf2-vLa 640w, /sites/default/files/styles/half_1x_crop/public/images/2020/07/Ralph_deJesus.jpg?itok=tjsQZgQ9 960w" sizes="(min-width:120em) 26vw, (min-width:40em) 45vw, 90vw" src="/sites/default/files/styles/half_1x_crop/public/images/2020/07/Ralph_deJesus.jpg?itok=tjsQZgQ9" alt="Alisha Beliso De Jesus and Lawrence Ralph" typeof="foaf:Image" /></div></article></div></a><div class="card-section" data-equalizer-watch><a href="/news/2020/07/15/summer-reads-2020-what-are-princeton-professors-reading-summer"><h2><span>Summer Reads 2020: What are Princeton professors reading this summer?</span><span class="show-for-sr">.</span></h2><p>
+            
+            Six Princeton professors talk about how the books on their shelves relate to their work and share what’s on their summer reading lists.
+      
+        </p><div class="readmore" aria-hidden="true">Read more</div></a><div class="news-category"><a href="/news?category=1876#filters"><span class="show-for-sr">More </span>Academics <span class="show-for-sr"> Stories</span></a></div></div></article>
+  </div>
+</div>
+          </div>
+  
+</div>
+
+                <div class="paragraph paragraph--type--tile paragraph--view-mode--default">
+          
+  
+<div class="content-tile content-tile-zen">
+      
+
+
+
+            <article class="view-mode-captionless-full-width media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=_J46V_Gx 640w, /sites/default/files/styles/half_1x/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=XjASXYab 960w, /sites/default/files/styles/scale_1440/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=9O_JHhHb 1440w, /sites/default/files/styles/half_2x/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=T3nbLm15 1920w, /sites/default/files/styles/full_2x/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=wLNC5LlO 2880w" sizes="100vw" src="/sites/default/files/styles/half_2x/public/images/2018/07/20120106_CampusLife_025_3800.jpg?itok=T3nbLm15" alt="Prospect Garden" typeof="foaf:Image" /></div></article>
+    
+
+
+  </div>
+
+  
+
+      </div>
+
+              <div class="split-header paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+            <div class="field field--name-field-paragraph-header-tile field--type-entity-reference field--label-hidden field__item">    
+<div class="content-tile content-tile-subhead clearfix no-body has-cta subhead subhead-wide-light">
+  <h2>
+            <div class="field field--name-name field--type-string field--label-hidden field__item">Upcoming Virtual Events</div>
+      </h2>
+      
+
+<div class="button">
+      <a href="/events">View All</a>
+  </div>
+
+  </div>
+</div>
+      
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div data-block-plugin-id="views_block:events-featured_events" class="block__wrapper">
+  
+    
+      <div class="views-element-container"><div class="newsgrid eventsgrid js-view-dom-id-c32dbd2ed4178ec68df7aa46da261108375fe386f8b3475d8baa3c3721141fab">
+  
+  
+  
+
+  
+  
+  
+
+  No events found.
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+</div>
+          </div>
+  
+</div>
+
+              <div class="content-tile-set content-tile-grid columns-3 invert split-header paragraph clearfix paragraph--type--paragraph-view paragraph--view-mode--default" data-equalizer data-equalize-by-row="true" data-equalize-on="small" data-equalize-on-stack="true">
+    
+            <div class="field field--name-field-paragraph-header-tile field--type-entity-reference field--label-hidden field__item">    
+<div class="content-tile content-tile-subhead clearfix has-body has-cta content-tile-subhead content-tile-subhead-tall invert">
+  <h2>
+            <div class="field field--name-name field--type-string field--label-hidden field__item">@PrincetonU</div>
+      </h2>
+      
+            <div class="field field--name-field-tiles-body field--type-text-long field--label-hidden field__item"><p>Connect with Princeton’s departmental and interest-based accounts for the latest from campus.</p></div>
+      
+
+<div class="button">
+      <a href="https://socialmedia.princeton.edu/accounts">Social Media Directory</a>
+  </div>
+
+  </div>
+</div>
+      
+      <div class="field field--name-field-paragraph-block field--type-block-field field--label-hidden field__items">
+              <div class="field__item"><div data-block-plugin-id="pu_juicer" class="block__wrapper">
+  
+    
+      <ul class="juicer-feed" data-feed-id="princetonu" data-per="6" data-pages="1" data-truncate="280" data-overlay="false" data-gutter="0" data-columns="1" data-after="juicerMoveDate()"></ul>
+  </div>
+</div>
+          </div>
+  
+</div>
+
+                <div class="paragraph paragraph--type--tile paragraph--view-mode--default">
+          
+  
+
+<div class="content-tile content-tile-billboard left clearfix">
+      
+      <div class="field field--name-field-tiles-media field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><article class="view-mode-captionless-full-width media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=zBvGTVSm 640w, /sites/default/files/styles/half_1x/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=00AWOdRX 960w, /sites/default/files/styles/scale_1440/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=3jQ0iTdI 1440w, /sites/default/files/styles/half_2x/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=kdfOudUL 1920w, /sites/default/files/styles/full_2x/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=UxC76iCn 2880w" sizes="100vw" src="/sites/default/files/styles/half_2x/public/images/2018/10/20171206_CL_Physics101Lab_DLA_015.jpg?itok=kdfOudUL" alt="Instructor working with student in physics lab" typeof="foaf:Image" /></div></article></div>
+          </div>
+  
+    <div class="image-caption-box">
+      <h2>
+            <div class="field field--name-name field--type-string field--label-hidden field__item">Study at Princeton</div>
+      </h2>
+      
+            <div class="field field--name-field-tiles-body field--type-text-long field--label-hidden field__item"><p>Our approach to learning combines the best aspects of a great research university and an outstanding liberal arts college.</p></div>
+      
+      
+
+<ul class="linklist">
+      <li><a href="/academics/areas-of-study">Areas of Study</a></li>
+      <li><a href="/academics/learning-abroad">Learning Abroad</a></li>
+      <li><a href="http://admission.princeton.edu">Undergraduate Admission</a></li>
+      <li><a href="/admission-aid/graduate-admission">Graduate Admission</a></li>
+  </ul>
+
+    </div>
+  </div>
+
+  
+
+      </div>
+
+                <div class="paragraph paragraph--type--tile paragraph--view-mode--default">
+          
+  
+
+<div class="content-tile content-tile-billboard right clearfix">
+      
+      <div class="field field--name-field-tiles-media field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item"><article class="view-mode-captionless-full-width media media-image"><div class="field field--name-image field--type-image field--label-hidden field__item"><img srcset="/sites/default/files/styles/third_1x/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=KElAPLSx 640w, /sites/default/files/styles/half_1x/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=Ls0-4XoA 960w, /sites/default/files/styles/scale_1440/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=gV1MzSkT 1440w, /sites/default/files/styles/half_2x/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=p8jO0K-b 1920w, /sites/default/files/styles/full_2x/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=pwqgOkVp 2880w" sizes="100vw" src="/sites/default/files/styles/half_2x/public/images/2020/01/IMG_1633_Michael-Moore_Wide_Hope-vanCleaf_2.jpg?itok=p8jO0K-b" alt="Michael Moore stands next to his portrait painted by Mario Moore" typeof="foaf:Image" /></div></article></div>
+          </div>
+  
+    <div class="image-caption-box">
+      <h2>
+            <div class="field field--name-name field--type-string field--label-hidden field__item">Work at Princeton</div>
+      </h2>
+      
+            <div class="field field--name-field-tiles-body field--type-text-long field--label-hidden field__item"><p>Every employee has the opportunity to make an impact supporting our mission of teaching and research.</p></div>
+      
+      
+
+<ul class="linklist">
+      <li><a href="http://dof.princeton.edu/academicjobs">Faculty and Academic Positions</a></li>
+      <li><a href="https://careers.princeton.edu/">Staff Positions</a></li>
+  </ul>
+
+    </div>
+  </div>
+
+  
+
+      </div>
+
+          </div>
+  
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+        </section>
+      </main>
+            
+              <footer class="page-footer">
+          <div class="row">
+                          <div class="small-6 xmedium-3 columns">
+                  <div>
+    <nav role="navigation" aria-labelledby="block-footergroup1-menu" id="block-footergroup1" data-block-plugin-id="system_menu_block:footer" class="menu--footer block--contact-links">
+            
+  <h2 class="visually-hidden" id="block-footergroup1-menu" aria-hidden="true">Contact links</h2>
+  
+
+        
+              <ul class="menu vertical" role="menu">
+                    <li class="menu-item">
+        <a href="/meet-princeton/contact-us" role="menuitem" data-drupal-link-system-path="node/20181">Contact Us</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://accessibility.princeton.edu/resources/accessibility-help" role="menuitem">Accessibility</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search/people-advanced" role="menuitem" data-drupal-link-system-path="search/people-advanced">Advanced People Search</a>
+              </li>
+                <li class="menu-item">
+        <a href="/news/media-inquiries" role="menuitem" data-drupal-link-system-path="node/20526">Media Inquiries</a>
+              </li>
+                <li class="menu-item">
+        <a href="/feedback" role="menuitem" data-drupal-link-system-path="contact/beta_feedback">Website Feedback</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+              </div>
+                                      <div class="small-6 xmedium-3 columns">
+                  <div>
+    <nav role="navigation" aria-labelledby="block-footergroup2-menu" id="block-footergroup2" data-block-plugin-id="system_menu_block:footer-2" class="menu--footer-2 block--visiting-links">
+            
+  <h2 class="visually-hidden" id="block-footergroup2-menu" aria-hidden="true">Visiting links</h2>
+  
+
+        
+              <ul class="menu vertical" role="menu">
+                    <li class="menu-item">
+        <a href="/meet-princeton/visit-us" role="menuitem" data-drupal-link-system-path="node/20531">Plan a Visit</a>
+              </li>
+                <li class="menu-item">
+        <a href="/meet-princeton/visit-us#campus-maps" role="menuitem" data-drupal-link-system-path="node/20531">Maps &amp; Shuttles</a>
+              </li>
+                <li class="menu-item">
+        <a href="http://www.goprincetontigers.com" role="menuitem">Varsity Athletics</a>
+              </li>
+                <li class="menu-item">
+        <a href="http://giving.princeton.edu" role="menuitem">Giving to Princeton</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+              </div>
+                                      <div class="small-6 xmedium-3 columns">
+                  <div>
+    <nav role="navigation" aria-labelledby="block-footergroup3-menu" id="block-footergroup3" data-block-plugin-id="system_menu_block:footer-3" class="menu--footer-3 block--academic-links">
+            
+  <h2 class="visually-hidden" id="block-footergroup3-menu" aria-hidden="true">Academic links</h2>
+  
+
+        
+            <ul class="menu vertical" role="menu">
+                            <li class="menu-item">
+            <a href="http://library.princeton.edu" role="menuitem">Library</a>
+                    </li>
+                        <li class="menu-item">
+            <a href="https://registrar.princeton.edu/academic-calendar/" role="menuitem">Academic Calendar</a>
+                    </li>
+                        <li class="menu-item">
+            <a href="/links/students" role="menuitem" data-drupal-link-system-path="node/20266">Student Links</a>
+                    </li>
+                        <li class="menu-item">
+            <a href="/links/faculty-staff" role="menuitem" data-drupal-link-system-path="node/20186">Faculty &amp; Staff Links</a>
+                    </li>
+        </ul>
+
+
+
+  </nav>
+
+  </div>
+
+              </div>
+                                      <div class="small-6 xmedium-3 columns">
+                  <div>
+    <nav role="navigation" aria-labelledby="block-footersocialmedia-menu" id="block-footersocialmedia" data-block-plugin-id="system_menu_block:footer-sm" class="menu--footer-sm block--footer-social-media">
+            
+  <h2 class="visually-hidden" id="block-footersocialmedia-menu" aria-hidden="true">Footer social media</h2>
+  
+
+        
+              <ul class="menu vertical" role="menu">
+                    <li class="menu-item sprite-before facebook">
+        <a href="https://www.facebook.com/princetonu" role="menuitem">Facebook</a>
+              </li>
+                <li class="menu-item sprite-before twitter">
+        <a href="https://twitter.com/princeton" role="menuitem">Twitter</a>
+              </li>
+                <li class="menu-item sprite-before instagram">
+        <a href="https://www.instagram.com/princeton/" role="menuitem">Instagram</a>
+              </li>
+                <li class="menu-item sprite-before snapchat">
+        <a href="https://www.snapchat.com/add/princetonu" role="menuitem">Snapchat</a>
+              </li>
+                <li class="menu-item sprite-before linkedin">
+        <a href="https://www.linkedin.com/school/157313/" role="menuitem">LinkedIn</a>
+              </li>
+                <li class="menu-item sprite-before youtube">
+        <a href="https://www.youtube.com/princeton" role="menuitem">YouTube</a>
+              </li>
+                <li class="menu-item sprite-before social-media-directory">
+        <a href="http://socialmedia.princeton.edu/accounts" role="menuitem">Social Media Directory</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+              </div>
+                      </div>
+          <div class="midfooter row">
+            <div class="columns">
+              <strong>Equal Opportunity and Nondiscrimination at Princeton University:</strong> Princeton University believes that commitment to principles of fairness and respect for all is favorable to the free and open exchange of ideas, and the University seeks to reach out as widely as possible in order to attract the ablest individuals as students, faculty, and staff. In applying this policy, the University is committed to nondiscrimination on the basis of personal beliefs or characteristics such as political views, religion, national or ethnic origin, race, color, sex, sexual orientation, gender identity or expression, pregnancy, age, marital or domestic partnership status, veteran status, disability, genetic information and/or other characteristics protected by applicable law in any phase of its education or employment programs or activities. In addition, pursuant to Title IX of the Education Amendments of 1972 and supporting regulations, Princeton does not discriminate on the basis of sex in the education programs or activities that it operates; this extends to admission and employment. Inquiries about the application of Title IX and its supporting regulations may be directed to the Assistant Secretary for Civil Rights, Office for Civil Rights, U.S. Department of Education or to the University's Sexual Misconduct/Title IX Coordinator. See Princeton’s full <a href="https://rrr.princeton.edu/eop">Equal Opportunity Policy and Nondiscrimination Statement</a>.
+            </div>
+          </div>
+            <div class="subfooter row" typeof="schema: Organization">
+                <div class="subfooter-first small-6 medium-4 large-5 columns">
+                  <a href="http://www.princeton.edu"><img alt="" src="/themes/custom/tony/images/logo-white.svg"><span property="schema:name" class="show-for-sr">Princeton University</span></a>
+                </div>
+                <div class="subfooter-second small-6 medium-8 large-7 columns">
+                  <div class="row">
+                    <div class="small-12 medium-5 large-4 columns address">
+                      <div property="schema: address" typeof="PostalAddress">
+                        <span property="addressLocality">Princeton, NJ</span>
+                        <span property="schema: postalCode">08544</span>
+                      </div>
+                      <div>Operator: <span property="telephone">(609) 258-3000</span></div>
+                    </div>
+                    <div class="small-12 medium-7 large-8 columns text-right">
+                      <div class="copyright">
+                        &copy; 2020 The Trustees of Princeton&nbsp;University
+                      </div>
+                                                <div>
+    <nav role="navigation" aria-labelledby="block-subfooterlinks-menu" id="block-subfooterlinks" data-block-plugin-id="system_menu_block:subfooter-links" class="menu--subfooter-links block--subfooter-links">
+            
+  <h2 class="visually-hidden" id="block-subfooterlinks-menu" aria-hidden="true">Subfooter links</h2>
+  
+
+        
+        <ul class="menu float-right" role="menu">
+          <li class="menu-item">
+        <a href="/meet-princeton/copyright-infringement" role="menuitem" data-drupal-link-system-path="node/20201">Copyright Infringement</a>
+      </li>
+          <li class="menu-item">
+        <a href="/privacy-notice" role="menuitem" data-drupal-link-system-path="node/174186">Privacy Notice</a>
+      </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+                                          </div>
+
+                    </div>
+                </div>
+                                  </div>
+            </div>
+        </footer>
+                    
+
+
+  </div>
+
+    
+    <!-- DO NOT REMOVE this comment. The UltraDNS service tests for the following string to confirm that the site is available: ultradns-test-string -->
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/141","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"anchor_link\/drupal.anchor_link,blazy\/load,core\/html5shiv,core\/picturefill,paragraphs\/drupal.paragraphs.unpublished,pu_news\/pu_news_ajax_block,pu_social\/juicer,system\/base,tony\/blazy,tony\/video,video_embed_field\/responsive-video,views\/views.ajax,views\/views.module","theme":"tony","theme_token":null},"ajaxTrustedUrl":[],"google_analytics":{"trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"views":{"ajax_path":"\/views\/ajax","ajaxViews":{"views_dom_id:c32dbd2ed4178ec68df7aa46da261108375fe386f8b3475d8baa3c3721141fab":{"view_name":"events","view_display_id":"featured_events","view_args":"","view_path":"\/node\/141","view_base_path":"feed\/events","view_dom_id":"c32dbd2ed4178ec68df7aa46da261108375fe386f8b3475d8baa3c3721141fab","pager_element":0}}},"blazy":{"loadInvisible":false,"offset":800,"saveViewportOffsetDelay":50},"blazyIo":{"enabled":false,"disconnect":false,"rootMargin":"0px","threshold":[0]},"ajax":[],"user":{"uid":0,"permissionsHash":"ed89fad618c7bbd7382b61a19ba51c2af0dfc507aaaf68689c5a220a1bcd23d3"}}</script>
+<script src="/sites/default/files/js/js_1HtsEO5GXiKWIn4Iu5Mq7AjFJVg3_BIenFUc3kMrbac.js"></script>
+<script src="//assets.juicer.io/embed.js" defer></script>
+<script src="/sites/default/files/js/js_YzfwW3ayopdGWNSOepcjaw17_zylKB9I3UavUmjRhHc.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-67e8b5519821728e13e","applicationID":"465817224","transactionName":"M1UGYktQVkAAV01YWwofJVVNWFddTnBLREQFXDhYVlVdbyJbV0VGC1wIU0ttdlwFUW9YURNzC1hNQ1dfDVFLHAoSWQFB","queueTime":0,"applicationTime":510,"atts":"HxIFFANKRU4=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
